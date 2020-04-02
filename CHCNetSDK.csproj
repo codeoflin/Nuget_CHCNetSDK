@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <!--IncludeBuildOutput>false</IncludeBuildOutput -->
+    <NuspecFile></NuspecFile>
+    <NuspecProperties></NuspecProperties>
+    <NuspecBasePath></NuspecBasePath>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <Target Name="CHCNetSDK" Condition="$(ConfigurationName) == 'Debug'" AfterTargets="Build">
+    <ItemGroup>
+      <Content Include="$(ProjectDir)runtimes\win-x86\*.dll" Pack="true" PackagePath="\runtimes\win-x86\native" />
+      <Content Include="$(ProjectDir)runtimes\win-x64\*.dll" Pack="true" PackagePath="\runtimes\win-x64\native" />
+    </ItemGroup>
+  </Target>
+
+
+</Project>

@@ -411,7 +411,6 @@ namespace CHCNetSDK
         [DllImport(@"PlayCtrl.dll")]
         public static extern bool PlayM4_GetFileTimeEx(int nPort, ref uint pStart, ref uint pStop, ref uint pRev);
 
-
         [DllImport(@"PlayCtrl.dll")]
         public static extern uint PlayM4_GetPlayedTime(int nPort);
 
@@ -423,7 +422,6 @@ namespace CHCNetSDK
 
         [DllImport(@"PlayCtrl.dll")]
         public static extern bool PlayM4_SetDecCallBack(int nPort, DECCBFUN DecCBFun);
-
 
         public delegate void DISPLAYCBFUN(int nPort, IntPtr pBuf, int nSize, int nWidth, int nHeight, int nStamp, int nType, int nReserved);
 

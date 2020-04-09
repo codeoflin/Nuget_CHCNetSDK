@@ -15515,6 +15515,9 @@ namespace CHCNetSDK
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_RealPlay_V40(int iUserID, ref NET_DVR_PREVIEWINFO lpPreviewInfo, REALDATACALLBACK fRealDataCallBack_V30, IntPtr pUser);
 
+        [DllImport(@"HCNetSDK.dll")]
+        public static extern int NET_DVR_RealPlay_V40(int iUserID, ref NET_DVR_PREVIEWINFO lpPreviewInfo, IntPtr fRealDataCallBack_V30, IntPtr pUser);
+
         // [DllImport(@"HCNetSDK.dll")]
         // public static extern int NET_DVR_GetRealPlayerIndex(int lRealHandle);
         /*********************************************************

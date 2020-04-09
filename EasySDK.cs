@@ -51,7 +51,7 @@ namespace CHCNetSDK
             /// </summary>
             public Process Process = null;
         }
-        private List<VideoPort> Ports = new List<VideoPort>();
+        public List<VideoPort> Ports = new List<VideoPort>();
 
         private void LogForError(string str)
         {

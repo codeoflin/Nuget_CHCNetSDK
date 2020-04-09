@@ -27,7 +27,9 @@ namespace CHCNetSDK
         public static string LibPath = $"{ BasePath}/runtimes/win-{(Environment.Is64BitProcess ? "x64" : "x86")}/native/";
         static EasySDK()
         {
+            if (!Directory.Exists(LibPath)) LibPath = BasePath;
             CHCNetSDK.CHCNet.NET_DVR_Init();
+
         }
 
         /// <summary>

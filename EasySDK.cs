@@ -46,7 +46,7 @@ namespace CHCNetSDK
             /// 
             /// </summary>
             /// <returns></returns>
-            public Image Frame = null;
+            public byte[] Frame = null;
 
             /// <summary>
             /// 
@@ -58,6 +58,63 @@ namespace CHCNetSDK
         private void LogForError(string str)
         {
 
+        }
+
+        /// <summary>
+        /// 将Base64字符串转换为图片
+        /// </summary>
+        /// <param name="base64">base64字符串</param>
+        /// <returns>图片</returns>
+        private static Image Base64ToImg(string base64)
+        {
+            base64 = base64.Replace("data:image/png;base64,", "").Replace("data:image/jgp;base64,", "").Replace("data:image/jpg;base64,", "").Replace("data:image/jpeg;base64,", ""); //将base64头部信息替换
+            var stream = new MemoryStream(Convert.FromBase64String(base64));
+            var img = (Bitmap)Bitmap.FromStream(stream);
+            if (img == null)
+            {
+                stream.Dispose();
+                return null;
+            }
+
+            /* 去除透明通道方案1
+			var data = img.LockBits(new Rectangle(0, 0, img.Width, img.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+			var raw = new byte[img.Width * img.Height * 4];
+			//uint* bckInt = (uint*)data.Scan0;
+			Marshal.Copy(data.Scan0, raw, 0, raw.Length);
+			for (int i = 0; i < img.Width * img.Height; i++)
+			{
+				raw[i * 4] = 0xFF;
+				raw[i * 4 + 1] = 0xFF;
+				raw[i * 4 + 2] = 0xFF;
+				raw[i * 4 + 3] = 0xFF;
+			}
+			Marshal.Copy(raw, 0, data.Scan0, raw.Length);
+			img.UnlockBits(data);
+			//*/
+
+            //复制一个图,与旧的图片抛弃关联
+            var newimg = DeepCopyBitmap(img);
+            img.Dispose();
+            stream.Dispose();
+            return newimg;
+
+            //创建文件夹
+            //var folderPath = savePath.Substring(0, savePath.LastIndexOf('\\'));
+            ////FileHelper.CreateDir(folderPath);
+            //if (!Directory.Exists(folderPath)) Directory.CreateDirectory(folderPath);
+            //图片后缀格式
+            //var suffix = savePath.Substring(savePath.LastIndexOf('.') + 1, savePath.Length - savePath.LastIndexOf('.') - 1).ToLower();
+            /*
+			var suffixName = suffix == "png"
+					? ImageFormat.Png
+					: suffix == "jpg" || suffix == "jpeg"
+							? ImageFormat.Jpeg
+							: suffix == "bmp"
+									? ImageFormat.Bmp
+									: suffix == "gif"
+											? ImageFormat.Gif
+											: ImageFormat.Jpeg;
+			// */
         }
 
         /// <summary>
@@ -161,16 +218,11 @@ namespace CHCNetSDK
                         var buff = new byte[imglen];
                         viewAccessor.ReadArray<byte>(6, buff, 0, buff.Length);
                         viewAccessor.Write(0, index2);
-                        var mem = new MemoryStream(buff);
-                        var img = (Bitmap)Bitmap.FromStream(mem);
-
-                        lock (videoport)
-                        {
-                            if (videoport.Frame != null) videoport.Frame.Dispose();
-                            videoport.Frame = DeepCopyBitmap(img);
-                        }
-                        img.Dispose();
-                        mem.Dispose();
+                        //var mem = new MemoryStream(buff);
+                        //var img = (Bitmap)Bitmap.FromStream(mem);
+                        lock (videoport) videoport.Frame = buff;
+                        //img.Dispose();
+                        //mem.Dispose();
                     }
                     videoport.Process.Dispose();
                     viewAccessor.Dispose();
@@ -189,11 +241,34 @@ namespace CHCNetSDK
         public Image ReadImage(int port = 0)
         {
             if (port >= Ports.Count) return null;
-            Image img = null;
-            lock (Ports[port]) if (Ports[port].Frame != null) img = DeepCopyBitmap(Ports[port].Frame);
-            return img;
+            var heximg = ReadImageBytes(port);
+            if (heximg == null) return null;
+            if (heximg.Length == 0) return null;
+            using (var mem = new MemoryStream(heximg)) return Image.FromStream(mem);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="port"></param>
+        /// <returns></returns>
+        public string ReadImageBase64(int port = 0)
+        {
+            if (port >= Ports.Count) return null;
+            return Convert.ToBase64String(ReadImageBytes(port));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="port"></param>
+        /// <returns></returns>
+        public byte[] ReadImageBytes(int port = 0)
+        {
+            if (port >= Ports.Count) return null;
+            lock (Ports[port]) return Ports[port].Frame;
+        }
+        
         /// <summary>
         /// 
         /// </summary>

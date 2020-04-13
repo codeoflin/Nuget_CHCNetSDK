@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
 
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net40;net45;net451;net452;net46;net461;net462;net472;</TargetFrameworks>
-    <!--IncludeBuildOutput>false</IncludeBuildOutput -->
+    <TargetFrameworks>netstandard2.0;net40;net45;net451;net452;net46;net461;net462;net472;netcoreapp3.1;</TargetFrameworks>
+    <IncludeBuildOutput>true</IncludeBuildOutput>
     <NuspecFile></NuspecFile>
     <NuspecProperties></NuspecProperties>
     <NuspecBasePath></NuspecBasePath>
@@ -10,21 +10,23 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
+
 <!-- Condition="$(ConfigurationName) == 'Debug'" AfterTargets="Build" -->
   <ItemGroup>
     <Content Include="$(ProjectDir)runtimes\win-x86\*" Pack="true" PackagePath="\runtimes\win-x86\native" />
     <Content Include="$(ProjectDir)runtimes\win-x64\*" Pack="true" PackagePath="\runtimes\win-x64\native" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
-    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
-    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
-    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
     <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
   </ItemGroup>
 

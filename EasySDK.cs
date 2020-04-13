@@ -193,7 +193,8 @@ namespace CHCNetSDK
                 Marshal.FreeHGlobal(databuff);
                 if (!isenable) continue;
                 Ports.Add(videoport);
-                var filename = $"HCNVR_{Ports.Count}";//_{Process.GetCurrentProcess().Id}
+                var run = true;
+                var filename = $"HCNVR{(run ? "_" : "")}{(run ? Process.GetCurrentProcess().Id.ToString() : "")}_{Ports.Count}";
                 Task.Factory.StartNew(() =>
                 {
                     //创建或者打开共享内存 32MB
@@ -206,8 +207,9 @@ namespace CHCNetSDK
                     viewAccessor.Write(1, 0);
                     videoport.Process = new Process();
                     videoport.Process.StartInfo = new ProcessStartInfo($"{LibPath}/CHCTCPSender.exe", $"{ip} {port.ToString()} {username} {password} {Ports.Count - 1} {filename}") { CreateNoWindow = true, WindowStyle = ProcessWindowStyle.Hidden };
-                    videoport.Process.Start();
-                    while (!videoport.Process.HasExited)
+
+                    if (run) videoport.Process.Start();
+                    while ((!run) || !videoport.Process.HasExited)
                     {
                         Thread.Sleep(10);
                         var index1 = viewAccessor.ReadByte(0);
@@ -218,11 +220,7 @@ namespace CHCNetSDK
                         var buff = new byte[imglen];
                         viewAccessor.ReadArray<byte>(6, buff, 0, buff.Length);
                         viewAccessor.Write(0, index2);
-                        //var mem = new MemoryStream(buff);
-                        //var img = (Bitmap)Bitmap.FromStream(mem);
                         lock (videoport) videoport.Frame = buff;
-                        //img.Dispose();
-                        //mem.Dispose();
                     }
                     videoport.Process.Dispose();
                     viewAccessor.Dispose();
@@ -255,7 +253,9 @@ namespace CHCNetSDK
         public string ReadImageBase64(int port = 0)
         {
             if (port >= Ports.Count) return null;
-            return Convert.ToBase64String(ReadImageBytes(port));
+            var imgbuff = ReadImageBytes(port);
+            if (imgbuff == null) return null;
+            return Convert.ToBase64String(imgbuff);
         }
 
         /// <summary>
@@ -266,9 +266,18 @@ namespace CHCNetSDK
         public byte[] ReadImageBytes(int port = 0)
         {
             if (port >= Ports.Count) return null;
-            lock (Ports[port]) return Ports[port].Frame;
+            byte[] buff = null;
+            lock (Ports[port])
+            {
+                if (Ports[port].Frame != null)
+                {
+                    buff = new byte[Ports[port].Frame.Length];
+                    Ports[port].Frame.CopyTo(buff, 0);
+                }
+            }
+            return buff;
         }
-        
+
         /// <summary>
         /// 
         /// </summary>

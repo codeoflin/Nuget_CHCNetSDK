@@ -195,6 +195,7 @@ namespace CHCNetSDK
                 Ports.Add(videoport);
                 var run = true;
                 var filename = $"HCNVR{(run ? "_" : "")}{(run ? Process.GetCurrentProcess().Id.ToString() : "")}_{Ports.Count}";
+                int portid=Ports.Count-1;
                 Task.Factory.StartNew(() =>
                 {
                     //创建或者打开共享内存 32MB
@@ -206,7 +207,7 @@ namespace CHCNetSDK
                     viewAccessor.Write(0, 0);
                     viewAccessor.Write(1, 0);
                     videoport.Process = new Process();
-                    videoport.Process.StartInfo = new ProcessStartInfo($"{LibPath}/CHCTCPSender.exe", $"{ip} {port.ToString()} {username} {password} {Ports.Count - 1} {filename}") { CreateNoWindow = true, WindowStyle = ProcessWindowStyle.Hidden };
+                    videoport.Process.StartInfo = new ProcessStartInfo($"{LibPath}/CHCTCPSender.exe", $"{ip} {port.ToString()} {username} {password} {portid} {filename}") { CreateNoWindow = true, WindowStyle = ProcessWindowStyle.Hidden };
 
                     if (run) videoport.Process.Start();
                     while ((!run) || !videoport.Process.HasExited)

@@ -9,10 +9,11 @@ namespace CHCNetSDK
     /// </summary>
     public class CHCNet
     {
-
         [DllImport("kernel32")]
         private static extern IntPtr LoadLibraryA([MarshalAs(UnmanagedType.LPStr)] string fileName);
-
+        /// <summary>
+        /// 
+        /// </summary>
         public static void SDKInit()
         {
             //File.WriteAllText(@"E:\2.TXT",$"123");
@@ -57,79 +58,256 @@ namespace CHCNetSDK
         }
 
         //SDK类型
-        public const int SDK_PLAYMPEG4 = 1;//播放库
-        public const int SDK_HCNETSDK = 2;//网络库
 
-        public const int NAME_LEN = 32;//用户名长度
-        public const int PASSWD_LEN = 16;//密码长度
-        public const int GUID_LEN = 16;      //GUID长度
-        public const int DEV_TYPE_NAME_LEN = 24;      //设备类型名称长度
-        public const int MAX_NAMELEN = 16;//DVR本地登陆名
-        public const int MAX_RIGHT = 32;//设备支持的权限（1-12表示本地权限，13-32表示远程权限）
-        public const int SERIALNO_LEN = 48;//序列号长度
-        public const int MACADDR_LEN = 6;//mac地址长度
-        public const int MAX_ETHERNET = 2;//设备可配以太网络
-        public const int MAX_NETWORK_CARD = 4; //设备可配最大网卡数目
-        public const int PATHNAME_LEN = 128;//路径长度
+        /// <summary>
+        /// 播放库
+        /// </summary>
+        public const int SDK_PLAYMPEG4 = 1;
+        /// <summary>
+        /// 网络库
+        /// </summary>
+        public const int SDK_HCNETSDK = 2;
+        /// <summary>
+        /// 用户名长度
+        /// </summary>
+        public const int NAME_LEN = 32;
+        /// <summary>
+        /// 密码长度
+        /// </summary>
+        public const int PASSWD_LEN = 16;
+        /// <summary>
+        /// GUID长度
+        /// </summary>
+        public const int GUID_LEN = 16;
+        /// <summary>
+        /// 设备类型名称长度
+        /// </summary>
+        public const int DEV_TYPE_NAME_LEN = 24;
+        /// <summary>
+        /// DVR本地登陆名
+        /// </summary>
+        public const int MAX_NAMELEN = 16;
+        /// <summary>
+        /// 设备支持的权限（1-12表示本地权限，13-32表示远程权限）
+        /// </summary>
+        public const int MAX_RIGHT = 32;
+        /// <summary>
+        /// 序列号长度
+        /// </summary>
+        public const int SERIALNO_LEN = 48;
+        /// <summary>
+        /// mac地址长度
+        /// </summary>
+        public const int MACADDR_LEN = 6;
+        /// <summary>
+        /// 设备可配以太网络
+        /// </summary>
+        public const int MAX_ETHERNET = 2;
+        /// <summary>
+        /// 设备可配最大网卡数目
+        /// </summary>
+        public const int MAX_NETWORK_CARD = 4;
+        /// <summary>
+        /// 路径长度
+        /// </summary>
+        public const int PATHNAME_LEN = 128;
+        /// <summary>
+        /// 号码最大长度
+        /// </summary>
+        public const int MAX_NUMBER_LEN = 32;
+        /// <summary>
+        /// 设备名称最大长度
+        /// </summary>
+        public const int MAX_NAME_LEN = 128;
+        /// <summary>
+        /// 9000设备最大时间段数
+        /// </summary>
+        public const int MAX_TIMESEGMENT_V30 = 8;
+        /// <summary>
+        /// 8000设备最大时间段数
+        /// </summary>
+        public const int MAX_TIMESEGMENT = 4;
+        /// <summary>
+        /// 抓拍机红外滤光片预置点数
+        /// </summary>
+        public const int MAX_ICR_NUM = 8;
+        /// <summary>
+        /// 8000设备最大遮挡区域数
+        /// </summary>
+        public const int MAX_SHELTERNUM = 4;
+        /// <summary>
+        /// pppoe拨号号码最大长度
+        /// </summary>
+        public const int PHONENUMBER_LEN = 32;
+        /// <summary>
+        /// 8000设备最大硬盘数
+        /// </summary>
 
-        public const int MAX_NUMBER_LEN = 32;   //号码最大长度
-        public const int MAX_NAME_LEN = 128; //设备名称最大长度
-
-        public const int MAX_TIMESEGMENT_V30 = 8;//9000设备最大时间段数
-        public const int MAX_TIMESEGMENT = 4;//8000设备最大时间段数
-        public const int MAX_ICR_NUM = 8;   //抓拍机红外滤光片预置点数
-
-        public const int MAX_SHELTERNUM = 4;//8000设备最大遮挡区域数
-        public const int PHONENUMBER_LEN = 32;//pppoe拨号号码最大长度
-
-        public const int MAX_DISKNUM = 16;//8000设备最大硬盘数
-        public const int MAX_DISKNUM_V10 = 8;//1.2版本之前版本
-
-        public const int MAX_WINDOW_V30 = 32;//9000设备本地显示最大播放窗口数
-        public const int MAX_WINDOW = 16;//8000设备最大硬盘数
-        public const int MAX_VGA_V30 = 4;//9000设备最大可接VGA数
-        public const int MAX_VGA = 1;//8000设备最大可接VGA数
-
-        public const int MAX_USERNUM_V30 = 32;//9000设备最大用户数
-        public const int MAX_USERNUM = 16;//8000设备最大用户数
-        public const int MAX_EXCEPTIONNUM_V30 = 32;//9000设备最大异常处理数
-        public const int MAX_EXCEPTIONNUM = 16;//8000设备最大异常处理数
-        public const int MAX_LINK = 6;//8000设备单通道最大视频流连接数
-        public const int MAX_ITC_EXCEPTIONOUT = 32;//抓拍机最大报警输出
-
-        public const int MAX_DECPOOLNUM = 4;//单路解码器每个解码通道最大可循环解码数
-        public const int MAX_DECNUM = 4;//单路解码器的最大解码通道数（实际只有一个，其他三个保留）
-        public const int MAX_TRANSPARENTNUM = 2;//单路解码器可配置最大透明通道数
-        public const int MAX_CYCLE_CHAN = 16; //单路解码器最大轮循通道数
-        public const int MAX_CYCLE_CHAN_V30 = 64;//最大轮询通道数（扩展）
-        public const int MAX_DIRNAME_LENGTH = 80;//最大目录长度
-
-        public const int MAX_STRINGNUM_V30 = 8;//9000设备最大OSD字符行数数
-        public const int MAX_STRINGNUM = 4;//8000设备最大OSD字符行数数
-        public const int MAX_STRINGNUM_EX = 8;//8000定制扩展
-        public const int MAX_AUXOUT_V30 = 16;//9000设备最大辅助输出数
-        public const int MAX_AUXOUT = 4;//8000设备最大辅助输出数
-        public const int MAX_HD_GROUP = 16;//9000设备最大硬盘组数
-        public const int MAX_NFS_DISK = 8; //8000设备最大NFS硬盘数
-
-        public const int IW_ESSID_MAX_SIZE = 32;//WIFI的SSID号长度
-        public const int IW_ENCODING_TOKEN_MAX = 32;//WIFI密锁最大字节数
+        public const int MAX_DISKNUM = 16;
+        /// <summary>
+        /// 1.2版本之前版本
+        /// </summary>
+        public const int MAX_DISKNUM_V10 = 8;
+        /// <summary>
+        /// 9000设备本地显示最大播放窗口数
+        /// </summary>
+        public const int MAX_WINDOW_V30 = 32;
+        /// <summary>
+        /// 8000设备最大硬盘数
+        /// </summary>
+        public const int MAX_WINDOW = 16;
+        /// <summary>
+        /// 9000设备最大可接VGA数
+        /// </summary>
+        public const int MAX_VGA_V30 = 4;
+        /// <summary>
+        /// 8000设备最大可接VGA数
+        /// </summary>
+        public const int MAX_VGA = 1;
+        /// <summary>
+        /// 9000设备最大用户数
+        /// </summary>
+        public const int MAX_USERNUM_V30 = 32;
+        /// <summary>
+        /// 8000设备最大用户数
+        /// </summary>
+        public const int MAX_USERNUM = 16;
+        /// <summary>
+        /// 9000设备最大异常处理数
+        /// </summary>
+        public const int MAX_EXCEPTIONNUM_V30 = 32;
+        /// <summary>
+        /// 8000设备最大异常处理数
+        /// </summary>
+        public const int MAX_EXCEPTIONNUM = 16;
+        /// <summary>
+        /// 8000设备单通道最大视频流连接数
+        /// </summary>
+        public const int MAX_LINK = 6;
+        /// <summary>
+        /// 抓拍机最大报警输出
+        /// </summary>
+        public const int MAX_ITC_EXCEPTIONOUT = 32;
+        /// <summary>
+        /// 单路解码器每个解码通道最大可循环解码数
+        /// </summary>
+        public const int MAX_DECPOOLNUM = 4;
+        /// <summary>
+        /// 单路解码器的最大解码通道数（实际只有一个，其他三个保留）
+        /// </summary>
+        public const int MAX_DECNUM = 4;
+        /// <summary>
+        /// 单路解码器可配置最大透明通道数
+        /// </summary>
+        public const int MAX_TRANSPARENTNUM = 2;
+        /// <summary>
+        /// 单路解码器最大轮循通道数
+        /// </summary>
+        public const int MAX_CYCLE_CHAN = 16;
+        /// <summary>
+        /// 最大轮询通道数（扩展）
+        /// </summary>
+        public const int MAX_CYCLE_CHAN_V30 = 64;
+        /// <summary>
+        /// 最大目录长度
+        /// </summary>
+        public const int MAX_DIRNAME_LENGTH = 80;
+        /// <summary>
+        /// 9000设备最大OSD字符行数数
+        /// </summary>
+        public const int MAX_STRINGNUM_V30 = 8;
+        /// <summary>
+        /// 8000设备最大OSD字符行数数
+        /// </summary>
+        public const int MAX_STRINGNUM = 4;
+        /// <summary>
+        /// 8000定制扩展
+        /// </summary>
+        public const int MAX_STRINGNUM_EX = 8;
+        /// <summary>
+        /// 9000设备最大辅助输出数
+        /// </summary>
+        public const int MAX_AUXOUT_V30 = 16;
+        /// <summary>
+        /// 8000设备最大辅助输出数
+        /// </summary>
+        public const int MAX_AUXOUT = 4;
+        /// <summary>
+        /// 9000设备最大硬盘组数
+        /// </summary>
+        public const int MAX_HD_GROUP = 16;
+        /// <summary>
+        /// 8000设备最大NFS硬盘数
+        /// </summary>
+        public const int MAX_NFS_DISK = 8;
+        /// <summary>
+        /// WIFI的SSID号长度
+        /// </summary>
+        public const int IW_ESSID_MAX_SIZE = 32;
+        /// <summary>
+        /// WIFI密锁最大字节数
+        /// </summary>
+        public const int IW_ENCODING_TOKEN_MAX = 32;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int WIFI_WEP_MAX_KEY_COUNT = 4;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int WIFI_WEP_MAX_KEY_LENGTH = 33;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int WIFI_WPA_PSK_MAX_KEY_LENGTH = 63;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int WIFI_WPA_PSK_MIN_KEY_LENGTH = 8;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int WIFI_MAX_AP_COUNT = 20;
-        public const int MAX_SERIAL_NUM = 64;//最多支持的透明通道路数
-        public const int MAX_DDNS_NUMS = 10;//9000设备最大可配ddns数
-        public const int MAX_EMAIL_ADDR_LEN = 48;//最大email地址长度
-        public const int MAX_EMAIL_PWD_LEN = 32;//最大email密码长度
-
-        public const int MAXPROGRESS = 100;//回放时的最大百分率
-        public const int MAX_SERIALNUM = 2;//8000设备支持的串口数 1-232， 2-485
-        public const int CARDNUM_LEN = 20;//卡号长度
-        public const int CARDNUM_LEN_OUT = 32; //外部结构体卡号长度
-        public const int MAX_VIDEOOUT_V30 = 4;//9000设备的视频输出数
-        public const int MAX_VIDEOOUT = 2;//8000设备的视频输出数
+        /// <summary>
+        /// 最多支持的透明通道路数
+        /// </summary>
+        public const int MAX_SERIAL_NUM = 64;
+        /// <summary>
+        /// 9000设备最大可配ddns数
+        /// </summary>
+        public const int MAX_DDNS_NUMS = 10;
+        /// <summary>
+        /// 最大email地址长度
+        /// </summary>
+        public const int MAX_EMAIL_ADDR_LEN = 48;
+        /// <summary>
+        /// 最大email密码长度
+        /// </summary>
+        public const int MAX_EMAIL_PWD_LEN = 32;
+        /// <summary>
+        /// 回放时的最大百分率
+        /// </summary>
+        public const int MAXPROGRESS = 100;
+        /// <summary>
+        /// 8000设备支持的串口数 1-232， 2-485
+        /// </summary>
+        public const int MAX_SERIALNUM = 2;
+        /// <summary>
+        /// 卡号长度
+        /// </summary>
+        public const int CARDNUM_LEN = 20;
+        /// <summary>
+        /// 外部结构体卡号长度
+        /// </summary>
+        public const int CARDNUM_LEN_OUT = 32;
+        /// <summary>
+        /// 9000设备的视频输出数
+        /// </summary>
+        public const int MAX_VIDEOOUT_V30 = 4;
+        /// <summary>
+        /// 8000设备的视频输出数
+        /// </summary>
+        public const int MAX_VIDEOOUT = 2;
 
         public const int MAX_PRESET_V30 = 256;// 9000设备支持的云台预置点数
         public const int MAX_TRACK_V30 = 256;// 9000设备支持的云台轨迹数
@@ -168,10 +346,25 @@ namespace CHCNetSDK
         public const int MAX_RECORD_FILE_NUM = 20;      // 每次删除或者刻录的最大文件数
 
         //SDK_V31 ATM
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MAX_ATM_NUM = 1;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MAX_ACTION_TYPE = 12;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int ATM_FRAMETYPE_NUM = 4;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MAX_ATM_PROTOCOL_NUM = 1025;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int ATM_PROTOCOL_SORT = 4;
         public const int ATM_DESC_LEN = 32;
         // SDK_V31 ATM
@@ -185,8 +378,10 @@ namespace CHCNetSDK
         public const int MAX_ALARMOUT_V40 = MAX_IP_ALARMOUT_V40 + MAX_ANALOG_ALARMOUT;//4128
         public const int MAX_ALARMIN_V40 = MAX_IP_ALARMIN_V40 + MAX_ANALOG_ALARMOUT;//4128
         public const int MAX_MULTI_AREA_NUM = 24;
-
-        public const int MAX_HUMAN_PICTURE_NUM = 10;   //最大照片数
+        /// <summary>
+        /// 最大照片数
+        /// </summary>
+        public const int MAX_HUMAN_PICTURE_NUM = 10;
         public const int MAX_HUMAN_BIRTHDATE_LEN = 10;
 
         public const int MAX_LAYERNUMS = 32;
@@ -430,7 +625,10 @@ namespace CHCNetSDK
         NET_DVR_IsSupport()返回值
         1－9位分别表示以下信息（位与是TRUE)表示支持；
         **************************************************/
-        public const int NET_DVR_SUPPORT_DDRAW = 1;//支持DIRECTDRAW，如果不支持，则播放器不能工作
+        /// <summary>
+        /// 支持DIRECTDRAW，如果不支持，则播放器不能工作
+        /// </summary>
+        public const int NET_DVR_SUPPORT_DDRAW = 1;
         public const int NET_DVR_SUPPORT_BLT = 2;//显卡支持BLT操作，如果不支持，则播放器不能工作
         public const int NET_DVR_SUPPORT_BLTFOURCC = 4;//显卡BLT支持颜色转换，如果不支持，播放器会用软件方法作RGB转换
         public const int NET_DVR_SUPPORT_BLTSHRINKX = 8;//显卡BLT支持X轴缩小；如果不支持，系统会用软件方法转换
@@ -586,49 +784,170 @@ namespace CHCNetSDK
 
         /*************************参数配置命令 begin*******************************/
         //用于NET_DVR_SetDVRConfig和NET_DVR_GetDVRConfig,注意其对应的配置结构
-        public const int NET_DVR_GET_DEVICECFG = 100;//获取设备参数
-        public const int NET_DVR_SET_DEVICECFG = 101;//设置设备参数
-        public const int NET_DVR_GET_NETCFG = 102;//获取网络参数
-        public const int NET_DVR_SET_NETCFG = 103;//设置网络参数
-        public const int NET_DVR_GET_PICCFG = 104;//获取图象参数
-        public const int NET_DVR_SET_PICCFG = 105;//设置图象参数
-        public const int NET_DVR_GET_COMPRESSCFG = 106;//获取压缩参数
-        public const int NET_DVR_SET_COMPRESSCFG = 107;//设置压缩参数
-        public const int NET_DVR_GET_RECORDCFG = 108;//获取录像时间参数
-        public const int NET_DVR_SET_RECORDCFG = 109;//设置录像时间参数
-        public const int NET_DVR_GET_DECODERCFG = 110;//获取解码器参数
-        public const int NET_DVR_SET_DECODERCFG = 111;//设置解码器参数
-        public const int NET_DVR_GET_RS232CFG = 112;//获取232串口参数
-        public const int NET_DVR_SET_RS232CFG = 113;//设置232串口参数
-        public const int NET_DVR_GET_ALARMINCFG = 114;//获取报警输入参数
-        public const int NET_DVR_SET_ALARMINCFG = 115;//设置报警输入参数
-        public const int NET_DVR_GET_ALARMOUTCFG = 116;//获取报警输出参数
-        public const int NET_DVR_SET_ALARMOUTCFG = 117;//设置报警输出参数
-        public const int NET_DVR_GET_TIMECFG = 118;//获取DVR时间
-        public const int NET_DVR_SET_TIMECFG = 119;//设置DVR时间
-        public const int NET_DVR_GET_PREVIEWCFG = 120;//获取预览参数
-        public const int NET_DVR_SET_PREVIEWCFG = 121;//设置预览参数
-        public const int NET_DVR_GET_VIDEOOUTCFG = 122;//获取视频输出参数
-        public const int NET_DVR_SET_VIDEOOUTCFG = 123;//设置视频输出参数
-        public const int NET_DVR_GET_USERCFG = 124;//获取用户参数
-        public const int NET_DVR_SET_USERCFG = 125;//设置用户参数
-        public const int NET_DVR_GET_EXCEPTIONCFG = 126;//获取异常参数
-        public const int NET_DVR_SET_EXCEPTIONCFG = 127;//设置异常参数
-        public const int NET_DVR_GET_ZONEANDDST = 128;//获取时区和夏时制参数
-        public const int NET_DVR_SET_ZONEANDDST = 129;//设置时区和夏时制参数
-        public const int NET_DVR_GET_SHOWSTRING = 130;//获取叠加字符参数
-        public const int NET_DVR_SET_SHOWSTRING = 131;//设置叠加字符参数
-        public const int NET_DVR_GET_EVENTCOMPCFG = 132;//获取事件触发录像参数
-        public const int NET_DVR_SET_EVENTCOMPCFG = 133;//设置事件触发录像参数
-
-        public const int NET_DVR_GET_AUXOUTCFG = 140;//获取报警触发辅助输出设置(HS设备辅助输出2006-02-28)
-        public const int NET_DVR_SET_AUXOUTCFG = 141;//设置报警触发辅助输出设置(HS设备辅助输出2006-02-28)
-        public const int NET_DVR_GET_PREVIEWCFG_AUX = 142;//获取-s系列双输出预览参数(-s系列双输出2006-04-13)
-        public const int NET_DVR_SET_PREVIEWCFG_AUX = 143;//设置-s系列双输出预览参数(-s系列双输出2006-04-13)
-
-        public const int NET_DVR_GET_PICCFG_EX = 200;//获取图象参数(SDK_V14扩展命令)
-        public const int NET_DVR_SET_PICCFG_EX = 201;//设置图象参数(SDK_V14扩展命令)
-        public const int NET_DVR_GET_USERCFG_EX = 202;//获取用户参数(SDK_V15扩展命令)
+        /// <summary>
+        /// 获取设备参数
+        /// </summary>
+        public const int NET_DVR_GET_DEVICECFG = 100;
+        /// <summary>
+        /// 设置设备参数
+        /// </summary>
+        public const int NET_DVR_SET_DEVICECFG = 101;
+        /// <summary>
+        /// 获取网络参数
+        /// </summary>
+        public const int NET_DVR_GET_NETCFG = 102;
+        /// <summary>
+        /// 设置网络参数
+        /// </summary>
+        public const int NET_DVR_SET_NETCFG = 103;
+        /// <summary>
+        /// 获取图象参数
+        /// </summary>
+        public const int NET_DVR_GET_PICCFG = 104;
+        /// <summary>
+        /// 设置图象参数
+        /// </summary>
+        public const int NET_DVR_SET_PICCFG = 105;
+        /// <summary>
+        /// 获取压缩参数
+        /// </summary>
+        public const int NET_DVR_GET_COMPRESSCFG = 106;
+        /// <summary>
+        /// 设置压缩参数
+        /// </summary>
+        public const int NET_DVR_SET_COMPRESSCFG = 107;
+        /// <summary>
+        /// 获取录像时间参数
+        /// </summary>
+        public const int NET_DVR_GET_RECORDCFG = 108;
+        /// <summary>
+        /// 设置录像时间参数
+        /// </summary>
+        public const int NET_DVR_SET_RECORDCFG = 109;
+        /// <summary>
+        /// 获取解码器参数
+        /// </summary>
+        public const int NET_DVR_GET_DECODERCFG = 110;
+        /// <summary>
+        /// 设置解码器参数
+        /// </summary>
+        public const int NET_DVR_SET_DECODERCFG = 111;
+        /// <summary>
+        /// 获取232串口参数
+        /// </summary>
+        public const int NET_DVR_GET_RS232CFG = 112;
+        /// <summary>
+        /// 设置232串口参数
+        /// </summary>
+        public const int NET_DVR_SET_RS232CFG = 113;
+        /// <summary>
+        /// 获取报警输入参数
+        /// </summary>
+        public const int NET_DVR_GET_ALARMINCFG = 114;
+        /// <summary>
+        /// 设置报警输入参数
+        /// </summary>
+        public const int NET_DVR_SET_ALARMINCFG = 115;
+        /// <summary>
+        /// 获取报警输出参数
+        /// </summary>
+        public const int NET_DVR_GET_ALARMOUTCFG = 116;
+        /// <summary>
+        /// 设置报警输出参数
+        /// </summary>
+        public const int NET_DVR_SET_ALARMOUTCFG = 117;
+        /// <summary>
+        /// 获取DVR时间
+        /// </summary>
+        public const int NET_DVR_GET_TIMECFG = 118;
+        /// <summary>
+        /// 设置DVR时间
+        /// </summary>
+        public const int NET_DVR_SET_TIMECFG = 119;
+        /// <summary>
+        /// 获取预览参数
+        /// </summary>
+        public const int NET_DVR_GET_PREVIEWCFG = 120;
+        /// <summary>
+        /// 设置预览参数
+        /// </summary>
+        public const int NET_DVR_SET_PREVIEWCFG = 121;
+        /// <summary>
+        /// 获取视频输出参数
+        /// </summary>
+        public const int NET_DVR_GET_VIDEOOUTCFG = 122;
+        /// <summary>
+        /// 设置视频输出参数
+        /// </summary>
+        public const int NET_DVR_SET_VIDEOOUTCFG = 123;
+        /// <summary>
+        /// 获取用户参数
+        /// </summary>
+        public const int NET_DVR_GET_USERCFG = 124;
+        /// <summary>
+        /// 设置用户参数
+        /// </summary>
+        public const int NET_DVR_SET_USERCFG = 125;
+        /// <summary>
+        /// 获取异常参数
+        /// </summary>
+        public const int NET_DVR_GET_EXCEPTIONCFG = 126;
+        /// <summary>
+        /// 设置异常参数
+        /// </summary>
+        public const int NET_DVR_SET_EXCEPTIONCFG = 127;
+        /// <summary>
+        /// 获取时区和夏时制参数
+        /// </summary>
+        public const int NET_DVR_GET_ZONEANDDST = 128;
+        /// <summary>
+        /// 设置时区和夏时制参数
+        /// </summary>
+        public const int NET_DVR_SET_ZONEANDDST = 129;
+        /// <summary>
+        /// 获取叠加字符参数
+        /// </summary>
+        public const int NET_DVR_GET_SHOWSTRING = 130;
+        /// <summary>
+        /// 设置叠加字符参数
+        /// </summary>
+        public const int NET_DVR_SET_SHOWSTRING = 131;
+        /// <summary>
+        /// 获取事件触发录像参数
+        /// </summary>
+        public const int NET_DVR_GET_EVENTCOMPCFG = 132;
+        /// <summary>
+        /// 设置事件触发录像参数
+        /// </summary>
+        public const int NET_DVR_SET_EVENTCOMPCFG = 133;
+        /// <summary>
+        /// 获取报警触发辅助输出设置(HS设备辅助输出2006-02-28)
+        /// </summary>
+        public const int NET_DVR_GET_AUXOUTCFG = 140;
+        /// <summary>
+        /// 设置报警触发辅助输出设置(HS设备辅助输出2006-02-28)
+        /// </summary>
+        public const int NET_DVR_SET_AUXOUTCFG = 141;
+        /// <summary>
+        /// 获取-s系列双输出预览参数(-s系列双输出2006-04-13)
+        /// </summary>
+        public const int NET_DVR_GET_PREVIEWCFG_AUX = 142;
+        /// <summary>
+        /// 设置-s系列双输出预览参数(-s系列双输出2006-04-13)
+        /// </summary>
+        public const int NET_DVR_SET_PREVIEWCFG_AUX = 143;
+        /// <summary>
+        /// 获取图象参数(SDK_V14扩展命令)
+        /// </summary>
+        public const int NET_DVR_GET_PICCFG_EX = 200;
+        /// <summary>
+        /// 设置图象参数(SDK_V14扩展命令)
+        /// </summary>
+        public const int NET_DVR_SET_PICCFG_EX = 201;
+        /// <summary>
+        /// 获取用户参数(SDK_V15扩展命令)
+        /// </summary>
+        public const int NET_DVR_GET_USERCFG_EX = 202;
         public const int NET_DVR_SET_USERCFG_EX = 203;//设置用户参数(SDK_V15扩展命令)
         public const int NET_DVR_GET_COMPRESSCFG_EX = 204;//获取压缩参数(SDK_V15扩展命令2006-05-15)
         public const int NET_DVR_SET_COMPRESSCFG_EX = 205;//设置压缩参数(SDK_V15扩展命令2006-05-15)
@@ -705,16 +1024,34 @@ namespace CHCNetSDK
         public const int NET_DVR_GET_VCA_CTRLCFG = 165;//获取智能控制参数
 
         //屏蔽区域NET_VCA_MASK_REGION_LIST
-        public const int NET_DVR_SET_VCA_MASK_REGION = 166;//设置屏蔽区域参数
-        public const int NET_DVR_GET_VCA_MASK_REGION = 167;//获取屏蔽区域参数
+        /// <summary>
+        /// 设置屏蔽区域参数
+        /// </summary>
+        public const int NET_DVR_SET_VCA_MASK_REGION = 166;
+        /// <summary>
+        /// 获取屏蔽区域参数
+        /// </summary>
+        public const int NET_DVR_GET_VCA_MASK_REGION = 167;
 
         //ATM进入区域 NET_VCA_ENTER_REGION
-        public const int NET_DVR_SET_VCA_ENTER_REGION = 168;//设置进入区域参数
-        public const int NET_DVR_GET_VCA_ENTER_REGION = 169;//获取进入区域参数
+        /// <summary>
+        /// 设置进入区域参数
+        /// </summary>
+        public const int NET_DVR_SET_VCA_ENTER_REGION = 168;
+        /// <summary>
+        /// 获取进入区域参数
+        /// </summary>
+        public const int NET_DVR_GET_VCA_ENTER_REGION = 169;
 
         //标定线配置NET_VCA_LINE_SEGMENT_LIST
-        public const int NET_DVR_SET_VCA_LINE_SEGMENT = 170;//设置标定线
-        public const int NET_DVR_GET_VCA_LINE_SEGMENT = 171;//获取标定线
+        /// <summary>
+        /// 设置标定线
+        /// </summary>
+        public const int NET_DVR_SET_VCA_LINE_SEGMENT = 170;
+        /// <summary>
+        /// 获取标定线
+        /// </summary>
+        public const int NET_DVR_GET_VCA_LINE_SEGMENT = 171;
 
         // ivms屏蔽区域NET_IVMS_MASK_REGION_LIST
         public const int NET_DVR_SET_IVMS_MASK_REGION = 172;//设置IVMS屏蔽区域参数
@@ -763,36 +1100,84 @@ namespace CHCNetSDK
         public const int NET_DVR_SET_EMAILCFG_V30 = 1013;//设置EMAIL参数 
 
         //巡航参数 (NET_DVR_CRUISE_PARA结构)
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_GET_CRUISE = 1020;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_SET_CRUISE = 1021;
 
         //报警输入结构参数 (NET_DVR_ALARMINCFG_V30结构)
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_GET_ALARMINCFG_V30 = 1024;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_SET_ALARMINCFG_V30 = 1025;
 
         //报警输出结构参数 (NET_DVR_ALARMOUTCFG_V30结构)
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_GET_ALARMOUTCFG_V30 = 1026;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_SET_ALARMOUTCFG_V30 = 1027;
 
         //视频输出结构参数 (NET_DVR_VIDEOOUT_V30结构)
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_GET_VIDEOOUTCFG_V30 = 1028;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_SET_VIDEOOUTCFG_V30 = 1029;
 
         //叠加字符结构参数 (NET_DVR_SHOWSTRING_V30结构)
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_GET_SHOWSTRING_V30 = 1030;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_SET_SHOWSTRING_V30 = 1031;
 
         //异常结构参数 (NET_DVR_EXCEPTION_V30结构)
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_GET_EXCEPTIONCFG_V30 = 1034;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_SET_EXCEPTIONCFG_V30 = 1035;
 
         //串口232结构参数 (NET_DVR_RS232CFG_V30结构)
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_GET_RS232CFG_V30 = 1036;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_SET_RS232CFG_V30 = 1037;
 
         //网络硬盘接入结构参数 (NET_DVR_NET_DISKCFG结构)
-        public const int NET_DVR_GET_NET_DISKCFG = 1038;//网络硬盘接入获取
-        public const int NET_DVR_SET_NET_DISKCFG = 1039;//网络硬盘接入设置
+        /// <summary>
+        /// 网络硬盘接入获取
+        /// </summary>
+        public const int NET_DVR_GET_NET_DISKCFG = 1038;
+        /// <summary>
+        /// 网络硬盘接入设置
+        /// </summary>
+        public const int NET_DVR_SET_NET_DISKCFG = 1039;
 
         //压缩参数 (NET_DVR_COMPRESSIONCFG_V30结构)
         public const int NET_DVR_GET_COMPRESSCFG_V30 = 1040;
@@ -6074,7 +6459,9 @@ namespace CHCNetSDK
             public int nReserved;
         }
 
-        //硬解码预览参数
+        /// <summary>
+        /// 硬解码预览参数
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_CARDINFO
         {
@@ -6085,7 +6472,9 @@ namespace CHCNetSDK
             public NET_DVR_DISPLAY_PARA struDisplayPara;
         }
 
-        //录象文件参数
+        /// <summary>
+        /// 录象文件参数
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
         public struct NET_DVR_FIND_DATA
         {
@@ -6096,7 +6485,9 @@ namespace CHCNetSDK
             public uint dwFileSize;//文件的大小
         }
 
-        //录象文件参数(9000)
+        /// <summary>
+        /// 录象文件参数(9000)
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
         public struct NET_DVR_FINDDATA_V30
         {
@@ -6148,13 +6539,20 @@ namespace CHCNetSDK
             public string sCardNum;
         }
 
-        //录象文件查找条件结构
+        /// <summary>
+        /// 录象文件查找条件结构
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_FILECOND
         {
-            public int lChannel;//通道号
-            public uint dwFileType;//录象文件类型0xff－全部，0－定时录像,1-移动侦测 ，2－报警触发，
-                                   //3-报警|移动侦测 4-报警&移动侦测 5-命令触发 6-手动录像
+            /// <summary>
+            /// 通道号
+            /// </summary>
+            public int lChannel;
+            /// <summary>
+            /// 录象文件类型0xff－全部，0－定时录像,1-移动侦测 ，2－报警触发，3-报警|移动侦测 4-报警&移动侦测 5-命令触发 6-手动录像
+            /// </summary>
+            public uint dwFileType;
             public uint dwIsLocked;//是否锁定 0-正常文件,1-锁定文件, 0xff表示所有文件
             public uint dwUseCardNo;//是否使用卡号
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
@@ -6163,7 +6561,9 @@ namespace CHCNetSDK
             public NET_DVR_TIME struStopTime;//结束时间
         }
 
-        //云台区域选择放大缩小(HIK 快球专用)
+        /// <summary>
+        /// 云台区域选择放大缩小(HIK 快球专用)
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_POINT_FRAME
         {
@@ -6347,7 +6747,9 @@ namespace CHCNetSDK
             public NET_DVR_WIFI_CFG_EX struWifiCfg;
         }
 
-        //wifi连接状态
+        /// <summary>
+        /// wifi连接状态
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_WIFI_CONNECT_STATUS
         {
@@ -6367,7 +6769,9 @@ namespace CHCNetSDK
             public uint dwNetworkInterfaceMode;/*0 自动切换模式　1 有线模式*/
         }
 
-        //智能控制信息
+        /// <summary>
+        /// 智能控制信息
+        /// </summary>
         public const int MAX_VCA_CHAN = 16;//最大智能通道数
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_CTRLINFO
@@ -6382,7 +6786,9 @@ namespace CHCNetSDK
             public byte[] byRes;//保留，设置为0 
         }
 
-        //智能控制信息结构
+        /// <summary>
+        /// 智能控制信息结构
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_CTRLCFG
         {
@@ -6393,7 +6799,9 @@ namespace CHCNetSDK
             public byte[] byRes;
         }
 
-        //智能设备能力集
+        /// <summary>
+        /// 智能设备能力集
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_DEV_ABILITY
         {
@@ -6422,7 +6830,9 @@ namespace CHCNetSDK
             public byte[] byRes;
         }
 
-        //行为分析能力类型
+        /// <summary>
+        /// 行为分析能力类型
+        /// </summary>
         public enum VCA_ABILITY_TYPE : uint
         {
             TRAVERSE_PLANE_ABILITY = 0x01,       //穿越警戒面
@@ -6455,7 +6865,9 @@ namespace CHCNetSDK
             INSTALL_SCANNER_ABILITY = 0x80000000  //安装读卡器
         }
 
-        //智能通道类型
+        /// <summary>
+        /// 智能通道类型
+        /// </summary>
         public enum VCA_CHAN_ABILITY_TYPE
         {
             VCA_BEHAVIOR_BASE = 1,          //行为分析基本版
@@ -6476,7 +6888,9 @@ namespace CHCNetSDK
             VCA_BEHAVIOR_FACESNAP = 16           //人脸抓拍和行为分析能力
         }
 
-        //智能ATM模式类型(ATM能力特有)
+        /// <summary>
+        /// 智能ATM模式类型(ATM能力特有)
+        /// </summary>
         public enum VCA_CHAN_MODE_TYPE
         {
             VCA_ATM_PANEL = 0,//ATM面板
@@ -6489,7 +6903,9 @@ namespace CHCNetSDK
             TFS_FREEWAY = 1   //TFS 高速道路
         }
 
-        //行为分析场景模式
+        /// <summary>
+        /// 行为分析场景模式
+        /// </summary>
         public enum BEHAVIOR_SCENE_MODE_TYPE
         {
             BEHAVIOR_SCENE_DEFAULT = 0, //系统默认
@@ -6497,7 +6913,9 @@ namespace CHCNetSDK
             BEHAVIOR_SCENE_INDOOR = 2   //室内
         }
 
-        //通道能力输入参数
+        /// <summary>
+        /// 通道能力输入参数
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_CHAN_IN_PARAM
         {
@@ -7236,53 +7654,112 @@ namespace CHCNetSDK
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_OBJECT_COLOR
         {
-            public uint dwSize;       //结构体大小
-            public byte byEnable;     //0-不启用，1-启用
-            public byte byColorMode;  //取色方式，1-颜色值，2-图片
+            /// <summary>
+            /// 结构体大小
+            /// </summary>
+            public uint dwSize;
+            /// <summary>
+            /// 0-不启用，1-启用
+            /// </summary>
+            public byte byEnable;
+            /// <summary>
+            /// 取色方式，1-颜色值，2-图片
+            /// </summary>
+            public byte byColorMode;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes1;    //保留
+            /// <summary>
+            /// 保留
+            /// </summary>
+            public byte[] byRes1;
             public NET_DVR_OBJECT_COLOR_UNION uObjColor; //物体颜色联合体，取值依赖于取色方式
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes2;   //保留
+            /// <summary>
+            /// 保留
+            /// </summary>
+            public byte[] byRes2;
         }
 
-        //区域类型
+        /// <summary>
+        /// 区域类型
+        /// </summary>
         public enum AREA_TYPE_ENUM
         {
-            ENUM_OVERLAP_REGION = 1,//共同区域
-            ENUM_BED_LOCATION = 2   //床铺位置
+            /// <summary>
+            /// 共同区域
+            /// </summary>
+            ENUM_OVERLAP_REGION = 1,
+            /// <summary>
+            /// 床铺位置
+            /// </summary>
+            ENUM_BED_LOCATION = 2
         }
 
-        //辅助区域
+        /// <summary>
+        /// 辅助区域
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_AUXAREA
         {
-            public uint dwAreaType;   //区域类型，参见AREA_TYPE_ENUM
-            public byte byEnable;     //0-不启用，1-启用
+            /// <summary>
+            /// 区域类型，参见AREA_TYPE_ENUM
+            /// </summary>
+            public uint dwAreaType;
+            /// <summary>
+            /// 0-不启用，1-启用
+            /// </summary>
+            public byte byEnable;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes1;     //保留
+            /// <summary>
+            /// 保留
+            /// </summary>
+            public byte[] byRes1;
             public NET_VCA_POLYGON struPolygon; //区域
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes2;   //保留
+            /// <summary>
+            /// 保留
+            /// </summary>
+            public byte[] byRes2;
         }
 
-        //辅助区域列表
+        /// <summary>
+        /// 辅助区域列表
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_AUXAREA_LIST
         {
-            public uint dwSize; // 结构体大小
+            /// <summary>
+            /// 结构体大小
+            /// </summary>
+            public uint dwSize;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_AUXAREA_NUM, ArraySubType = UnmanagedType.Struct)]
-            public NET_DVR_AUXAREA[] struArea; //辅助区域
+            /// <summary>
+            /// 辅助区域
+            /// </summary>
+            public NET_DVR_AUXAREA[] struArea;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes2;   // 保留
+            /// <summary>
+            /// 保留
+            /// </summary>
+            public byte[] byRes2;
         }
 
-        //通道工作模式
+        /// <summary>
+        /// 通道工作模式
+        /// </summary>
         public enum CHAN_WORKMODE_ENUM
         {
-            ENUM_CHAN_WORKMODE_INDEPENDENT = 1,  //独立模式
-            ENUM_CHAN_WORKMODE_MASTER = 2,      //主模式
-            ENUM_CHAN_WORKMODE_SLAVE = 3        //从模式
+            /// <summary>
+            /// 独立模式
+            /// </summary>
+            ENUM_CHAN_WORKMODE_INDEPENDENT = 1,
+            /// <summary>
+            /// 主模式
+            /// </summary>
+            ENUM_CHAN_WORKMODE_MASTER = 2,
+            /// <summary>
+            /// 从模式
+            /// </summary>
+            ENUM_CHAN_WORKMODE_SLAVE = 3
         }
 
         //通道工作模式参数结构体
@@ -10151,18 +10628,48 @@ namespace CHCNetSDK
         public struct NET_DVR_VTPARAM
         {
             public uint dwSize;
-            public byte byEnable;  /* 是否使能虚拟线圈，0-不使用，1-使用*/
-            public byte byIsDisplay; /* 是否显示虚拟线圈，0-不显示，1-显示*/
-            public byte byLoopPos; //晚间触发线圈的偏向：0-向上，1-向下
-            public byte bySnapGain; /*抓拍增益*/
-            public uint dwSnapShutter; /*抓拍快门速度*/
-            public NET_DVR_TRIGCOORDINATE struTrigCoordinate; //保留
+            /// <summary>
+            /// 是否使能虚拟线圈，0-不使用，1-使用
+            /// </summary>
+            public byte byEnable;
+            /// <summary>
+            /// 是否显示虚拟线圈，0-不显示，1-显示
+            /// </summary>
+            public byte byIsDisplay;
+            /// <summary>
+            /// 晚间触发线圈的偏向：0-向上，1-向下
+            /// </summary>
+            public byte byLoopPos;
+            /// <summary>
+            /// 抓拍增益
+            /// </summary>
+            public byte bySnapGain;
+            /// <summary>
+            /// 抓拍快门速度
+            /// </summary>
+            public uint dwSnapShutter;
+            /// <summary>
+            /// 保留
+            /// </summary>
+            public NET_DVR_TRIGCOORDINATE struTrigCoordinate;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_VL_NUM, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_TRIGCOORDINATE[] struRes;
-            public byte byTotalLaneNum;/*视频触发的车道数1*/
-            public byte byPolarLenType; /*偏振镜类型，0：不加偏振镜；1：加施耐德偏振镜。*/
-            public byte byDayAuxLightMode; /*白天辅助照明模式，0：无辅助照明；1：LED灯照明；2：闪光灯照明*/
-            public byte byLoopToCalRoadBright; /*用以计算路面亮度的车道(虚拟线圈)*/
+            /// <summary>
+            /// 视频触发的车道数1
+            /// </summary>
+            public byte byTotalLaneNum;
+            /// <summary>
+            /// 偏振镜类型，0：不加偏振镜；1：加施耐德偏振镜。
+            /// </summary>
+            public byte byPolarLenType;
+            /// <summary>
+            /// 白天辅助照明模式，0：无辅助照明；1：LED灯照明；2：闪光灯照明
+            /// </summary>
+            public byte byDayAuxLightMode;
+            /// <summary>
+            /// 用以计算路面亮度的车道(虚拟线圈)
+            /// </summary>
+            public byte byLoopToCalRoadBright;
             public byte byRoadGrayLowTh; /*路面亮度低阈值初始化值1*/
             public byte byRoadGrayHighTh; /*路面亮度高阈值初始化值140*/
             public ushort wLoopPosBias; /*晚间触发线圈位移30*/
@@ -10535,7 +11042,10 @@ namespace CHCNetSDK
         public struct NET_DVR_IPSAN_SERACH_RET
         {
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 128, ArraySubType = UnmanagedType.I1)]
-            public byte[] byDirectory;  // 返回的文件目录
+            /// <summary>
+            /// 返回的文件目录
+            /// </summary>
+            public byte[] byDirectory;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 20, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
@@ -16895,16 +17405,40 @@ namespace CHCNetSDK
         }
 
 
-        // 异常回调函数
+        /// <summary>
+        /// 异常回调函数
+        /// </summary>
+        /// <param name="hSession"></param>
+        /// <param name="dwUser"></param>
+        /// <param name="lErrorType"></param>
         public delegate void ErrorCallback(System.IntPtr hSession, uint dwUser, int lErrorType);
-        //帧数据回调函数
+        /// <summary>
+        /// 帧数据回调函数
+        /// </summary>
+        /// <param name="hStream"></param>
+        /// <param name="dwUser"></param>
+        /// <param name="lFrameType"></param>
+        /// <param name="pBuffer"></param>
+        /// <param name="dwSize"></param>
         public delegate void VodStreamFrameData(System.IntPtr hStream, uint dwUser, int lFrameType, System.IntPtr pBuffer, uint dwSize);
 
-        //模块初始化
+        /// <summary>
+        /// 模块初始化
+        /// </summary>
+        /// <param name="strServerIp"></param>
+        /// <param name="uiServerPort"></param>
+        /// <param name="hSession"></param>
+        /// <param name="struConn"></param>
+        /// <param name="hWnd"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODServerConnect(string strServerIp, uint uiServerPort, ref IntPtr hSession, ref CONNPARAM struConn, IntPtr hWnd);
 
-        //模块销毁
+        /// <summary>
+        /// 模块销毁
+        /// </summary>
+        /// <param name="hSession"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODServerDisconnect(IntPtr hSession);
 
@@ -16914,21 +17448,35 @@ namespace CHCNetSDK
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODDeleteSectionList(IntPtr pSecList);
 
-        // 根据ID、时间段打开流获取流句柄
+        /// <summary>
+        /// 根据ID、时间段打开流获取流句柄
+        /// </summary>
+        /// <param name="pOpenParam"></param>
+        /// <param name="phStream"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODOpenStream(IntPtr pOpenParam, ref IntPtr phStream);
 
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODCloseStream(IntPtr hStream);
 
-        //根据ID、时间段打开批量下载
+        /// <summary>
+        /// 根据ID、时间段打开批量下载
+        /// </summary>
+        /// <param name="struVodParam"></param>
+        /// <param name="phStream"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODOpenDownloadStream(ref VODOPENPARAM struVodParam, ref IntPtr phStream);
 
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODCloseDownloadStream(IntPtr hStream);
 
-        // 开始流解析，发送数据帧
+        /// <summary>
+        /// 开始流解析，发送数据帧
+        /// </summary>
+        /// <param name="phStream"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODStartStreamData(IntPtr phStream);
         [DllImport("PdCssVodClient.dll")]
@@ -16936,16 +17484,31 @@ namespace CHCNetSDK
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODStopStreamData(IntPtr hStream);
 
-        // 根据时间定位
+        /// <summary>
+        /// 根据时间定位
+        /// </summary>
+        /// <param name="hStream"></param>
+        /// <param name="pStartTime"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODSeekStreamData(IntPtr hStream, IntPtr pStartTime);
 
 
-        // 根据时间定位
+        /// <summary>
+        /// 根据时间定位
+        /// </summary>
+        /// <param name="hStream"></param>
+        /// <param name="iSpeed"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODSetStreamSpeed(IntPtr hStream, int iSpeed);
 
-        // 根据时间定位
+        /// <summary>
+        /// 根据时间定位
+        /// </summary>
+        /// <param name="hStream"></param>
+        /// <param name="pCurrentTime"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODGetStreamCurrentTime(IntPtr hStream, ref BLOCKTIME pCurrentTime);
 
@@ -16954,19 +17517,22 @@ namespace CHCNetSDK
 
         #region 帧分析库
 
-
+        /// <summary>
+        /// 帧分析库
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct PACKET_INFO
         {
-            public int nPacketType;     // packet type
-                                        // 0:  file head
-                                        // 1:  video I frame
-                                        // 2:  video B frame
-                                        // 3:  video P frame
-                                        // 10: audio frame
-                                        // 11: private frame only for PS
-
-
+            /// <summary>
+            /// packet type
+            /// 0:  file head
+            /// 1:  video I frame
+            /// 2:  video B frame
+            /// 3:  video P frame
+            /// 10: audio frame
+            /// 11: private frame only for PS
+            /// </summary>
+            public int nPacketType;
             //      [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPStr)]
             public IntPtr pPacketBuffer;
             public uint dwPacketSize;
@@ -16979,8 +17545,6 @@ namespace CHCNetSDK
             public uint dwTimeStamp;
         }
 
-
-
         /******************************************************************************
         * function：get a empty port number
         * parameters：
@@ -16991,14 +17555,12 @@ namespace CHCNetSDK
         [DllImport("AnalyzeData.dll")]
         public static extern int AnalyzeDataGetSafeHandle();
 
-
-        /******************************************************************************
-        * function：open standard stream data for analyzing
-        * parameters：lHandle - working port number
-        *             pHeader - pointer to file header or info header
-        * return：TRUE or FALSE
-        * comment：
-        ******************************************************************************/
+        /// <summary>
+        /// open standard stream data for analyzing
+        /// </summary>
+        /// <param name="iHandle">working port number</param>
+        /// <param name="pFileHead">pointer to file header or info header</param>
+        /// <returns></returns>
         [DllImport("AnalyzeData.dll")]
         public static extern bool AnalyzeDataOpenStreamEx(int iHandle, byte[] pFileHead);
 
@@ -17038,7 +17600,6 @@ namespace CHCNetSDK
         [DllImport("AnalyzeData.dll")]
         public static extern int AnalyzeDataGetPacket(int iHandle, ref PACKET_INFO pPacketInfo);  //要把pPacketInfo转换成PACKET_INFO结构
 
-
         /******************************************************************************
         * function：get remain data from input buffer
         * parameters：lHandle		- working port number
@@ -17058,8 +17619,10 @@ namespace CHCNetSDK
 
 
         #region 录像库
-
-        public const int DATASTREAM_HEAD = 0;       //数据头
+        /// <summary>
+        /// 数据头
+        /// </summary>
+        public const int DATASTREAM_HEAD = 0;
         public const int DATASTREAM_BITBLOCK = 1;       //字节数据
         public const int DATASTREAM_KEYFRAME = 2;       //关键帧数据
         public const int DATASTREAM_NORMALFRAME = 3;        //非关键帧数据
@@ -17070,8 +17633,6 @@ namespace CHCNetSDK
         public const int MESSAGEVALUE_CREATEFILE = 0x03;
         public const int MESSAGEVALUE_DELETEFILE = 0x04;
         public const int MESSAGEVALUE_SWITCHFILE = 0x05;
-
-
 
 
         [StructLayoutAttribute(LayoutKind.Sequential)]

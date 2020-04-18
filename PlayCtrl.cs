@@ -61,6 +61,9 @@ namespace CHCNetSDK
         public const int PLAYM4_MAX_SUPPORTS = 500;
         //Wave coef range;
         public const int MIN_WAVE_COEF = -100;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MAX_WAVE_COEF = 100;
 
         //Timer type
@@ -330,7 +333,9 @@ namespace CHCNetSDK
             public int nFrameNum;
             public bool bRsaRight;
             public int nReserved;
-
+            /// <summary>
+            /// 
+            /// </summary>
             public void Init()
             {
                 pDataBuf = "";

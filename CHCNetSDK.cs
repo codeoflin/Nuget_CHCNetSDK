@@ -308,18 +308,44 @@ namespace CHCNetSDK
         /// 8000设备的视频输出数
         /// </summary>
         public const int MAX_VIDEOOUT = 2;
+        /// <summary>
+        /// 9000设备支持的云台预置点数
+        /// </summary>
+        public const int MAX_PRESET_V30 = 256;
+        /// <summary>
+        /// 9000设备支持的云台轨迹数
+        /// </summary>
+        public const int MAX_TRACK_V30 = 256;
+        /// <summary>
+        /// 9000设备支持的云台巡航数
+        /// </summary>
+        public const int MAX_CRUISE_V30 = 256;
+        /// <summary>
+        /// 8000设备支持的云台预置点数 
+        /// </summary>
+        public const int MAX_PRESET = 128;
+        /// <summary>
+        /// 8000设备支持的云台轨迹数
+        /// </summary>
+        public const int MAX_TRACK = 128;
+        /// <summary>
+        /// 8000设备支持的云台巡航数 
+        /// </summary>
+        public const int MAX_CRUISE = 128;
 
-        public const int MAX_PRESET_V30 = 256;// 9000设备支持的云台预置点数
-        public const int MAX_TRACK_V30 = 256;// 9000设备支持的云台轨迹数
-        public const int MAX_CRUISE_V30 = 256;// 9000设备支持的云台巡航数
-        public const int MAX_PRESET = 128;// 8000设备支持的云台预置点数 
-        public const int MAX_TRACK = 128;// 8000设备支持的云台轨迹数
-        public const int MAX_CRUISE = 128;// 8000设备支持的云台巡航数 
+        /// <summary>
+        /// 一条巡航最多的巡航点
+        /// </summary>
+        public const int CRUISE_MAX_PRESET_NUMS = 32;
 
-        public const int CRUISE_MAX_PRESET_NUMS = 32;// 一条巡航最多的巡航点 
-
-        public const int MAX_SERIAL_PORT = 8;//9000设备支持232串口数
-        public const int MAX_PREVIEW_MODE = 8;// 设备支持最大预览模式数目 1画面,4画面,9画面,16画面.... 
+        /// <summary>
+        /// 9000设备支持232串口数
+        /// </summary>
+        public const int MAX_SERIAL_PORT = 8;
+        /// <summary>
+        /// 设备支持最大预览模式数目 1画面,4画面,9画面,16画面
+        /// </summary>
+        public const int MAX_PREVIEW_MODE = 8;
         public const int MAX_MATRIXOUT = 16;// 最大模拟矩阵输出个数 
         public const int LOG_INFO_LEN = 11840; // 日志附加信息 
         public const int DESC_LEN = 16;// 云台描述字符串长度 
@@ -1012,16 +1038,34 @@ namespace CHCNetSDK
         public const int NET_DVR_GET_RULECFG = 153;//获取行为分析规则
 
         //双摄像机标定参数（NET_DVR_LF_CFG）
-        public const int NET_DVR_SET_LF_CFG = 160;//设置双摄像机的配置参数
-        public const int NET_DVR_GET_LF_CFG = 161;//获取双摄像机的配置参数
+        /// <summary>
+        /// 设置双摄像机的配置参数
+        /// </summary>
+        public const int NET_DVR_SET_LF_CFG = 160;
+        /// <summary>
+        /// 获取双摄像机的配置参数
+        /// </summary>
+        public const int NET_DVR_GET_LF_CFG = 161;
 
         //智能分析仪取流配置结构
-        public const int NET_DVR_SET_IVMS_STREAMCFG = 162;//设置智能分析仪取流参数
-        public const int NET_DVR_GET_IVMS_STREAMCFG = 163;//获取智能分析仪取流参数
+        /// <summary>
+        /// 设置智能分析仪取流参数
+        /// </summary>
+        public const int NET_DVR_SET_IVMS_STREAMCFG = 162;
+        /// <summary>
+        /// 获取智能分析仪取流参数
+        /// </summary>
+        public const int NET_DVR_GET_IVMS_STREAMCFG = 163;
 
         //智能控制参数结构
-        public const int NET_DVR_SET_VCA_CTRLCFG = 164;//设置智能控制参数
-        public const int NET_DVR_GET_VCA_CTRLCFG = 165;//获取智能控制参数
+        /// <summary>
+        /// 设置智能控制参数
+        /// </summary>
+        public const int NET_DVR_SET_VCA_CTRLCFG = 164;
+        /// <summary>
+        /// 获取智能控制参数
+        /// </summary>
+        public const int NET_DVR_GET_VCA_CTRLCFG = 165;
 
         //屏蔽区域NET_VCA_MASK_REGION_LIST
         /// <summary>
@@ -1038,6 +1082,7 @@ namespace CHCNetSDK
         /// 设置进入区域参数
         /// </summary>
         public const int NET_DVR_SET_VCA_ENTER_REGION = 168;
+
         /// <summary>
         /// 获取进入区域参数
         /// </summary>
@@ -1054,50 +1099,124 @@ namespace CHCNetSDK
         public const int NET_DVR_GET_VCA_LINE_SEGMENT = 171;
 
         // ivms屏蔽区域NET_IVMS_MASK_REGION_LIST
-        public const int NET_DVR_SET_IVMS_MASK_REGION = 172;//设置IVMS屏蔽区域参数
-        public const int NET_DVR_GET_IVMS_MASK_REGION = 173;//获取IVMS屏蔽区域参数
-                                                            // ivms进入检测区域NET_IVMS_ENTER_REGION
-        public const int NET_DVR_SET_IVMS_ENTER_REGION = 174;//设置IVMS进入区域参数
-        public const int NET_DVR_GET_IVMS_ENTER_REGION = 175;//获取IVMS进入区域参数
+        /// <summary>
+        /// 设置IVMS屏蔽区域参数
+        /// </summary>
+        public const int NET_DVR_SET_IVMS_MASK_REGION = 172;
+        /// <summary>
+        /// 获取IVMS屏蔽区域参数
+        /// </summary>
+        public const int NET_DVR_GET_IVMS_MASK_REGION = 173;
 
-        public const int NET_DVR_SET_IVMS_BEHAVIORCFG = 176;//设置智能分析仪行为规则参数
-        public const int NET_DVR_GET_IVMS_BEHAVIORCFG = 177;//获取智能分析仪行为规则参数
+        // ivms进入检测区域NET_IVMS_ENTER_REGION
+
+        /// <summary>
+        /// 设置IVMS进入区域参数
+        /// </summary>
+        public const int NET_DVR_SET_IVMS_ENTER_REGION = 174;
+        /// <summary>
+        /// 获取IVMS进入区域参数
+        /// </summary>
+        public const int NET_DVR_GET_IVMS_ENTER_REGION = 175;
+        /// <summary>
+        /// 设置智能分析仪行为规则参数
+        /// </summary>
+
+        public const int NET_DVR_SET_IVMS_BEHAVIORCFG = 176;
+        /// <summary>
+        /// 获取智能分析仪行为规则参数
+        /// </summary>
+        public const int NET_DVR_GET_IVMS_BEHAVIORCFG = 177;
 
         // IVMS 回放检索
-        public const int NET_DVR_IVMS_SET_SEARCHCFG = 178;//设置IVMS回放检索参数
-        public const int NET_DVR_IVMS_GET_SEARCHCFG = 179;//获取IVMS回放检索参数     
+        /// <summary>
+        /// 设置IVMS回放检索参数
+        /// </summary>
+        public const int NET_DVR_IVMS_SET_SEARCHCFG = 178;
+        /// <summary>
+        /// 获取IVMS回放检索参数
+        /// </summary>
+        public const int NET_DVR_IVMS_GET_SEARCHCFG = 179;
 
         /***************************DS9000新增命令(_V30) begin *****************************/
         //网络(NET_DVR_NETCFG_V30结构)
-        public const int NET_DVR_GET_NETCFG_V30 = 1000;//获取网络参数
-        public const int NET_DVR_SET_NETCFG_V30 = 1001;//设置网络参数
+        /// <summary>
+        /// 获取网络参数
+        /// </summary>
+        public const int NET_DVR_GET_NETCFG_V30 = 1000;
+        /// <summary>
+        /// 设置网络参数
+        /// </summary>
+        public const int NET_DVR_SET_NETCFG_V30 = 1001;
 
         //图象(NET_DVR_PICCFG_V30结构)
-        public const int NET_DVR_GET_PICCFG_V30 = 1002;//获取图象参数
-        public const int NET_DVR_SET_PICCFG_V30 = 1003;//设置图象参数
+        /// <summary>
+        /// 获取图象参数
+        /// </summary>
+        public const int NET_DVR_GET_PICCFG_V30 = 1002;
+        /// <summary>
+        /// 设置图象参数
+        /// </summary>
+        public const int NET_DVR_SET_PICCFG_V30 = 1003;
 
         //图象(NET_DVR_PICCFG_V40结构)
-        public const int NET_DVR_GET_PICCFG_V40 = 6179;//获取图象参数V40扩展
-        public const int NET_DVR_SET_PICCFG_V40 = 6180;//设置图象参数V40扩展
+        /// <summary>
+        /// 获取图象参数V40扩展
+        /// </summary>
+        public const int NET_DVR_GET_PICCFG_V40 = 6179;
+        /// <summary>
+        /// 设置图象参数V40扩展
+        /// </summary>
+        public const int NET_DVR_SET_PICCFG_V40 = 6180;
 
         //录像时间(NET_DVR_RECORD_V30结构)
-        public const int NET_DVR_GET_RECORDCFG_V30 = 1004;//获取录像参数
-        public const int NET_DVR_SET_RECORDCFG_V30 = 1005;//设置录像参数
+        /// <summary>
+        /// 获取录像参数
+        /// </summary>
+        public const int NET_DVR_GET_RECORDCFG_V30 = 1004;
+        /// <summary>
+        /// 设置录像参数
+        /// </summary>
+        public const int NET_DVR_SET_RECORDCFG_V30 = 1005;
 
-        public const int NET_DVR_GET_RECORDCFG_V40 = 1008; //获取录像参数(扩展)
-        public const int NET_DVR_SET_RECORDCFG_V40 = 1009; //设置录像参数(扩展)
+        /// <summary>
+        /// 获取录像参数(扩展)
+        /// </summary>
+        public const int NET_DVR_GET_RECORDCFG_V40 = 1008;
+        /// <summary>
+        /// 设置录像参数(扩展)
+        /// </summary>
+        public const int NET_DVR_SET_RECORDCFG_V40 = 1009;
 
         //用户(NET_DVR_USER_V30结构)
-        public const int NET_DVR_GET_USERCFG_V30 = 1006;//获取用户参数
-        public const int NET_DVR_SET_USERCFG_V30 = 1007;//设置用户参数
+        /// <summary>
+        /// 获取用户参数
+        /// </summary>
+        public const int NET_DVR_GET_USERCFG_V30 = 1006;
+        /// <summary>
+        /// 设置用户参数
+        /// </summary>
+        public const int NET_DVR_SET_USERCFG_V30 = 1007;
 
         //9000DDNS参数配置(NET_DVR_DDNSPARA_V30结构)
-        public const int NET_DVR_GET_DDNSCFG_V30 = 1010;//获取DDNS(9000扩展)
-        public const int NET_DVR_SET_DDNSCFG_V30 = 1011;//设置DDNS(9000扩展)
+        /// <summary>
+        /// 获取DDNS(9000扩展)
+        /// </summary>
+        public const int NET_DVR_GET_DDNSCFG_V30 = 1010;
+        /// <summary>
+        /// 设置DDNS(9000扩展)
+        /// </summary>
+        public const int NET_DVR_SET_DDNSCFG_V30 = 1011;
 
         //EMAIL功能(NET_DVR_EMAILCFG_V30结构)
-        public const int NET_DVR_GET_EMAILCFG_V30 = 1012;//获取EMAIL参数 
-        public const int NET_DVR_SET_EMAILCFG_V30 = 1013;//设置EMAIL参数 
+        /// <summary>
+        /// 获取EMAIL参数 
+        /// </summary>
+        public const int NET_DVR_GET_EMAILCFG_V30 = 1012;
+        /// <summary>
+        /// 设置EMAIL参数 
+        /// </summary>
+        public const int NET_DVR_SET_EMAILCFG_V30 = 1013;
 
         //巡航参数 (NET_DVR_CRUISE_PARA结构)
         /// <summary>
@@ -6374,11 +6493,16 @@ namespace CHCNetSDK
             public string sMultiCastIP;//多播组地址
         }
 
-        //SDK状态信息(9000新增)
+        /// <summary>
+        /// SDK状态信息(9000新增)
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_SDKSTATE
         {
-            public uint dwTotalLoginNum;//当前login用户数
+            /// <summary>
+            /// 当前login用户数
+            /// </summary>
+            public uint dwTotalLoginNum;
             public uint dwTotalRealPlayNum;//当前realplay路数
             public uint dwTotalPlayBackNum;//当前回放或下载路数
             public uint dwTotalAlarmChanNum;//当前建立报警通道路数
@@ -15449,29 +15573,56 @@ namespace CHCNetSDK
             public NET_DVR_DATE struBirth; //出生日期
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ID_ADDR_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byAddr;  //住址
+
+            /// <summary>
+            /// 身份证号码
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ID_NUM_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] byIDNum;   //身份证号码
+            public byte[] byIDNum;
+            /// <summary>
+            /// 签发机关
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ID_ISSUING_AUTHORITY_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] byIssuingAuthority;  //签发机关
-            public NET_DVR_DATE struStartDate;  //有效开始日期
-            public NET_DVR_DATE struEndDate;  //有效截止日期
-            public byte byTermOfValidity;  //是否长期有效， 0-否，1-是（有效截止日期无效）
-            public byte bySex;  //性别，1-男，2-女
-            public byte byNation;    //民族，1-"汉"，2-"蒙古"，3-"回",4-"藏",5-"维吾尔",6-"苗",7-"彝",8-"壮",9-"布依",10-"朝鲜",
-                                     //11-"满",12-"侗",13-"瑶",14-"白",15-"土家",16-"哈尼",17-"哈萨克",18-"傣",19-"黎",20-"傈僳",
-                                     //21-"佤",22-"畲",23-"高山",24-"拉祜",25-"水",26-"东乡",27-"纳西",28-"景颇",29-"柯尔克孜",30-"土",
-                                     //31-"达斡尔",32-"仫佬",33-"羌",34-"布朗",35-"撒拉",36-"毛南",37-"仡佬",38-"锡伯",39-"阿昌",40-"普米",
-                                     //41-"塔吉克",42-"怒",43-"乌孜别克",44-"俄罗斯",45-"鄂温克",46-"德昂",47-"保安",48-"裕固",49-"京",50-"塔塔尔",
-                                     //51-"独龙",52-"鄂伦春",53-"赫哲",54-"门巴",55-"珞巴",56-"基诺"
+            public byte[] byIssuingAuthority;
+            /// <summary>
+            /// 有效开始日期
+            /// </summary>
+            public NET_DVR_DATE struStartDate;
+            /// <summary>
+            /// 有效截止日期
+            /// </summary>
+            public NET_DVR_DATE struEndDate;
+            /// <summary>
+            /// 是否长期有效， 0-否，1-是（有效截止日期无效）
+            /// </summary>
+            public byte byTermOfValidity;
+            /// <summary>
+            /// 性别，1-男，2-女
+            /// </summary>
+            public byte bySex;
+            /// <summary>
+            /// 民族，1-"汉"，2-"蒙古"，3-"回",4-"藏",5-"维吾尔",6-"苗",7-"彝",8-"壮",9-"布依",10-"朝鲜",
+            /// 11-"满",12-"侗",13-"瑶",14-"白",15-"土家",16-"哈尼",17-"哈萨克",18-"傣",19-"黎",20-"傈僳",
+            /// 21-"佤",22-"畲",23-"高山",24-"拉祜",25-"水",26-"东乡",27-"纳西",28-"景颇",29-"柯尔克孜",30-"土",
+            /// 31-"达斡尔",32-"仫佬",33-"羌",34-"布朗",35-"撒拉",36-"毛南",37-"仡佬",38-"锡伯",39-"阿昌",40-"普米",
+            /// 41-"塔吉克",42-"怒",43-"乌孜别克",44-"俄罗斯",45-"鄂温克",46-"德昂",47-"保安",48-"裕固",49-"京",50-"塔塔尔",
+            /// 51-"独龙",52-"鄂伦春",53-"赫哲",54-"门巴",55-"珞巴",56-"基诺"
+            /// </summary>
+            public byte byNation;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 101, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
 
-        //身份证信息报警
+        /// <summary>
+        /// 身份证信息报警
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_ID_CARD_INFO_ALARM
         {
-            public uint dwSize;        //结构长度
+            /// <summary>
+            /// 结构长度
+            /// </summary>
+            public uint dwSize;
             public NET_DVR_ID_CARD_INFO struIDCardCfg;//身份证信息
             public uint dwMajor; //报警主类型，参考宏定义
             public uint dwMinor; //报警次类型，参考宏定义
@@ -15534,9 +15685,15 @@ namespace CHCNetSDK
             // #define CARD_SIM_NO                 0x00010000  //SIM卡号（手机号）
             // #define CARD_FLOOR_NUMBER           0x00020000  //楼层号
             // #define CARD_USER_TYPE              0x00040000  //用户类型
+            /// <summary>
+            /// 卡号
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = ACS_CARD_NO_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] byCardNo; //卡号
-            public byte byCardValid; //卡是否有效，0-无效，1-有效（用于删除卡，设置时置为0进行删除，获取时此字段始终为1）
+            public byte[] byCardNo;
+            /// <summary>
+            /// 卡是否有效，0-无效，1-有效（用于删除卡，设置时置为0进行删除，获取时此字段始终为1）
+            /// </summary>
+            public byte byCardValid;
             public byte byCardType; //卡类型，1-普通卡，2-残疾人卡，3-黑名单卡，4-巡更卡，5-胁迫卡，6-超级卡，7-来宾卡，8-解除卡，9-员工卡，10-应急卡，11-应急管理卡（用于授权临时卡权限，本身不能开门），默认普通卡
             public byte byLeaderCard; //是否为首卡，1-是，0-否
             public byte byUserType; // 0 – 普通用户1 - 管理员用户;

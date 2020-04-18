@@ -57,9 +57,13 @@ namespace CHCNetSDK
         // public const string PLAYM4_API = "extern \"C\" __declspec(dllimport)";
 
 
-        //Max channel numbers
+        /// <summary>
+        /// Max channel numbers
+        /// </summary>
         public const int PLAYM4_MAX_SUPPORTS = 500;
-        //Wave coef range;
+        /// <summary>
+        /// Wave coef range;
+        /// </summary>
         public const int MIN_WAVE_COEF = -100;
         /// <summary>
         /// 

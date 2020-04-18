@@ -346,8 +346,14 @@ namespace CHCNetSDK
         /// 设备支持最大预览模式数目 1画面,4画面,9画面,16画面
         /// </summary>
         public const int MAX_PREVIEW_MODE = 8;
-        public const int MAX_MATRIXOUT = 16;// 最大模拟矩阵输出个数 
-        public const int LOG_INFO_LEN = 11840; // 日志附加信息 
+        /// <summary>
+        /// 最大模拟矩阵输出个数 
+        /// </summary>
+        public const int MAX_MATRIXOUT = 16;
+        /// <summary>
+        /// 日志附加信息 
+        /// </summary>
+        public const int LOG_INFO_LEN = 11840; 
         public const int DESC_LEN = 16;// 云台描述字符串长度 
         public const int PTZ_PROTOCOL_NUM = 200;// 9000最大支持的云台协议数 
 

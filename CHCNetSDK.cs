@@ -353,18 +353,46 @@ namespace CHCNetSDK
         /// <summary>
         /// 日志附加信息 
         /// </summary>
-        public const int LOG_INFO_LEN = 11840; 
-        public const int DESC_LEN = 16;// 云台描述字符串长度 
-        public const int PTZ_PROTOCOL_NUM = 200;// 9000最大支持的云台协议数 
+        public const int LOG_INFO_LEN = 11840;
+        /// <summary>
+        /// 云台描述字符串长度 
+        /// </summary>
+        public const int DESC_LEN = 16;
+        /// <summary>
+        /// 9000最大支持的云台协议数 
+        /// </summary>
+        public const int PTZ_PROTOCOL_NUM = 200;
+        /// <summary>
+        /// 8000语音对讲通道数
+        /// </summary>
+        public const int MAX_AUDIO = 1;
+        /// <summary>
+        /// 9000语音对讲通道数
+        /// </summary>
+        public const int MAX_AUDIO_V30 = 2;
+        /// <summary>
+        /// 8000设备最大通道数
+        /// </summary>
+        public const int MAX_CHANNUM = 16;
+        /// <summary>
+        /// 8000设备最大报警输入数
+        /// </summary>
+        public const int MAX_ALARMIN = 16;
+        /// <summary>
+        /// 8000设备最大报警输出数
+        /// </summary>
+        public const int MAX_ALARMOUT = 4;
 
-        public const int MAX_AUDIO = 1;//8000语音对讲通道数
-        public const int MAX_AUDIO_V30 = 2;//9000语音对讲通道数
-        public const int MAX_CHANNUM = 16;//8000设备最大通道数
-        public const int MAX_ALARMIN = 16;//8000设备最大报警输入数
-        public const int MAX_ALARMOUT = 4;//8000设备最大报警输出数
-                                          //9000 IPC接入
-        public const int MAX_ANALOG_CHANNUM = 32;//最大32个模拟通道
-        public const int MAX_ANALOG_ALARMOUT = 32; //最大32路模拟报警输出 
+        //9000 IPC接入
+
+        /// <summary>
+        /// 最大32个模拟通道
+        /// </summary>
+        public const int MAX_ANALOG_CHANNUM = 32;
+        /// <summary>
+        /// 最大32路模拟报警输出 
+        /// </summary>
+        public const int MAX_ANALOG_ALARMOUT = 32;
         public const int MAX_ANALOG_ALARMIN = 32;//最大32路模拟报警输入
 
         public const int MAX_IP_DEVICE = 32;//允许接入的最大IP设备数
@@ -14731,7 +14759,10 @@ namespace CHCNetSDK
         public const int PULL_DISK_NOT_SUPPORT = 5; // 不支持安全拔盘
 
         //扫描阵列状态
-        public const int SCAN_RAID_SUC = 1;     // 扫描阵列成功
+        /// <summary>
+        /// 扫描阵列成功
+        /// </summary>
+        public const int SCAN_RAID_SUC = 1;
         public const int SCAN_RAID_FAIL = 2;    // 扫描阵列失败
         public const int SCAN_RAID_PROCESSING = 3;  // 正在扫描阵列
         public const int SCAN_RAID_NOT_SUPPORT = 4; // 不支持阵列扫描

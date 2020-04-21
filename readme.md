@@ -16,4 +16,3 @@ nuget安装即可,按照海康官方的demo调用,所有接口相同
 dotnet pack -p:PackageVersion=2.1.50
 
 <!--  -p:NuspecFile=~/projects/app1/project.nuspec -p:NuspecBasePath=~/projects/app1/nuget -->
-

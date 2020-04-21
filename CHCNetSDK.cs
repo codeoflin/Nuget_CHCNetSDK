@@ -393,17 +393,43 @@ namespace CHCNetSDK
         /// 最大32路模拟报警输出 
         /// </summary>
         public const int MAX_ANALOG_ALARMOUT = 32;
-        public const int MAX_ANALOG_ALARMIN = 32;//最大32路模拟报警输入
+        /// <summary>
+        /// 最大32路模拟报警输入
+        /// </summary>
+        public const int MAX_ANALOG_ALARMIN = 32;
 
-        public const int MAX_IP_DEVICE = 32;//允许接入的最大IP设备数
-        public const int MAX_IP_DEVICE_V40 = 64;//允许接入的最大IP设备数
-        public const int MAX_IP_CHANNEL = 32;//允许加入的最多IP通道数
-        public const int MAX_IP_ALARMIN = 128;//允许加入的最多报警输入数
-        public const int MAX_IP_ALARMOUT = 64;//允许加入的最多报警输出数
-        public const int MAX_IP_ALARMIN_V40 = 4096;    //允许加入的最多报警输入数
-        public const int MAX_IP_ALARMOUT_V40 = 4096;    //允许加入的最多报警输出数
-
-        public const int MAX_RECORD_FILE_NUM = 20;      // 每次删除或者刻录的最大文件数
+        /// <summary>
+        /// 允许接入的最大IP设备数
+        /// </summary>
+        public const int MAX_IP_DEVICE = 32;
+        /// <summary>
+        /// 允许接入的最大IP设备数
+        /// </summary>
+        public const int MAX_IP_DEVICE_V40 = 64;
+        /// <summary>
+        /// 允许加入的最多IP通道数
+        /// </summary>
+        public const int MAX_IP_CHANNEL = 32;
+        /// <summary>
+        /// 允许加入的最多报警输入数
+        /// </summary>
+        public const int MAX_IP_ALARMIN = 128;
+        /// <summary>
+        /// 允许加入的最多报警输出数
+        /// </summary>
+        public const int MAX_IP_ALARMOUT = 64;
+        /// <summary>
+        /// 允许加入的最多报警输入数
+        /// </summary>
+        public const int MAX_IP_ALARMIN_V40 = 4096;
+        /// <summary>
+        /// 允许加入的最多报警输出数
+        /// </summary>
+        public const int MAX_IP_ALARMOUT_V40 = 4096;
+        /// <summary>
+        /// 每次删除或者刻录的最大文件数
+        /// </summary>
+        public const int MAX_RECORD_FILE_NUM = 20;
 
         //SDK_V31 ATM
         /// <summary>
@@ -430,34 +456,94 @@ namespace CHCNetSDK
         // SDK_V31 ATM
 
         /* 最大支持的通道数 最大模拟加上最大IP支持 */
-        public const int MAX_CHANNUM_V30 = MAX_ANALOG_CHANNUM + MAX_IP_CHANNEL;//64
-        public const int MAX_ALARMOUT_V30 = MAX_ANALOG_ALARMOUT + MAX_IP_ALARMOUT;//96
-        public const int MAX_ALARMIN_V30 = MAX_ANALOG_ALARMIN + MAX_IP_ALARMIN;//160
-
+        /// <summary>
+        /// 64
+        /// </summary>
+        public const int MAX_CHANNUM_V30 = MAX_ANALOG_CHANNUM + MAX_IP_CHANNEL;
+        /// <summary>
+        /// 96
+        /// </summary>
+        public const int MAX_ALARMOUT_V30 = MAX_ANALOG_ALARMOUT + MAX_IP_ALARMOUT;
+        /// <summary>
+        /// 160
+        /// </summary>
+        public const int MAX_ALARMIN_V30 = MAX_ANALOG_ALARMIN + MAX_IP_ALARMIN;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MAX_CHANNUM_V40 = 512;
-        public const int MAX_ALARMOUT_V40 = MAX_IP_ALARMOUT_V40 + MAX_ANALOG_ALARMOUT;//4128
-        public const int MAX_ALARMIN_V40 = MAX_IP_ALARMIN_V40 + MAX_ANALOG_ALARMOUT;//4128
+        /// <summary>
+        /// 4128
+        /// </summary>
+        public const int MAX_ALARMOUT_V40 = MAX_IP_ALARMOUT_V40 + MAX_ANALOG_ALARMOUT;
+        /// <summary>
+        /// 4128
+        /// </summary>
+        public const int MAX_ALARMIN_V40 = MAX_IP_ALARMIN_V40 + MAX_ANALOG_ALARMOUT;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MAX_MULTI_AREA_NUM = 24;
         /// <summary>
         /// 最大照片数
         /// </summary>
         public const int MAX_HUMAN_PICTURE_NUM = 10;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MAX_HUMAN_BIRTHDATE_LEN = 10;
-
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MAX_LAYERNUMS = 32;
-
-        public const int MAX_ROIDETECT_NUM = 8;    //支持的ROI区域数
-        public const int MAX_LANERECT_NUM = 5;    //最大车牌识别区域数
-        public const int MAX_FORTIFY_NUM = 10;   //最大布防个数
-        public const int MAX_INTERVAL_NUM = 4;    //最大时间间隔个数
-        public const int MAX_CHJC_NUM = 3;    //最大车辆省份简称字符个数
-        public const int MAX_VL_NUM = 5;    //最大虚拟线圈个数
-        public const int MAX_DRIVECHAN_NUM = 16;   //最大车道数
-        public const int MAX_COIL_NUM = 3;    //最大线圈个数
-        public const int MAX_SIGNALLIGHT_NUM = 6;   //最大信号灯个数
+        /// <summary>
+        /// 支持的ROI区域数
+        /// </summary>
+        public const int MAX_ROIDETECT_NUM = 8;
+        /// <summary>
+        /// 最大车牌识别区域数
+        /// </summary>
+        public const int MAX_LANERECT_NUM = 5;
+        /// <summary>
+        /// 最大布防个数
+        /// </summary>
+        public const int MAX_FORTIFY_NUM = 10;
+        /// <summary>
+        /// 最大时间间隔个数
+        /// </summary>
+        public const int MAX_INTERVAL_NUM = 4;
+        /// <summary>
+        /// 最大车辆省份简称字符个数
+        /// </summary>
+        public const int MAX_CHJC_NUM = 3;
+        /// <summary>
+        /// 最大虚拟线圈个数
+        /// </summary>
+        public const int MAX_VL_NUM = 5;
+        /// <summary>
+        /// 最大车道数
+        /// </summary>
+        public const int MAX_DRIVECHAN_NUM = 16;
+        /// <summary>
+        /// 最大线圈个数
+        /// </summary>
+        public const int MAX_COIL_NUM = 3;
+        /// <summary>
+        /// 最大信号灯个数
+        /// </summary>
+        public const int MAX_SIGNALLIGHT_NUM = 6;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int LEN_32 = 32;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int LEN_31 = 31;
-        public const int MAX_CABINET_COUNT = 8;    //最大支持机柜数量
+        /// <summary>
+        /// 最大支持机柜数量
+        /// </summary>
+        public const int MAX_CABINET_COUNT = 8;
         public const int MAX_ID_LEN = 48;
         public const int MAX_PARKNO_LEN = 16;
         public const int MAX_ALARMREASON_LEN = 32;
@@ -773,73 +859,229 @@ namespace CHCNetSDK
 
         //远程按键定义如下：
         /* key value send to CONFIG program */
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_1 = 1;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_2 = 2;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_3 = 3;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_4 = 4;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_5 = 5;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_6 = 6;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_7 = 7;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_8 = 8;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_9 = 9;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_0 = 10;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_POWER = 11;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_MENU = 12;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_ENTER = 13;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_CANCEL = 14;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_UP = 15;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_DOWN = 16;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_LEFT = 17;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_RIGHT = 18;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_EDIT = 19;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_ADD = 20;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_MINUS = 21;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_PLAY = 22;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_REC = 23;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_PAN = 24;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_M = 25;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_A = 26;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_F1 = 27;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_F2 = 28;
 
         /* for PTZ control */
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_UP_START = KEY_CODE_UP;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_UP_STOP = 32;
-
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_DOWN_START = KEY_CODE_DOWN;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_DOWN_STOP = 33;
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_LEFT_START = KEY_CODE_LEFT;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_LEFT_STOP = 34;
-
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_RIGHT_START = KEY_CODE_RIGHT;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_RIGHT_STOP = 35;
-
-        public const int KEY_PTZ_AP1_START = KEY_CODE_EDIT;/* 光圈+ */
+        /// <summary>
+        /// 光圈+
+        /// </summary>
+        public const int KEY_PTZ_AP1_START = KEY_CODE_EDIT;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_AP1_STOP = 36;
 
-        public const int KEY_PTZ_AP2_START = KEY_CODE_PAN;/* 光圈- */
+        /// <summary>
+        /// 光圈-
+        /// </summary>
+        public const int KEY_PTZ_AP2_START = KEY_CODE_PAN;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_AP2_STOP = 37;
 
-        public const int KEY_PTZ_FOCUS1_START = KEY_CODE_A;/* 聚焦+ */
+        /// <summary>
+        /// 聚焦+
+        /// </summary>
+        public const int KEY_PTZ_FOCUS1_START = KEY_CODE_A;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_FOCUS1_STOP = 38;
-
-        public const int KEY_PTZ_FOCUS2_START = KEY_CODE_M;/* 聚焦- */
+        /// <summary>
+        /// 聚焦-
+        /// </summary>
+        public const int KEY_PTZ_FOCUS2_START = KEY_CODE_M;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_FOCUS2_STOP = 39;
 
-        public const int KEY_PTZ_B1_START = 40;/* 变倍+ */
+        /// <summary>
+        /// 变倍+ 
+        /// </summary>
+        public const int KEY_PTZ_B1_START = 40;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_B1_STOP = 41;
-
-        public const int KEY_PTZ_B2_START = 42;/* 变倍- */
+        /// <summary>
+        /// 变倍-
+        /// </summary>
+        public const int KEY_PTZ_B2_START = 42;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_PTZ_B2_STOP = 43;
 
         //9000新增
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_11 = 44;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_12 = 45;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_13 = 46;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_14 = 47;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_15 = 48;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int KEY_CODE_16 = 49;
 
         /*************************参数配置命令 begin*******************************/
@@ -1491,9 +1733,18 @@ namespace CHCNetSDK
         public const int MINOR_IPC_SET = 101;/* 本地设置IPC */
         public const int MINOR_LOCAL_START_BACKUP = 102;/* 本地开始备份 */
         public const int MINOR_LOCAL_STOP_BACKUP = 103;/* 本地停止备份*/
-        public const int MINOR_LOCAL_COPYFILE_START_TIME = 104;/* 本地备份开始时间*/
-        public const int MINOR_LOCAL_COPYFILE_END_TIME = 105;/* 本地备份结束时间*/
-        public const int MINOR_LOCAL_ADD_NAS = 106;/*本地添加网络硬盘*/
+        /// <summary>
+        /// 本地备份开始时间
+        /// </summary>
+        public const int MINOR_LOCAL_COPYFILE_START_TIME = 104;
+        /// <summary>
+        /// 本地备份结束时间
+        /// </summary>
+        public const int MINOR_LOCAL_COPYFILE_END_TIME = 105;
+        /// <summary>
+        /// 本地添加网络硬盘
+        /// </summary>
+        public const int MINOR_LOCAL_ADD_NAS = 106;
         public const int MINOR_LOCAL_DEL_NAS = 107;/* 本地删除nas盘*/
         public const int MINOR_LOCAL_SET_NAS = 108;/* 本地设置nas盘*/
 
@@ -1501,21 +1752,66 @@ namespace CHCNetSDK
         public const int MINOR_REMOTE_LOGOUT = 113;/* 远程注销登陆 */
         public const int MINOR_REMOTE_START_REC = 114;/* 远程开始录像 */
         public const int MINOR_REMOTE_STOP_REC = 115;/* 远程停止录像 */
-        public const int MINOR_START_TRANS_CHAN = 116;/* 开始透明传输 */
-        public const int MINOR_STOP_TRANS_CHAN = 117;/* 停止透明传输 */
-        public const int MINOR_REMOTE_GET_PARM = 118;/* 远程获取参数 */
-        public const int MINOR_REMOTE_CFG_PARM = 119;/* 远程配置参数 */
-        public const int MINOR_REMOTE_GET_STATUS = 120;/* 远程获取状态 */
-        public const int MINOR_REMOTE_ARM = 121;/* 远程布防 */
-        public const int MINOR_REMOTE_DISARM = 122;/* 远程撤防 */
-        public const int MINOR_REMOTE_REBOOT = 123;/* 远程重启 */
-        public const int MINOR_START_VT = 124;/* 开始语音对讲 */
-        public const int MINOR_STOP_VT = 125;/* 停止语音对讲 */
-        public const int MINOR_REMOTE_UPGRADE = 126;/* 远程升级 */
-        public const int MINOR_REMOTE_PLAYBYFILE = 127;/* 远程按文件回放 */
-        public const int MINOR_REMOTE_PLAYBYTIME = 128;/* 远程按时间回放 */
-        public const int MINOR_REMOTE_PTZCTRL = 129;/* 远程云台控制 */
-        public const int MINOR_REMOTE_FORMAT_HDD = 130;/* 远程格式化硬盘 */
+        /// <summary>
+        /// 开始透明传输
+        /// </summary>
+        public const int MINOR_START_TRANS_CHAN = 116;
+        /// <summary>
+        /// 停止透明传输
+        /// </summary>
+        public const int MINOR_STOP_TRANS_CHAN = 117;
+        /// <summary>
+        /// 远程获取参数
+        /// </summary>
+        public const int MINOR_REMOTE_GET_PARM = 118;
+        /// <summary>
+        /// 远程配置参数
+        /// </summary>
+        public const int MINOR_REMOTE_CFG_PARM = 119;
+        /// <summary>
+        /// 远程获取状态
+        /// </summary>
+        public const int MINOR_REMOTE_GET_STATUS = 120;
+        /// <summary>
+        /// 远程布防
+        /// </summary>
+        public const int MINOR_REMOTE_ARM = 121;
+        /// <summary>
+        /// 远程撤防
+        /// </summary>
+        public const int MINOR_REMOTE_DISARM = 122;
+        /// <summary>
+        /// 远程重启
+        /// </summary>
+        public const int MINOR_REMOTE_REBOOT = 123;
+        /// <summary>
+        /// 开始语音对讲
+        /// </summary>
+        public const int MINOR_START_VT = 124;
+        /// <summary>
+        /// 停止语音对讲
+        /// </summary>
+        public const int MINOR_STOP_VT = 125;
+        /// <summary>
+        /// 远程升级
+        /// </summary>
+        public const int MINOR_REMOTE_UPGRADE = 126;
+        /// <summary>
+        /// 远程按文件回放
+        /// </summary>
+        public const int MINOR_REMOTE_PLAYBYFILE = 127;
+        /// <summary>
+        /// 远程按时间回放
+        /// </summary>
+        public const int MINOR_REMOTE_PLAYBYTIME = 128;
+        /// <summary>
+        /// 远程云台控制
+        /// </summary>
+        public const int MINOR_REMOTE_PTZCTRL = 129;
+        /// <summary>
+        /// 远程格式化硬盘
+        /// </summary>
+        public const int MINOR_REMOTE_FORMAT_HDD = 130;
         public const int MINOR_REMOTE_STOP = 131;/* 远程关机 */
         public const int MINOR_REMOTE_LOCKFILE = 132;/* 远程锁定文件 */
         public const int MINOR_REMOTE_UNLOCKFILE = 133;/* 远程解锁文件 */
@@ -1734,7 +2030,9 @@ namespace CHCNetSDK
         /*************************************************
         参数配置结构、参数(其中_V30为9000新增)
         **************************************************/
-        //校时结构参数
+        /// <summary>
+        /// 校时结构参数
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_TIME
         {
@@ -1746,7 +2044,9 @@ namespace CHCNetSDK
             public uint dwSecond;
         }
 
-        //时间参数
+        /// <summary>
+        /// 时间参数
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_TIME_V30
         {
@@ -1774,11 +2074,16 @@ namespace CHCNetSDK
             public byte byRes;
         }
 
-        //时间段(子结构)
+        /// <summary>
+        /// 时间段(子结构)
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_SCHEDTIME
         {
-            public byte byStartHour;//开始时间
+            /// <summary>
+            /// 开始时间
+            /// </summary>
+            public byte byStartHour;
             public byte byStartMin;//开始时间
             public byte byStopHour;//结束时间
             public byte byStopMin;//结束时间
@@ -16170,13 +16475,35 @@ namespace CHCNetSDK
 
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDVRIPByResolveSvr(string sServerIP, ushort wServerPort, string sDVRName, ushort wDVRNameLen, string sDVRSerialNumber, ushort wDVRSerialLen, IntPtr pGetIP);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sServerIP"></param>
+        /// <param name="wServerPort"></param>
+        /// <param name="sDVRName"></param>
+        /// <param name="wDVRNameLen"></param>
+        /// <param name="sDVRSerialNumber"></param>
+        /// <param name="wDVRSerialLen"></param>
+        /// <param name="sGetIP"></param>
+        /// <param name="dwPort"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDVRIPByResolveSvr_EX(string sServerIP, ushort wServerPort, byte[] sDVRName, ushort wDVRNameLen, byte[] sDVRSerialNumber, ushort wDVRSerialLen, byte[] sGetIP, ref uint dwPort);
-        //预览相关接口
+        /// <summary>
+        /// 预览相关接口
+        /// </summary>
+        /// <param name="iUserID"></param>
+        /// <param name="lpClientInfo"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern Int32 NET_DVR_RealPlay(int iUserID, ref NET_DVR_CLIENTINFO lpClientInfo);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="iUserLogID"></param>
+        /// <param name="lpDVRClientInfo"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern Int32 NET_SDK_RealPlay(int iUserLogID, ref NET_DVR_CLIENTINFO lpDVRClientInfo);
         /*********************************************************
@@ -16442,17 +16769,22 @@ namespace CHCNetSDK
 
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PlayBackControl_V40(int lPlayHandle, uint dwControlCode, IntPtr lpInBuffer, uint dwInValue, IntPtr lpOutBuffer, ref uint LPOutValue);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lPlayHandle"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_StopPlayBack(int lPlayHandle);
 
-        /*********************************************************
-        Function:	PLAYDATACALLBACK
-        Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
-        **********************************************************/
+        /// <summary>
+        /// 回调函数
+        /// </summary>
+        /// <param name="lPlayHandle"></param>
+        /// <param name="dwDataType"></param>
+        /// <param name="pBuffer"></param>
+        /// <param name="dwBufSize"></param>
+        /// <param name="dwUser"></param>
         public delegate void PLAYDATACALLBACK(int lPlayHandle, uint dwDataType, IntPtr pBuffer, uint dwBufSize, uint dwUser);
 
         [DllImport(@"HCNetSDK.dll")]
@@ -16489,7 +16821,12 @@ namespace CHCNetSDK
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_GetPlayBackPos(int lPlayHandle);
 
-        //升级
+        /// <summary>
+        /// 升级
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="sFileName"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_Upgrade(int lUserID, string sFileName);
 
@@ -16505,10 +16842,23 @@ namespace CHCNetSDK
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_SetNetworkEnvironment(uint dwEnvironmentLevel);
 
-        //远程格式化硬盘
+        /// <summary>
+        /// 远程格式化硬盘
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lDiskNumber"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FormatDisk(int lUserID, int lDiskNumber);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lFormatHandle"></param>
+        /// <param name="pCurrentFormatDisk"></param>
+        /// <param name="pCurrentDiskPos"></param>
+        /// <param name="pFormatStatic"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_GetFormatProgress(int lFormatHandle, ref int pCurrentFormatDisk, ref int pCurrentDiskPos, ref int pFormatStatic);
 
@@ -17817,9 +18167,18 @@ namespace CHCNetSDK
         /// 数据头
         /// </summary>
         public const int DATASTREAM_HEAD = 0;
-        public const int DATASTREAM_BITBLOCK = 1;       //字节数据
-        public const int DATASTREAM_KEYFRAME = 2;       //关键帧数据
-        public const int DATASTREAM_NORMALFRAME = 3;        //非关键帧数据
+        /// <summary>
+        /// 字节数据
+        /// </summary>
+        public const int DATASTREAM_BITBLOCK = 1;
+        /// <summary>
+        /// 关键帧数据
+        /// </summary>
+        public const int DATASTREAM_KEYFRAME = 2;
+        /// <summary>
+        /// 非关键帧数据
+        /// </summary>
+        public const int DATASTREAM_NORMALFRAME = 3;
 
 
         public const int MESSAGEVALUE_DISKFULL = 0x01;

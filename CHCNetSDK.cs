@@ -452,6 +452,9 @@ namespace CHCNetSDK
         /// 
         /// </summary>
         public const int ATM_PROTOCOL_SORT = 4;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int ATM_DESC_LEN = 32;
         // SDK_V31 ATM
 
@@ -544,32 +547,91 @@ namespace CHCNetSDK
         /// 最大支持机柜数量
         /// </summary>
         public const int MAX_CABINET_COUNT = 8;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MAX_ID_LEN = 48;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MAX_PARKNO_LEN = 16;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MAX_ALARMREASON_LEN = 32;
-        public const int MAX_UPGRADE_INFO_LEN = 48; //获取升级文件匹配信息(模糊升级)
-        public const int MAX_CUSTOMDIR_LEN = 32; //自定义目录长度
+        /// <summary>
+        /// 获取升级文件匹配信息(模糊升级)
+        /// </summary>
+        public const int MAX_UPGRADE_INFO_LEN = 48;
+        /// <summary>
+        /// 自定义目录长度
+        /// </summary>
+        public const int MAX_CUSTOMDIR_LEN = 32;
+        /// <summary>
+        /// 每个串口允许建立的最大透明通道数
+        /// </summary>
 
-        public const int MAX_TRANSPARENT_CHAN_NUM = 4;   //每个串口允许建立的最大透明通道数
-        public const int MAX_TRANSPARENT_ACCESS_NUM = 4;   //每个监听端口允许接入的最大主机数
+        public const int MAX_TRANSPARENT_CHAN_NUM = 4;
+        /// <summary>
+        /// 每个监听端口允许接入的最大主机数
+        /// </summary>
+        public const int MAX_TRANSPARENT_ACCESS_NUM = 4;
 
         //ITS
-        public const int MAX_PARKING_STATUS = 8;    //车位状态 0代表无车，1代表有车，2代表压线(优先级最高), 3特殊车位 
-        public const int MAX_PARKING_NUM = 4;    //一个通道最大4个车位 (从左到右车位 数组0～3)
+        /// <summary>
+        /// 车位状态 0代表无车，1代表有车，2代表压线(优先级最高), 3特殊车位 
+        /// </summary>
+        public const int MAX_PARKING_STATUS = 8;
+        /// <summary>
+        /// 一个通道最大4个车位 (从左到右车位 数组0～3)
+        /// </summary>
+        public const int MAX_PARKING_NUM = 4;
 
-        public const int MAX_ITS_SCENE_NUM = 16;   //最大场景数量
-        public const int MAX_SCENE_TIMESEG_NUM = 16;   //最大场景时间段数量
-        public const int MAX_IVMS_IP_CHANNEL = 128;  //最大IP通道数
-        public const int DEVICE_ID_LEN = 48;   //设备编号长度
-        public const int MONITORSITE_ID_LEN = 48;   //监测点编号长度
-        public const int MAX_AUXAREA_NUM = 16;   //辅助区域最大数目
-        public const int MAX_SLAVE_CHANNEL_NUM = 16;   //最大从通道数量
+        /// <summary>
+        /// 最大场景数量
+        /// </summary>
+        public const int MAX_ITS_SCENE_NUM = 16;
+        /// <summary>
+        /// 最大场景时间段数量
+        /// </summary>
+        public const int MAX_SCENE_TIMESEG_NUM = 16;
+        /// <summary>
+        /// 最大IP通道数
+        /// </summary>
+        public const int MAX_IVMS_IP_CHANNEL = 128;
+        /// <summary>
+        /// 设备编号长度
+        /// </summary>
+        public const int DEVICE_ID_LEN = 48;
+        /// <summary>
+        /// 监测点编号长度
+        /// </summary>
+        public const int MONITORSITE_ID_LEN = 48;
+        /// <summary>
+        /// 辅助区域最大数目
+        /// </summary>
+        public const int MAX_AUXAREA_NUM = 16;
+        /// <summary>
+        /// 最大从通道数量
+        /// </summary>
+        public const int MAX_SLAVE_CHANNEL_NUM = 16;
+        /// <summary>
+        /// 
+        /// </summary>
 
         public const int MAX_SCH_TASKS_NUM = 10;
-
-        public const int MAX_SERVERID_LEN = 64; //最大服务器ID的长度
-        public const int MAX_SERVERDOMAIN_LEN = 128; //服务器域名最大长度
-        public const int MAX_AUTHENTICATEID_LEN = 64; //认证ID最大长度
+        /// <summary>
+        /// 最大服务器ID的长度
+        /// </summary>
+        public const int MAX_SERVERID_LEN = 64;
+        /// <summary>
+        /// 服务器域名最大长度
+        /// </summary>
+        public const int MAX_SERVERDOMAIN_LEN = 128;
+        /// <summary>
+        /// 认证ID最大长度
+        /// </summary>
+        public const int MAX_AUTHENTICATEID_LEN = 64;
         public const int MAX_AUTHENTICATEPASSWD_LEN = 32; //认证密码最大长度
         public const int MAX_SERVERNAME_LEN = 64; //最大服务器用户名 
         public const int MAX_COMPRESSIONID_LEN = 64; //编码ID的最大长度

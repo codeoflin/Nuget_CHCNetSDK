@@ -71,56 +71,177 @@ namespace CHCNetSDK
         public const int MAX_WAVE_COEF = 100;
 
         //Timer type
-        public const int TIMER_1 = 1; //Only 16 timers for every process.Default TIMER;
-        public const int TIMER_2 = 2;//Not limit;But the precision less than TIMER_1; 
+        /// <summary>
+        /// Only 16 timers for every process.Default TIMER
+        /// </summary>
+        public const int TIMER_1 = 1;
+        /// <summary>
+        /// Not limit;But the precision less than TIMER_1
+        /// </summary>
+        public const int TIMER_2 = 2;
 
         //BUFFER TYPE
+        /// <summary>
+        /// 
+        /// </summary>
         public const int BUF_VIDEO_SRC = 1;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int BUF_AUDIO_SRC = 2;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int BUF_VIDEO_RENDER = 3;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int BUF_AUDIO_RENDER = 4;
 
         //Error code
-        public const int PLAYM4_NOERROR = 0;//no error
-        public const int PLAYM4_PARA_OVER = 1;//input parameter is invalid;
-        public const int PLAYM4_ORDER_ERROR = 2;//The order of the function to be called is error.
-        public const int PLAYM4_TIMER_ERROR = 3;//Create multimedia clock failed;
-        public const int PLAYM4_DEC_VIDEO_ERROR = 4;//Decode video data failed.
-        public const int PLAYM4_DEC_AUDIO_ERROR = 5;//Decode audio data failed.
-        public const int PLAYM4_ALLOC_MEMORY_ERROR = 6;//Allocate memory failed.
-        public const int PLAYM4_OPEN_FILE_ERROR = 7;//Open the file failed.
-        public const int PLAYM4_CREATE_OBJ_ERROR = 8;//Create thread or event failed
-        public const int PLAYM4_CREATE_DDRAW_ERROR = 9;//Create DirectDraw object failed.
-        public const int PLAYM4_CREATE_OFFSCREEN_ERROR = 10;//failed when creating off-screen surface.
-        public const int PLAYM4_BUF_OVER = 11;//buffer is overflow
-        public const int PLAYM4_CREATE_SOUND_ERROR = 12;//failed when creating audio device.	
-        public const int PLAYM4_SET_VOLUME_ERROR = 13;//Set volume failed
-        public const int PLAYM4_SUPPORT_FILE_ONLY = 14;//The function only support play file.
-        public const int PLAYM4_SUPPORT_STREAM_ONLY = 15;//The function only support play stream.
-        public const int PLAYM4_SYS_NOT_SUPPORT = 16;//System not support.
-        public const int PLAYM4_FILEHEADER_UNKNOWN = 17;//No file header.
-        public const int PLAYM4_VERSION_INCORRECT = 18;//The version of decoder and encoder is not adapted.  
-        public const int PLAYM4_INIT_DECODER_ERROR = 19;//Initialize decoder failed.
-        public const int PLAYM4_CHECK_FILE_ERROR = 20;//The file data is unknown.
-        public const int PLAYM4_INIT_TIMER_ERROR = 21;//Initialize multimedia clock failed.
-        public const int PLAYM4_BLT_ERROR = 22;//Blt failed.
-        public const int PLAYM4_UPDATE_ERROR = 23;//Update failed.
-        public const int PLAYM4_OPEN_FILE_ERROR_MULTI = 24;//openfile error, streamtype is multi
-        public const int PLAYM4_OPEN_FILE_ERROR_VIDEO = 25;//openfile error, streamtype is video
-        public const int PLAYM4_JPEG_COMPRESS_ERROR = 26;//JPEG compress error
-        public const int PLAYM4_EXTRACT_NOT_SUPPORT = 27;//Don't support the version of this file.
-        public const int PLAYM4_EXTRACT_DATA_ERROR = 28;//extract video data failed.
-        public const int PLAYM4_SECRET_KEY_ERROR = 29;//Secret key is error //add 20071218
+        /// <summary>
+        /// no error
+        /// </summary>
+        public const int PLAYM4_NOERROR = 0;
+        /// <summary>
+        /// input parameter is invalid;
+        /// </summary>
+        public const int PLAYM4_PARA_OVER = 1;
+        /// <summary>
+        /// The order of the function to be called is error.
+        /// </summary>
+        public const int PLAYM4_ORDER_ERROR = 2;
+        /// <summary>
+        /// Create multimedia clock failed
+        /// </summary>
+        public const int PLAYM4_TIMER_ERROR = 3;
+        /// <summary>
+        /// Decode video data failed.
+        /// </summary>
+        public const int PLAYM4_DEC_VIDEO_ERROR = 4;
+        /// <summary>
+        /// Decode audio data failed.
+        /// </summary>
+        public const int PLAYM4_DEC_AUDIO_ERROR = 5;
+        /// <summary>
+        /// Allocate memory failed.
+        /// </summary>
+        public const int PLAYM4_ALLOC_MEMORY_ERROR = 6;
+        /// <summary>
+        /// Open the file failed.
+        /// </summary>
+        public const int PLAYM4_OPEN_FILE_ERROR = 7;
+        /// <summary>
+        /// Create thread or event failed
+        /// </summary>
+        public const int PLAYM4_CREATE_OBJ_ERROR = 8;
+        /// <summary>
+        /// Create DirectDraw object failed.
+        /// </summary>
+        public const int PLAYM4_CREATE_DDRAW_ERROR = 9;
+        /// <summary>
+        /// failed when creating off-screen surface.
+        /// </summary>
+        public const int PLAYM4_CREATE_OFFSCREEN_ERROR = 10;
+        /// <summary>
+        /// buffer is overflow
+        /// </summary>
+        public const int PLAYM4_BUF_OVER = 11;
+        /// <summary>
+        /// failed when creating audio device.
+        /// </summary>
+        public const int PLAYM4_CREATE_SOUND_ERROR = 12;
+        /// <summary>
+        /// Set volume failed
+        /// </summary>
+        public const int PLAYM4_SET_VOLUME_ERROR = 13;
+        /// <summary>
+        /// The function only support play file.
+        /// </summary>
+        public const int PLAYM4_SUPPORT_FILE_ONLY = 14;
+        /// <summary>
+        /// The function only support play stream.
+        /// </summary>
+        public const int PLAYM4_SUPPORT_STREAM_ONLY = 15;
+        /// <summary>
+        /// System not support.
+        /// </summary>
+        public const int PLAYM4_SYS_NOT_SUPPORT = 16;
+        /// <summary>
+        /// No file header.
+        /// </summary>
+        public const int PLAYM4_FILEHEADER_UNKNOWN = 17;
+        /// <summary>
+        /// The version of decoder and encoder is not adapted.  
+        /// </summary>
+        public const int PLAYM4_VERSION_INCORRECT = 18;
+        /// <summary>
+        /// Initialize decoder failed.
+        /// </summary>
+        public const int PLAYM4_INIT_DECODER_ERROR = 19;
+        /// <summary>
+        /// The file data is unknown.
+        /// </summary>
+        public const int PLAYM4_CHECK_FILE_ERROR = 20;
+        /// <summary>
+        /// Initialize multimedia clock failed.
+        /// </summary>
+        public const int PLAYM4_INIT_TIMER_ERROR = 21;
+        /// <summary>
+        /// Blt failed.
+        /// </summary>
+        public const int PLAYM4_BLT_ERROR = 22;
+        /// <summary>
+        /// Update failed.
+        /// </summary>
+        public const int PLAYM4_UPDATE_ERROR = 23;
+        /// <summary>
+        /// openfile error, streamtype is multi
+        /// </summary>
+        public const int PLAYM4_OPEN_FILE_ERROR_MULTI = 24;
+        /// <summary>
+        /// openfile error, streamtype is video
+        /// </summary>
+        public const int PLAYM4_OPEN_FILE_ERROR_VIDEO = 25;
+        /// <summary>
+        /// JPEG compress error
+        /// </summary>
+        public const int PLAYM4_JPEG_COMPRESS_ERROR = 26;
+        /// <summary>
+        /// Don't support the version of this file.
+        /// </summary>
+        public const int PLAYM4_EXTRACT_NOT_SUPPORT = 27;
+        /// <summary>
+        /// extract video data failed
+        /// </summary>
+        public const int PLAYM4_EXTRACT_DATA_ERROR = 28;
+        /// <summary>
+        /// Secret key is error //add 20071218
+        /// </summary>
+        public const int PLAYM4_SECRET_KEY_ERROR = 29;
 
-        //Max display regions.
+        /// <summary>
+        /// Max display regions.
+        /// </summary>
         public const int MAX_DISPLAY_WND = 4;
 
-        //Display type
+        /// <summary>
+        /// Display NORMAL
+        /// </summary>
         public const int DISPLAY_NORMAL = 1;
+        /// <summary>
+        /// Display QUARTER
+        /// </summary>
         public const int DISPLAY_QUARTER = 2;
 
         //Display buffers
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MAX_DIS_FRAMES = 50;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MIN_DIS_FRAMES = 1;
 
         //Locate by
@@ -176,29 +297,85 @@ namespace CHCNetSDK
         public const int T_RGB32 = 7;
 
         //capability
+        /// <summary>
+        /// 
+        /// </summary>
         public const int SUPPORT_DDRAW = 1;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int SUPPORT_BLT = 2;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int SUPPORT_BLTFOURCC = 4;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int SUPPORT_BLTSHRINKX = 8;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int SUPPORT_BLTSHRINKY = 16;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int SUPPORT_BLTSTRETCHX = 32;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int SUPPORT_BLTSTRETCHY = 64;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int SUPPORT_SSE = 128;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int SUPPORT_MMX = 256;
 
         // 以下宏定义用于HIK_MEDIAINFO结构
-        public const int FOURCC_HKMI = 0x484B4D49;  // "HKMI" HIK_MEDIAINFO结构标记
-                                                    // 系统封装格式
-        public const int SYSTEM_NULL = 0;// 没有系统层，纯音频流或视频流	
-        public const int SYSTEM_HIK = 1;// 海康文件层
-        public const int SYSTEM_MPEG2_PS = 2;// PS封装
-        public const int SYSTEM_MPEG2_TS = 3;// TS封装
-        public const int SYSTEM_RTP = 4;// rtp封装
+        /// <summary>
+        /// "HKMI" HIK_MEDIAINFO结构标记
+        /// 
+        /// </summary>
+        public const int FOURCC_HKMI = 0x484B4D49;
+
+        // 系统封装格式
+        /// <summary>
+        /// 没有系统层，纯音频流或视频流	
+        /// </summary>                  
+        public const int SYSTEM_NULL = 0;
+        /// <summary>
+        /// 海康文件层
+        /// </summary>
+        public const int SYSTEM_HIK = 1;
+        /// <summary>
+        /// PS封装
+        /// </summary>
+        public const int SYSTEM_MPEG2_PS = 2;
+        /// <summary>
+        /// TS封装
+        /// </summary>
+        public const int SYSTEM_MPEG2_TS = 3;
+        /// <summary>
+        /// rtp封装
+        /// </summary>
+        public const int SYSTEM_RTP = 4;
 
         // 视频编码类型
-        public const int VIDEO_NULL = 0;// 没有视频
-        public const int VIDEO_H264 = 1;// 标准H.264和海康H.264都可以用这个定义
-        public const int VIDEO_MPEG4 = 3;// 标准MPEG4
+        /// <summary>
+        /// 没有视频
+        /// </summary>
+        public const int VIDEO_NULL = 0;
+        /// <summary>
+        /// 标准H.264和海康H.264都可以用这个定义
+        /// </summary>
+        public const int VIDEO_H264 = 1;
+        /// <summary>
+        /// 标准MPEG4
+        /// </summary>
+        public const int VIDEO_MPEG4 = 3;
 
         // 音频编码类型
         /// <summary>
@@ -240,18 +417,47 @@ namespace CHCNetSDK
         /// </summary>
         public const int AUDIO_G729 = 29328;
 
-        //Frame position
+
+        /// <summary>
+        /// Frame position
+        /// </summary>
         public struct SYSTEMTIME
         {
+            /// <summary>
+            /// 
+            /// </summary>
             public ushort wYear;
+            /// <summary>
+            /// 
+            /// </summary>
             public ushort wMonth;
+            /// <summary>
+            /// 
+            /// </summary>
             public ushort wDayOfWeek;
+            /// <summary>
+            /// 
+            /// </summary>
             public ushort wDay;
+            /// <summary>
+            /// 
+            /// </summary>
             public ushort wHour;
+            /// <summary>
+            /// 
+            /// </summary>
             public ushort wMinute;
+            /// <summary>
+            /// 
+            /// </summary>
             public ushort wSecond;
+            /// <summary>
+            /// 
+            /// </summary>
             public ushort wMilliseconds;
-
+            /// <summary>
+            /// 
+            /// </summary>
             public void Init()
             {
                 wYear = 0;
@@ -265,16 +471,42 @@ namespace CHCNetSDK
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public struct FRAME_POS
         {
+            /// <summary>
+            /// 
+            /// </summary>
             public int nFilePos;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nFrameNum;
+            /// <summary>
+            ///  
+            /// </summary>
             public int nFrameTime;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nErrorFrameNum;
+            /// <summary>
+            /// 
+            /// </summary>
             public IntPtr pErrorTime;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nErrorLostFrameNum;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nErrorFrameSize;
-
+            /// <summary>
+            /// 
+            /// </summary>
             public void Init()
             {
                 nFilePos = 0;
@@ -287,16 +519,38 @@ namespace CHCNetSDK
             }
         }
 
-        //Frame Info
+        /// <summary>
+        /// Frame Info
+        /// </summary>
         public struct FRAME_INFO
         {
+            /// <summary>
+            /// 
+            /// </summary>
             public int nWidth;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nHeight;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nStamp;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nType;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nFrameRate;
+            /// <summary>
+            /// 
+            /// </summary>
             public uint dwFrameNum;
-
+            /// <summary>
+            /// 
+            /// </summary>
             public void Init()
             {
                 nWidth = 0;
@@ -308,16 +562,35 @@ namespace CHCNetSDK
             }
         }
 
-        //Frame
+        /// <summary>
+        /// Frame
+        /// </summary>
         public struct FRAME_TYPE
         {
+            /// <summary>
+            /// 
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.LPStr)]
             public string pDataBuf;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nSize;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nFrameNum;
+            /// <summary>
+            /// 
+            /// </summary>
             public bool bIsAudio;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nReserved;
-
+            /// <summary>
+            /// 
+            /// </summary>
             public void Init()
             {
                 pDataBuf = "";
@@ -328,14 +601,32 @@ namespace CHCNetSDK
             }
         }
 
-        //Watermark Info	//add by gb 080119
+        /// <summary>
+        /// Watermark Info
+        /// add by gb 080119
+        /// </summary>
         public struct WATERMARK_INFO
         {
+            /// <summary>
+            /// 
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.LPStr)]
             public string pDataBuf;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nSize;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nFrameNum;
+            /// <summary>
+            /// 
+            /// </summary>
             public bool bRsaRight;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nReserved;
             /// <summary>
             /// 

@@ -53,6 +53,10 @@ namespace CHCNetSDK
             /// </summary>
             public Process Process = null;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<VideoPort> Ports = new List<VideoPort>();
 
         private void LogForError(string str)
@@ -195,7 +199,7 @@ namespace CHCNetSDK
                 Ports.Add(videoport);
                 var run = true;
                 var filename = $"HCNVR{(run ? "_" : "")}{(run ? Process.GetCurrentProcess().Id.ToString() : "")}_{Ports.Count}";
-                int portid=Ports.Count-1;
+                int portid = Ports.Count - 1;
                 Task.Factory.StartNew(() =>
                 {
                     //创建或者打开共享内存 32MB

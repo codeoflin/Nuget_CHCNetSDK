@@ -695,98 +695,338 @@ namespace CHCNetSDK
         /// 卡权限最大计划个数
         /// </summary>
         public const int MAX_CARD_RIGHT_PLAN_NUM = 4;
-        public const int MAX_GROUP_NUM_128 = 128; //最大群组数
-        public const int MAX_CARD_READER_NUM = 64;  //最大读卡器数
-        public const int MAX_SNEAK_PATH_NODE = 8;   //最大后续读卡器数
-        public const int MAX_MULTI_DOOR_INTERLOCK_GROUP = 8;   //最大多门互锁组数
-        public const int MAX_INTER_LOCK_DOOR_NUM = 8;   //一个多门互锁组中最大互锁门数
-        public const int MAX_CASE_SENSOR_NUM = 8;  //最大case sensor触发器数
-        public const int MAX_DOOR_NUM_256 = 256; //最大门数
-        public const int MAX_READER_ROUTE_NUM = 16;  //最大刷卡循序路径 
-        public const int MAX_FINGER_PRINT_NUM = 10;  //最大指纹个数
-        public const int MAX_CARD_READER_NUM_512 = 512; //最大读卡器数
-        public const int NET_SDK_MULTI_CARD_GROUP_NUM_20 = 20;   //单门最大多重卡组数
-        public const int CARD_PASSWORD_LEN = 8;   //卡密码长度
-        public const int MAX_DOOR_CODE_LEN = 8; //房间代码长度
-        public const int MAX_LOCK_CODE_LEN = 8; //锁代码长度
-
-        public const int MAX_NOTICE_NUMBER_LEN = 32;   //公告编号最大长度
-        public const int MAX_NOTICE_THEME_LEN = 64;   //公告主题最大长度
-        public const int MAX_NOTICE_DETAIL_LEN = 1024; //公告详情最大长度
-        public const int MAX_NOTICE_PIC_NUM = 6;    //公告信息最大图片数量
-        public const int MAX_DEV_NUMBER_LEN = 32;   //设备编号最大长度
-        public const int LOCK_NAME_LEN = 32;  //锁名称
-
-        public const int NET_SDK_EMPLOYEE_NO_LEN = 32;  //工号长度
-
-        public const int VCA_MAX_POLYGON_POINT_NUM = 10;//检测区域最多支持10个点的多边形
-        public const int MAX_RULE_NUM = 8;//最多规则条数
-        public const int MAX_TARGET_NUM = 30;//最多目标个数
-        public const int MAX_CALIB_PT = 6;//最大标定点个数
-        public const int MIN_CALIB_PT = 4;//最小标定点个数
-        public const int MAX_TIMESEGMENT_2 = 2;//最大时间段数
-        public const int MAX_LICENSE_LEN = 16;//车牌号最大长度
-        public const int MAX_PLATE_NUM = 3;//车牌个数
-        public const int MAX_MASK_REGION_NUM = 4;//最多四个屏蔽区域
-        public const int MAX_SEGMENT_NUM = 6;//摄像机标定最大样本线数目
-        public const int MIN_SEGMENT_NUM = 3;//摄像机标定最小样本线数目  
-        public const int MAX_CATEGORY_LEN = 8;       //车牌附加信息最大字符
-        public const int SERIAL_NO_LEN = 16;      //泊车位编号
+        /// <summary>
+        /// 最大群组数
+        /// </summary>
+        public const int MAX_GROUP_NUM_128 = 128;
+        /// <summary>
+        /// 最大读卡器数
+        /// </summary>
+        public const int MAX_CARD_READER_NUM = 64;
+        /// <summary>
+        /// 最大后续读卡器数
+        /// </summary>
+        public const int MAX_SNEAK_PATH_NODE = 8;
+        /// <summary>
+        /// 最大多门互锁组数
+        /// </summary>
+        public const int MAX_MULTI_DOOR_INTERLOCK_GROUP = 8;
+        /// <summary>
+        /// 一个多门互锁组中最大互锁门数
+        /// </summary>
+        public const int MAX_INTER_LOCK_DOOR_NUM = 8;
+        /// <summary>
+        /// 最大case sensor触发器数
+        /// </summary>
+        public const int MAX_CASE_SENSOR_NUM = 8;
+        /// <summary>
+        /// 最大门数
+        /// </summary>
+        public const int MAX_DOOR_NUM_256 = 256;
+        /// <summary>
+        /// 最大刷卡循序路径
+        /// </summary>
+        public const int MAX_READER_ROUTE_NUM = 16;
+        /// <summary>
+        /// 最大指纹个数
+        /// </summary>
+        public const int MAX_FINGER_PRINT_NUM = 10;
+        /// <summary>
+        /// 最大读卡器数
+        /// </summary>
+        public const int MAX_CARD_READER_NUM_512 = 512;
+        /// <summary>
+        /// 单门最大多重卡组数
+        /// </summary>
+        public const int NET_SDK_MULTI_CARD_GROUP_NUM_20 = 20;
+        /// <summary>
+        /// 卡密码长度
+        /// </summary>
+        public const int CARD_PASSWORD_LEN = 8;
+        /// <summary>
+        /// 房间代码长度
+        /// </summary>
+        public const int MAX_DOOR_CODE_LEN = 8;
+        /// <summary>
+        /// 锁代码长度
+        /// </summary>
+        public const int MAX_LOCK_CODE_LEN = 8;
+        /// <summary>
+        /// 公告编号最大长度
+        /// </summary>
+        public const int MAX_NOTICE_NUMBER_LEN = 32;
+        /// <summary>
+        /// 公告主题最大长度
+        /// </summary>
+        public const int MAX_NOTICE_THEME_LEN = 64;
+        /// <summary>
+        /// 公告详情最大长度
+        /// </summary>
+        public const int MAX_NOTICE_DETAIL_LEN = 1024;
+        /// <summary>
+        /// 公告信息最大图片数量
+        /// </summary>
+        public const int MAX_NOTICE_PIC_NUM = 6;
+        /// <summary>
+        /// 设备编号最大长度
+        /// </summary>
+        public const int MAX_DEV_NUMBER_LEN = 32;
+        /// <summary>
+        /// 锁名称
+        /// </summary>
+        public const int LOCK_NAME_LEN = 32;
+        /// <summary>
+        /// 工号长度
+        /// </summary>
+        public const int NET_SDK_EMPLOYEE_NO_LEN = 32;
+        /// <summary>
+        /// 检测区域最多支持10个点的多边形
+        /// </summary>
+        public const int VCA_MAX_POLYGON_POINT_NUM = 10;
+        /// <summary>
+        /// 最多规则条数
+        /// </summary>
+        public const int MAX_RULE_NUM = 8;
+        /// <summary>
+        /// 最多目标个数
+        /// </summary>
+        public const int MAX_TARGET_NUM = 30;
+        /// <summary>
+        /// 最大标定点个数
+        /// </summary>
+        public const int MAX_CALIB_PT = 6;
+        /// <summary>
+        /// 最小标定点个数
+        /// </summary>
+        public const int MIN_CALIB_PT = 4;
+        /// <summary>
+        /// 最大时间段数
+        /// </summary>
+        public const int MAX_TIMESEGMENT_2 = 2;
+        /// <summary>
+        /// 车牌号最大长度
+        /// </summary>
+        public const int MAX_LICENSE_LEN = 16;
+        /// <summary>
+        /// 车牌个数
+        /// </summary>
+        public const int MAX_PLATE_NUM = 3;
+        /// <summary>
+        /// 最多四个屏蔽区域
+        /// </summary>
+        public const int MAX_MASK_REGION_NUM = 4;
+        /// <summary>
+        /// 摄像机标定最大样本线数目
+        /// </summary>
+        public const int MAX_SEGMENT_NUM = 6;
+        /// <summary>
+        /// 摄像机标定最小样本线数目
+        /// </summary>
+        public const int MIN_SEGMENT_NUM = 3;
+        /// <summary>
+        /// 车牌附加信息最大字符
+        /// </summary>
+        public const int MAX_CATEGORY_LEN = 8;
+        /// <summary>
+        /// 泊车位编号
+        /// </summary>
+        public const int SERIAL_NO_LEN = 16;
 
         //码流连接方式
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NORMALCONNECT = 1;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MEDIACONNECT = 2;
 
-        //设备型号(大类)
+        #region 设备型号(大类)
+        /// <summary>
+        /// 
+        /// </summary>
         public const int HCDVR = 1;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MEDVR = 2;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int PCDVR = 3;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int HC_9000 = 4;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int HF_I = 5;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int PCNVR = 6;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int HC_76NVR = 8;
-
+        #endregion 
         //NVR类型
+        /// <summary>
+        /// 
+        /// </summary>
         public const int DS8000HC_NVR = 0;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int DS9000HC_NVR = 1;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int DS8000ME_NVR = 2;
 
-        /*******************全局错误码 begin**********************/
-        public const int NET_DVR_NOERROR = 0;//没有错误
-        public const int NET_DVR_PASSWORD_ERROR = 1;//用户名密码错误
-        public const int NET_DVR_NOENOUGHPRI = 2;//权限不足
-        public const int NET_DVR_NOINIT = 3;//没有初始化
-        public const int NET_DVR_CHANNEL_ERROR = 4;//通道号错误
-        public const int NET_DVR_OVER_MAXLINK = 5;//连接到DVR的客户端个数超过最大
-        public const int NET_DVR_VERSIONNOMATCH = 6;//版本不匹配
-        public const int NET_DVR_NETWORK_FAIL_CONNECT = 7;//连接服务器失败
-        public const int NET_DVR_NETWORK_SEND_ERROR = 8;//向服务器发送失败
-        public const int NET_DVR_NETWORK_RECV_ERROR = 9;//从服务器接收数据失败
-        public const int NET_DVR_NETWORK_RECV_TIMEOUT = 10;//从服务器接收数据超时
-        public const int NET_DVR_NETWORK_ERRORDATA = 11;//传送的数据有误
-        public const int NET_DVR_ORDER_ERROR = 12;//调用次序错误
-        public const int NET_DVR_OPERNOPERMIT = 13;//无此权限
-        public const int NET_DVR_COMMANDTIMEOUT = 14;//DVR命令执行超时
-        public const int NET_DVR_ERRORSERIALPORT = 15;//串口号错误
-        public const int NET_DVR_ERRORALARMPORT = 16;//报警端口错误
-        public const int NET_DVR_PARAMETER_ERROR = 17;//参数错误
-        public const int NET_DVR_CHAN_EXCEPTION = 18;//服务器通道处于错误状态
-        public const int NET_DVR_NODISK = 19;//没有硬盘
-        public const int NET_DVR_ERRORDISKNUM = 20;//硬盘号错误
-        public const int NET_DVR_DISK_FULL = 21;//服务器硬盘满
-        public const int NET_DVR_DISK_ERROR = 22;//服务器硬盘出错
-        public const int NET_DVR_NOSUPPORT = 23;//服务器不支持
-        public const int NET_DVR_BUSY = 24;//服务器忙
-        public const int NET_DVR_MODIFY_FAIL = 25;//服务器修改不成功
-        public const int NET_DVR_PASSWORD_FORMAT_ERROR = 26;//密码输入格式不正确
-        public const int NET_DVR_DISK_FORMATING = 27;//硬盘正在格式化，不能启动操作
-        public const int NET_DVR_DVRNORESOURCE = 28;//DVR资源不足
-        public const int NET_DVR_DVROPRATEFAILED = 29;//DVR操作失败
-        public const int NET_DVR_OPENHOSTSOUND_FAIL = 30;//打开PC声音失败
-        public const int NET_DVR_DVRVOICEOPENED = 31;//服务器语音对讲被占用
-        public const int NET_DVR_TIMEINPUTERROR = 32;//时间输入不正确
-        public const int NET_DVR_NOSPECFILE = 33;//回放时服务器没有指定的文件
-        public const int NET_DVR_CREATEFILE_ERROR = 34;//创建文件出错
+        #region 全局错误码
+        /// <summary>
+        /// 没有错误
+        /// </summary>
+        public const int NET_DVR_NOERROR = 0;
+        /// <summary>
+        /// 用户名密码错误
+        /// </summary>
+        public const int NET_DVR_PASSWORD_ERROR = 1;
+        /// <summary>
+        /// 权限不足
+        /// </summary>
+        public const int NET_DVR_NOENOUGHPRI = 2;
+        /// <summary>
+        /// 没有初始化
+        /// </summary>
+        public const int NET_DVR_NOINIT = 3;
+        /// <summary>
+        /// 通道号错误
+        /// </summary>
+        public const int NET_DVR_CHANNEL_ERROR = 4;
+        /// <summary>
+        /// 连接到DVR的客户端个数超过最大
+        /// </summary>
+        public const int NET_DVR_OVER_MAXLINK = 5;
+        /// <summary>
+        /// 版本不匹配
+        /// </summary>
+        public const int NET_DVR_VERSIONNOMATCH = 6;
+        /// <summary>
+        /// 连接服务器失败
+        /// </summary>
+        public const int NET_DVR_NETWORK_FAIL_CONNECT = 7;
+        /// <summary>
+        /// 向服务器发送失败
+        /// </summary>
+        public const int NET_DVR_NETWORK_SEND_ERROR = 8;
+        /// <summary>
+        /// 从服务器接收数据失败
+        /// </summary>
+        public const int NET_DVR_NETWORK_RECV_ERROR = 9;
+        /// <summary>
+        /// 从服务器接收数据超时
+        /// </summary>
+        public const int NET_DVR_NETWORK_RECV_TIMEOUT = 10;
+        /// <summary>
+        /// 传送的数据有误
+        /// </summary>
+        public const int NET_DVR_NETWORK_ERRORDATA = 11;
+        /// <summary>
+        /// 调用次序错误
+        /// </summary>
+        public const int NET_DVR_ORDER_ERROR = 12;
+        /// <summary>
+        /// 无此权限
+        /// </summary>
+        public const int NET_DVR_OPERNOPERMIT = 13;
+        /// <summary>
+        /// DVR命令执行超时
+        /// </summary>
+        public const int NET_DVR_COMMANDTIMEOUT = 14;
+        /// <summary>
+        /// 串口号错误
+        /// </summary>
+        public const int NET_DVR_ERRORSERIALPORT = 15;
+        /// <summary>
+        /// 报警端口错误
+        /// </summary>
+        public const int NET_DVR_ERRORALARMPORT = 16;
+        /// <summary>
+        /// 参数错误
+        /// </summary>
+        public const int NET_DVR_PARAMETER_ERROR = 17;
+        /// <summary>
+        /// 服务器通道处于错误状态
+        /// </summary>
+        public const int NET_DVR_CHAN_EXCEPTION = 18;
+        /// <summary>
+        /// 没有硬盘
+        /// </summary>
+        public const int NET_DVR_NODISK = 19;
+        /// <summary>
+        /// 硬盘号错误
+        /// </summary>
+        public const int NET_DVR_ERRORDISKNUM = 20;
+        /// <summary>
+        /// 服务器硬盘满
+        /// </summary>
+        public const int NET_DVR_DISK_FULL = 21;
+        /// <summary>
+        /// 服务器硬盘出错
+        /// </summary>
+        public const int NET_DVR_DISK_ERROR = 22;
+        /// <summary>
+        /// 服务器不支持
+        /// </summary>
+        public const int NET_DVR_NOSUPPORT = 23;
+        /// <summary>
+        /// 服务器忙
+        /// </summary>
+        public const int NET_DVR_BUSY = 24;
+        /// <summary>
+        /// 服务器修改不成功
+        /// </summary>
+        public const int NET_DVR_MODIFY_FAIL = 25;
+        /// <summary>
+        /// 密码输入格式不正确
+        /// </summary>
+        public const int NET_DVR_PASSWORD_FORMAT_ERROR = 26;
+        /// <summary>
+        /// 硬盘正在格式化，不能启动操作
+        /// </summary>
+        public const int NET_DVR_DISK_FORMATING = 27;
+        /// <summary>
+        /// DVR资源不足
+        /// </summary>
+        public const int NET_DVR_DVRNORESOURCE = 28;
+        /// <summary>
+        /// DVR操作失败
+        /// </summary>
+        public const int NET_DVR_DVROPRATEFAILED = 29;
+        /// <summary>
+        /// 打开PC声音失败
+        /// </summary>
+        public const int NET_DVR_OPENHOSTSOUND_FAIL = 30;
+        /// <summary>
+        /// 服务器语音对讲被占用
+        /// </summary>
+        public const int NET_DVR_DVRVOICEOPENED = 31;
+        /// <summary>
+        /// 时间输入不正确
+        /// </summary>
+        public const int NET_DVR_TIMEINPUTERROR = 32;
+        /// <summary>
+        /// 回放时服务器没有指定的文件
+        /// </summary>
+        public const int NET_DVR_NOSPECFILE = 33;
+        /// <summary>
+        /// 创建文件出错
+        /// </summary>
+        public const int NET_DVR_CREATEFILE_ERROR = 34;
         public const int NET_DVR_FILEOPENFAIL = 35;//打开文件出错
         public const int NET_DVR_OPERNOTFINISH = 36; //上次的操作还没有完成
         public const int NET_DVR_GETPLAYTIMEFAIL = 37;//获取当前播放的时间出错
@@ -840,36 +1080,123 @@ namespace CHCNetSDK
         public const int NET_DVR_CONVERT_SDK_ERROR = 85;//加载转码库失败
         public const int NET_DVR_IPC_COUNT_OVERFLOW = 86;//超出最大的ip接入通道数
 
-        public const int NET_PLAYM4_NOERROR = 500;//no error
-        public const int NET_PLAYM4_PARA_OVER = 501;//input parameter is invalid
-        public const int NET_PLAYM4_ORDER_ERROR = 502;//The order of the function to be called is error
-        public const int NET_PLAYM4_TIMER_ERROR = 503;//Create multimedia clock failed
-        public const int NET_PLAYM4_DEC_VIDEO_ERROR = 504;//Decode video data failed
-        public const int NET_PLAYM4_DEC_AUDIO_ERROR = 505;//Decode audio data failed
-        public const int NET_PLAYM4_ALLOC_MEMORY_ERROR = 506;//Allocate memory failed
-        public const int NET_PLAYM4_OPEN_FILE_ERROR = 507;//Open the file failed
-        public const int NET_PLAYM4_CREATE_OBJ_ERROR = 508;//Create thread or event failed
-        public const int NET_PLAYM4_CREATE_DDRAW_ERROR = 509;//Create DirectDraw object failed
-        public const int NET_PLAYM4_CREATE_OFFSCREEN_ERROR = 510;//failed when creating off-screen surface
-        public const int NET_PLAYM4_BUF_OVER = 511;//buffer is overflow
-        public const int NET_PLAYM4_CREATE_SOUND_ERROR = 512;//failed when creating audio device
-        public const int NET_PLAYM4_SET_VOLUME_ERROR = 513;//Set volume failed
-        public const int NET_PLAYM4_SUPPORT_FILE_ONLY = 514;//The function only support play file
-        public const int NET_PLAYM4_SUPPORT_STREAM_ONLY = 515;//The function only support play stream
-        public const int NET_PLAYM4_SYS_NOT_SUPPORT = 516;//System not support
-        public const int NET_PLAYM4_FILEHEADER_UNKNOWN = 517;//No file header
-        public const int NET_PLAYM4_VERSION_INCORRECT = 518;//The version of decoder and encoder is not adapted
-        public const int NET_PALYM4_INIT_DECODER_ERROR = 519;//Initialize decoder failed
-        public const int NET_PLAYM4_CHECK_FILE_ERROR = 520;//The file data is unknown
-        public const int NET_PLAYM4_INIT_TIMER_ERROR = 521;//Initialize multimedia clock failed
-        public const int NET_PLAYM4_BLT_ERROR = 522;//Blt failed
-        public const int NET_PLAYM4_UPDATE_ERROR = 523;//Update failed
-        public const int NET_PLAYM4_OPEN_FILE_ERROR_MULTI = 524;//openfile error, streamtype is multi
-        public const int NET_PLAYM4_OPEN_FILE_ERROR_VIDEO = 525;//openfile error, streamtype is video
-        public const int NET_PLAYM4_JPEG_COMPRESS_ERROR = 526;//JPEG compress error
-        public const int NET_PLAYM4_EXTRACT_NOT_SUPPORT = 527;//Don't support the version of this file
-        public const int NET_PLAYM4_EXTRACT_DATA_ERROR = 528;//extract video data failed
-        /*******************全局错误码 end**********************/
+        /// <summary>
+        /// no error
+        /// </summary>
+        public const int NET_PLAYM4_NOERROR = 500;
+        /// <summary>
+        /// input parameter is invalid
+        /// </summary>
+        public const int NET_PLAYM4_PARA_OVER = 501;
+        /// <summary>
+        /// The order of the function to be called is error
+        /// </summary>
+        public const int NET_PLAYM4_ORDER_ERROR = 502;
+        /// <summary>
+        /// Create multimedia clock failed
+        /// </summary>
+        public const int NET_PLAYM4_TIMER_ERROR = 503;
+        /// <summary>
+        /// Decode video data failed
+        /// </summary>
+        public const int NET_PLAYM4_DEC_VIDEO_ERROR = 504;
+        /// <summary>
+        /// Decode audio data failed
+        /// </summary>
+        public const int NET_PLAYM4_DEC_AUDIO_ERROR = 505;
+        /// <summary>
+        /// Allocate memory failed
+        /// </summary>
+        public const int NET_PLAYM4_ALLOC_MEMORY_ERROR = 506;
+        /// <summary>
+        /// Open the file failed
+        /// </summary>
+        public const int NET_PLAYM4_OPEN_FILE_ERROR = 507;
+        /// <summary>
+        /// Create thread or event failed
+        /// </summary>
+        public const int NET_PLAYM4_CREATE_OBJ_ERROR = 508;
+        /// <summary>
+        /// Create DirectDraw object failed
+        /// </summary>
+        public const int NET_PLAYM4_CREATE_DDRAW_ERROR = 509;
+        /// <summary>
+        /// failed when creating off-screen surface
+        /// </summary>
+        public const int NET_PLAYM4_CREATE_OFFSCREEN_ERROR = 510;
+        /// <summary>
+        /// buffer is overflow
+        /// </summary>
+        public const int NET_PLAYM4_BUF_OVER = 511;
+        /// <summary>
+        /// failed when creating audio device
+        /// </summary>
+        public const int NET_PLAYM4_CREATE_SOUND_ERROR = 512;
+        /// <summary>
+        /// Set volume failed
+        /// </summary>
+        public const int NET_PLAYM4_SET_VOLUME_ERROR = 513;
+        /// <summary>
+        /// The function only support play file
+        /// </summary>
+        public const int NET_PLAYM4_SUPPORT_FILE_ONLY = 514;
+        /// <summary>
+        /// The function only support play stream
+        /// </summary>
+        public const int NET_PLAYM4_SUPPORT_STREAM_ONLY = 515;
+        /// <summary>
+        /// System not support
+        /// </summary>
+        public const int NET_PLAYM4_SYS_NOT_SUPPORT = 516;
+        /// <summary>
+        /// No file header
+        /// </summary>
+        public const int NET_PLAYM4_FILEHEADER_UNKNOWN = 517;
+        /// <summary>
+        /// The version of decoder and encoder is not adapted
+        /// </summary>
+        public const int NET_PLAYM4_VERSION_INCORRECT = 518;
+        /// <summary>
+        /// Initialize decoder failed
+        /// </summary>
+        public const int NET_PALYM4_INIT_DECODER_ERROR = 519;
+        /// <summary>
+        /// The file data is unknown
+        /// </summary>
+        public const int NET_PLAYM4_CHECK_FILE_ERROR = 520;
+        /// <summary>
+        /// Initialize multimedia clock failed
+        /// </summary>
+        public const int NET_PLAYM4_INIT_TIMER_ERROR = 521;
+        /// <summary>
+        /// Blt failed
+        /// </summary>
+        public const int NET_PLAYM4_BLT_ERROR = 522;
+        /// <summary>
+        /// Update failed
+        /// </summary>
+        public const int NET_PLAYM4_UPDATE_ERROR = 523;
+        /// <summary>
+        /// openfile error, streamtype is multi
+        /// </summary>
+        public const int NET_PLAYM4_OPEN_FILE_ERROR_MULTI = 524;
+        /// <summary>
+        /// openfile error, streamtype is video
+        /// </summary>
+        public const int NET_PLAYM4_OPEN_FILE_ERROR_VIDEO = 525;
+        /// <summary>
+        /// JPEG compress error
+        /// </summary>
+        public const int NET_PLAYM4_JPEG_COMPRESS_ERROR = 526;
+        /// <summary>
+        /// Don't support the version of this file
+        /// </summary>
+        public const int NET_PLAYM4_EXTRACT_NOT_SUPPORT = 527;
+        /// <summary>
+        /// extract video data failed
+        /// </summary>
+        public const int NET_PLAYM4_EXTRACT_DATA_ERROR = 528;
+        #endregion 
 
         /*************************************************
         NET_DVR_IsSupport()返回值
@@ -957,9 +1284,18 @@ namespace CHCNetSDK
         public const int NET_DVR_PLAYSETTIME = 26;//按绝对时间定位
         public const int NET_DVR_PLAYGETTOTALLEN = 27;//获取按时间回放对应时间段内的所有文件的总长度
         public const int NET_DVR_PLAY_FORWARD = 29;//倒放切换为正放
-        public const int NET_DVR_PLAY_REVERSE = 30;//正放切换为倒放
-        public const int NET_DVR_SET_TRANS_TYPE = 32;//设置转封装类型
-        public const int NET_DVR_PLAY_CONVERT = 33;//正放切换为倒放
+        /// <summary>
+        /// 正放切换为倒放
+        /// </summary>
+        public const int NET_DVR_PLAY_REVERSE = 30;
+        /// <summary>
+        /// 设置转封装类型
+        /// </summary>
+        public const int NET_DVR_SET_TRANS_TYPE = 32;
+        /// <summary>
+        /// 正放切换为倒放
+        /// </summary>
+        public const int NET_DVR_PLAY_CONVERT = 33;
 
         //远程按键定义如下：
         /* key value send to CONFIG program */
@@ -1783,20 +2119,55 @@ namespace CHCNetSDK
         public const int MINOR_VCA_ALARM_STOP = 8;/*智能报警停止*/
 
         /* 异常 */
-        //主类型
+        /// <summary>
+        /// 主类型
+        /// </summary>
         public const int MAJOR_EXCEPTION = 2;
         //次类型
-        public const int MINOR_VI_LOST = 33;/* 视频信号丢失 */
-        public const int MINOR_ILLEGAL_ACCESS = 34;/* 非法访问 */
-        public const int MINOR_HD_FULL = 35;/* 硬盘满 */
-        public const int MINOR_HD_ERROR = 36;/* 硬盘错误 */
-        public const int MINOR_DCD_LOST = 37;/* MODEM 掉线(保留不使用) */
-        public const int MINOR_IP_CONFLICT = 38;/* IP地址冲突 */
-        public const int MINOR_NET_BROKEN = 39;/* 网络断开*/
-        public const int MINOR_REC_ERROR = 40;/* 录像出错 */
-        public const int MINOR_IPC_NO_LINK = 41;/* IPC连接异常 */
-        public const int MINOR_VI_EXCEPTION = 42;/* 视频输入异常(只针对模拟通道) */
-        public const int MINOR_IPC_IP_CONFLICT = 43;/*ipc ip 地址 冲突*/
+        /// <summary>
+        /// 视频信号丢失
+        /// </summary>
+        public const int MINOR_VI_LOST = 33;
+        /// <summary>
+        /// 非法访问
+        /// </summary>
+        public const int MINOR_ILLEGAL_ACCESS = 34;
+        /// <summary>
+        /// 硬盘满
+        /// </summary>
+        public const int MINOR_HD_FULL = 35;
+        /// <summary>
+        /// 硬盘错误
+        /// </summary>
+        public const int MINOR_HD_ERROR = 36;
+        /// <summary>
+        /// MODEM 掉线(保留不使用)
+        /// </summary>
+        public const int MINOR_DCD_LOST = 37;
+        /// <summary>
+        /// IP地址冲突
+        /// </summary>
+        public const int MINOR_IP_CONFLICT = 38;
+        /// <summary>
+        /// 网络断开
+        /// </summary>
+        public const int MINOR_NET_BROKEN = 39;
+        /// <summary>
+        /// 录像出错
+        /// </summary>
+        public const int MINOR_REC_ERROR = 40;
+        /// <summary>
+        /// IPC连接异常
+        /// </summary>
+        public const int MINOR_IPC_NO_LINK = 41;
+        /// <summary>
+        /// 视频输入异常(只针对模拟通道)
+        /// </summary>
+        public const int MINOR_VI_EXCEPTION = 42;
+        /// <summary>
+        /// ipc ip 地址 冲突
+        /// </summary>
+        public const int MINOR_IPC_IP_CONFLICT = 43;
 
         //视频综合平台
         public const int MINOR_FANABNORMAL = 49;/* 视频综合平台：风扇状态异常 */
@@ -1916,24 +2287,72 @@ namespace CHCNetSDK
         /// 远程格式化硬盘
         /// </summary>
         public const int MINOR_REMOTE_FORMAT_HDD = 130;
-        public const int MINOR_REMOTE_STOP = 131;/* 远程关机 */
-        public const int MINOR_REMOTE_LOCKFILE = 132;/* 远程锁定文件 */
-        public const int MINOR_REMOTE_UNLOCKFILE = 133;/* 远程解锁文件 */
-        public const int MINOR_REMOTE_CFGFILE_OUTPUT = 134;/* 远程导出配置文件 */
-        public const int MINOR_REMOTE_CFGFILE_INTPUT = 135;/* 远程导入配置文件 */
-        public const int MINOR_REMOTE_RECFILE_OUTPUT = 136;/* 远程导出录象文件 */
-        public const int MINOR_REMOTE_DVR_ALARM = 137;/* 远程手动清除和触发报警*/
-        public const int MINOR_REMOTE_IPC_ADD = 138;/* 远程添加IPC */
-        public const int MINOR_REMOTE_IPC_DEL = 139;/* 远程删除IPC */
-        public const int MINOR_REMOTE_IPC_SET = 140;/* 远程设置IPC */
-        public const int MINOR_REBOOT_VCA_LIB = 141;/*重启智能库*/
-        public const int MINOR_REMOTE_ADD_NAS = 142;/* 远程添加nas盘*/
-        public const int MINOR_REMOTE_DEL_NAS = 143;/* 远程删除nas盘*/
-        public const int MINOR_REMOTE_SET_NAS = 144;/* 远程设置nas盘*/
+        /// <summary>
+        /// 远程关机
+        /// </summary>
+        public const int MINOR_REMOTE_STOP = 131;
+        /// <summary>
+        /// 远程锁定文件
+        /// </summary>
+        public const int MINOR_REMOTE_LOCKFILE = 132;
+        /// <summary>
+        /// 远程解锁文件
+        /// </summary>
+        public const int MINOR_REMOTE_UNLOCKFILE = 133;
+        /// <summary>
+        /// 远程导出配置文件
+        /// </summary>
+        public const int MINOR_REMOTE_CFGFILE_OUTPUT = 134;
+        /// <summary>
+        /// 远程导入配置文件
+        /// </summary>
+        public const int MINOR_REMOTE_CFGFILE_INTPUT = 135;
+        /// <summary>
+        /// 远程导出录象文件
+        /// </summary>
+        public const int MINOR_REMOTE_RECFILE_OUTPUT = 136;
+        /// <summary>
+        /// 远程手动清除和触发报警
+        /// </summary>
+        public const int MINOR_REMOTE_DVR_ALARM = 137;
+        /// <summary>
+        /// 远程添加IPC
+        /// </summary>
+        public const int MINOR_REMOTE_IPC_ADD = 138;
+        /// <summary>
+        /// 远程删除IPC
+        /// </summary>
+        public const int MINOR_REMOTE_IPC_DEL = 139;
+        /// <summary>
+        /// 远程设置IPC
+        /// </summary>
+        public const int MINOR_REMOTE_IPC_SET = 140;
+        /// <summary>
+        /// 重启智能库
+        /// </summary>
+        public const int MINOR_REBOOT_VCA_LIB = 141;
+        /// <summary>
+        /// 远程添加nas盘
+        /// </summary>
+        public const int MINOR_REMOTE_ADD_NAS = 142;
+        /// <summary>
+        /// 远程删除nas盘
+        /// </summary>
+        public const int MINOR_REMOTE_DEL_NAS = 143;
+        /// <summary>
+        /// 远程设置nas盘
+        /// </summary>
+        public const int MINOR_REMOTE_SET_NAS = 144;
 
         //2009-12-16 增加视频综合平台日志类型
-        public const int MINOR_SUBSYSTEMREBOOT = 160;/*视频综合平台：dm6467 正常重启*/
-        public const int MINOR_MATRIX_STARTTRANSFERVIDEO = 161; /*视频综合平台：矩阵切换开始传输图像*/
+        /// <summary>
+        /// 视频综合平台：dm6467 正常重启
+        /// </summary>
+        public const int MINOR_SUBSYSTEMREBOOT = 160;
+        /// <summary>
+        /// 视频综合平台：矩阵切换开始传输图像
+        /// </summary>
+        public const int MINOR_MATRIX_STARTTRANSFERVIDEO = 161;
         public const int MINOR_MATRIX_STOPTRANSFERVIDEO = 162;  /*视频综合平台：矩阵切换停止传输图像*/
         public const int MINOR_REMOTE_SET_ALLSUBSYSTEM = 163;   /*视频综合平台：设置所有6467子系统信息*/
         public const int MINOR_REMOTE_GET_ALLSUBSYSTEM = 164;   /*视频综合平台：获取所有6467子系统信息*/
@@ -16610,267 +17029,613 @@ namespace CHCNetSDK
         /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern Int32 NET_SDK_RealPlay(int iUserLogID, ref NET_DVR_CLIENTINFO lpDVRClientInfo);
-        /*********************************************************
-        Function:	REALDATACALLBACK
-        Desc:		预览回调
-        Input:	lRealHandle 当前的预览句柄 
-                dwDataType 数据类型
-                pBuffer 存放数据的缓冲区指针 
-                dwBufSize 缓冲区大小 
-                pUser 用户数据 
-        Output:	
-        Return:	void
-        **********************************************************/
+        /// <summary>
+        /// 预览回调
+        /// </summary>
+        /// <param name="lRealHandle">当前的预览句柄</param>
+        /// <param name="dwDataType">数据类型</param>
+        /// <param name="pBuffer">存放数据的缓冲区指针</param>
+        /// <param name="dwBufSize">缓冲区大小</param>
+        /// <param name="pUser">用户数据</param>
         public delegate void REALDATACALLBACK(Int32 lRealHandle, UInt32 dwDataType, IntPtr pBuffer, UInt32 dwBufSize, IntPtr pUser);
-        [DllImport(@"HCNetSDK.dll")]
 
-        /*********************************************************
-        Function:	NET_DVR_RealPlay_V30
-        Desc:		实时预览。
-        Input:	lUserID [in] NET_DVR_Login()或NET_DVR_Login_V30()的返回值 
-                lpClientInfo [in] 预览参数 
-                cbRealDataCallBack [in] 码流数据回调函数 
-                pUser [in] 用户数据 
-                bBlocked [in] 请求码流过程是否阻塞：0－否；1－是 
-        Output:	
-        Return:	1表示失败，其他值作为NET_DVR_StopRealPlay等函数的句柄参数
-        **********************************************************/
+
+        /// <summary>
+        /// 实时预览。
+        /// </summary>
+        /// <param name="iUserID"> NET_DVR_Login()或NET_DVR_Login_V30()的返回值 </param>
+        /// <param name="lpClientInfo">预览参数</param>
+        /// <param name="fRealDataCallBack_V30">码流数据回调函数</param>
+        /// <param name="pUser">用户数据</param>
+        /// <param name="bBlocked">请求码流过程是否阻塞：0－否；1－是 </param>
+        /// <returns>	1表示失败，其他值作为NET_DVR_StopRealPlay等函数的句柄参数</returns>
+        [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_RealPlay_V30(int iUserID, ref NET_DVR_CLIENTINFO lpClientInfo, REALDATACALLBACK fRealDataCallBack_V30, IntPtr pUser, UInt32 bBlocked);
 
-        /*********************************************************
-        Function:	NET_DVR_RealPlay_V40
-        Desc:		实时预览扩展接口。
-        Input:	lUserID [in] NET_DVR_Login()或NET_DVR_Login_V30()的返回值 
-                lpPreviewInfo [in] 预览参数 
-                fRealDataCallBack_V30 [in] 码流数据回调函数 
-                pUser [in] 用户数据 
-        Output:	
-        Return:	1表示失败，其他值作为NET_DVR_StopRealPlay等函数的句柄参数
-        **********************************************************/
+        /// <summary>
+        /// 实时预览扩展接口。
+        /// </summary>
+        /// <param name="iUserID"> NET_DVR_Login()或NET_DVR_Login_V30()的返回值 </param>
+        /// <param name="lpPreviewInfo">预览参数</param>
+        /// <param name="fRealDataCallBack_V30">码流数据回调函数</param>
+        /// <param name="pUser">用户数据</param>
+        /// <returns>1表示失败，其他值作为NET_DVR_StopRealPlay等函数的句柄参数</returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_RealPlay_V40(int iUserID, ref NET_DVR_PREVIEWINFO lpPreviewInfo, REALDATACALLBACK fRealDataCallBack_V30, IntPtr pUser);
 
+        /// <summary>
+        /// 实时预览扩展接口。
+        /// </summary>
+        /// <param name="iUserID"> NET_DVR_Login()或NET_DVR_Login_V30()的返回值 </param>
+        /// <param name="lpPreviewInfo">预览参数</param>
+        /// <param name="fRealDataCallBack_V30">码流数据回调函数</param>
+        /// <param name="pUser">用户数据</param>
+        /// <returns>1表示失败，其他值作为NET_DVR_StopRealPlay等函数的句柄参数</returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_RealPlay_V40(int iUserID, ref NET_DVR_PREVIEWINFO lpPreviewInfo, IntPtr fRealDataCallBack_V30, IntPtr pUser);
 
         // [DllImport(@"HCNetSDK.dll")]
         // public static extern int NET_DVR_GetRealPlayerIndex(int lRealHandle);
-        /*********************************************************
-        Function:	NET_DVR_StopRealPlay
-        Desc:		停止预览。
-        Input:	lRealHandle [in] 预览句柄，NET_DVR_RealPlay或者NET_DVR_RealPlay_V30的返回值 
-        Output:	
-        Return:	
-        **********************************************************/
+
+        /// <summary>
+        /// 停止预览。
+        /// </summary>
+        /// <param name="iRealHandle">预览句柄，NET_DVR_RealPlay或者NET_DVR_RealPlay_V30的返回值 </param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_StopRealPlay(int iRealHandle);
 
-        /*********************************************************
-        Function:	DRAWFUN
-        Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
-        **********************************************************/
+        /// <summary>
+        /// (回调函数)
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="hDc"></param>
+        /// <param name="dwUser"></param>
         public delegate void DRAWFUN(int lRealHandle, IntPtr hDc, uint dwUser);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="fDrawFun"></param>
+        /// <param name="dwUser"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_RigisterDrawFun(int lRealHandle, DRAWFUN fDrawFun, uint dwUser);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwBufNum"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_SetPlayerBufNumber(Int32 lRealHandle, uint dwBufNum);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwNum"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_ThrowBFrame(Int32 lRealHandle, uint dwNum);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dwMode"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_SetAudioMode(uint dwMode);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_OpenSound(Int32 lRealHandle);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_CloseSound();
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_OpenSoundShare(Int32 lRealHandle);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_CloseSoundShare(Int32 lRealHandle);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="wVolume"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_Volume(Int32 lRealHandle, ushort wVolume);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="sFileName"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_SaveRealData(Int32 lRealHandle, string sFileName);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_StopSaveRealData(Int32 lRealHandle);
 
-        /*********************************************************
-        Function:	REALDATACALLBACK
-        Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
-        **********************************************************/
+        /// <summary>
+        /// (回调函数)
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwDataType"></param>
+        /// <param name="pBuffer"></param>
+        /// <param name="dwBufSize"></param>
+        /// <param name="dwUser"></param>
         public delegate void SETREALDATACALLBACK(int lRealHandle, uint dwDataType, IntPtr pBuffer, uint dwBufSize, uint dwUser);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="fRealDataCallBack"></param>
+        /// <param name="dwUser"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_SetRealDataCallBack(int lRealHandle, SETREALDATACALLBACK fRealDataCallBack, uint dwUser);
 
-        /*********************************************************
-        Function:	STDDATACALLBACK
-        Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
-        **********************************************************/
+        /// <summary>
+        /// (回调函数)
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwDataType"></param>
+        /// <param name="pBuffer"></param>
+        /// <param name="dwBufSize"></param>
+        /// <param name="dwUser"></param>
         public delegate void STDDATACALLBACK(int lRealHandle, uint dwDataType, ref byte pBuffer, uint dwBufSize, uint dwUser);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="fStdDataCallBack"></param>
+        /// <param name="dwUser"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_SetStandardDataCallBack(int lRealHandle, STDDATACALLBACK fStdDataCallBack, uint dwUser);
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="sPicFileName"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_CapturePicture(Int32 lRealHandle, string sPicFileName);
 
-        //动态生成I帧
+        /// <summary>
+        /// 动态生成I帧
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_MakeKeyFrame(Int32 lUserID, Int32 lChannel);//主码流
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_MakeKeyFrameSub(Int32 lUserID, Int32 lChannel);//子码流
 
         //云台控制相关接口
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_GetPTZCtrl(Int32 lRealHandle);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_GetPTZCtrl_Other(Int32 lUserID, int lChannel);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwPTZCommand"></param>
+        /// <param name="dwStop"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZControl(Int32 lRealHandle, uint dwPTZCommand, uint dwStop);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="dwPTZCommand"></param>
+        /// <param name="dwStop"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZControl_Other(Int32 lUserID, Int32 lChannel, uint dwPTZCommand, uint dwStop);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="pPTZCodeBuf"></param>
+        /// <param name="dwBufSize"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_TransPTZ(Int32 lRealHandle, string pPTZCodeBuf, uint dwBufSize);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="pPTZCodeBuf"></param>
+        /// <param name="dwBufSize"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_TransPTZ_Other(int lUserID, int lChannel, string pPTZCodeBuf, uint dwBufSize);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwPTZPresetCmd"></param>
+        /// <param name="dwPresetIndex"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZPreset(int lRealHandle, uint dwPTZPresetCmd, uint dwPresetIndex);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="dwPTZPresetCmd"></param>
+        /// <param name="dwPresetIndex"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZPreset_Other(int lUserID, int lChannel, uint dwPTZPresetCmd, uint dwPresetIndex);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="pPTZCodeBuf"></param>
+        /// <param name="dwBufSize"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_TransPTZ_EX(int lRealHandle, string pPTZCodeBuf, uint dwBufSize);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwPTZCommand"></param>
+        /// <param name="dwStop"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZControl_EX(int lRealHandle, uint dwPTZCommand, uint dwStop);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwPTZPresetCmd"></param>
+        /// <param name="dwPresetIndex"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZPreset_EX(int lRealHandle, uint dwPTZPresetCmd, uint dwPresetIndex);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwPTZCruiseCmd"></param>
+        /// <param name="byCruiseRoute"></param>
+        /// <param name="byCruisePoint"></param>
+        /// <param name="wInput"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZCruise(int lRealHandle, uint dwPTZCruiseCmd, byte byCruiseRoute, byte byCruisePoint, ushort wInput);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="dwPTZCruiseCmd"></param>
+        /// <param name="byCruiseRoute"></param>
+        /// <param name="byCruisePoint"></param>
+        /// <param name="wInput"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZCruise_Other(int lUserID, int lChannel, uint dwPTZCruiseCmd, byte byCruiseRoute, byte byCruisePoint, ushort wInput);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwPTZCruiseCmd"></param>
+        /// <param name="byCruiseRoute"></param>
+        /// <param name="byCruisePoint"></param>
+        /// <param name="wInput"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZCruise_EX(int lRealHandle, uint dwPTZCruiseCmd, byte byCruiseRoute, byte byCruisePoint, ushort wInput);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwPTZTrackCmd"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZTrack(int lRealHandle, uint dwPTZTrackCmd);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="dwPTZTrackCmd"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZTrack_Other(int lUserID, int lChannel, uint dwPTZTrackCmd);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwPTZTrackCmd"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZTrack_EX(int lRealHandle, uint dwPTZTrackCmd);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwPTZCommand"></param>
+        /// <param name="dwStop"></param>
+        /// <param name="dwSpeed"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZControlWithSpeed(int lRealHandle, uint dwPTZCommand, uint dwStop, uint dwSpeed);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="dwPTZCommand"></param>
+        /// <param name="dwStop"></param>
+        /// <param name="dwSpeed"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZControlWithSpeed_Other(int lUserID, int lChannel, uint dwPTZCommand, uint dwStop, uint dwSpeed);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwPTZCommand"></param>
+        /// <param name="dwStop"></param>
+        /// <param name="dwSpeed"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZControlWithSpeed_EX(int lRealHandle, uint dwPTZCommand, uint dwStop, uint dwSpeed);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="lCruiseRoute"></param>
+        /// <param name="lpCruiseRet"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_GetPTZCruise(int lUserID, int lChannel, int lCruiseRoute, ref NET_DVR_CRUISE_RET lpCruiseRet);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwPTZTrackCmd"></param>
+        /// <param name="dwTrackIndex"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZMltTrack(int lRealHandle, uint dwPTZTrackCmd, uint dwTrackIndex);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="dwPTZTrackCmd"></param>
+        /// <param name="dwTrackIndex"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZMltTrack_Other(int lUserID, int lChannel, uint dwPTZTrackCmd, uint dwTrackIndex);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwPTZTrackCmd"></param>
+        /// <param name="dwTrackIndex"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZMltTrack_EX(int lRealHandle, uint dwPTZTrackCmd, uint dwTrackIndex);
 
         //文件查找与回放
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="dwFileType"></param>
+        /// <param name="lpStartTime"></param>
+        /// <param name="lpStopTime"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FindFile(int lUserID, int lChannel, uint dwFileType, ref NET_DVR_TIME lpStartTime, ref NET_DVR_TIME lpStopTime);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lFindHandle"></param>
+        /// <param name="lpFindData"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextFile(int lFindHandle, ref NET_DVR_FIND_DATA lpFindData);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lFindHandle"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_FindClose(int lFindHandle);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lFindHandle"></param>
+        /// <param name="lpFindData"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextFile_V30(int lFindHandle, ref NET_DVR_FINDDATA_V30 lpFindData);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lFindHandle"></param>
+        /// <param name="lpFindData"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextFile_V40(int lFindHandle, ref NET_DVR_FINDDATA_V40 lpFindData);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="pFindCond"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FindFile_V30(int lUserID, ref NET_DVR_FILECOND pFindCond);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="pFindCond"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FindFile_V40(int lUserID, ref NET_DVR_FILECOND_V40 pFindCond);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lpSearchEventParam"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FindFileByEvent_V40(int lUserID, ref NET_DVR_SEARCH_EVENT_PARAM_V40 lpSearchEventParam);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lSearchHandle"></param>
+        /// <param name="lpSearchEventRet"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextEvent_V40(int lSearchHandle, ref NET_DVR_SEARCH_EVENT_RET_V40 lpSearchEventRet);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lFindHandle"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_FindClose_V30(int lFindHandle);
 
-        //2007-04-16增加查询结果带卡号的文件查找
+        /// <summary>
+        /// 2007-04-16增加 查询结果带卡号的文件查找
+        /// </summary>
+        /// <param name="lFindHandle"></param>
+        /// <param name="lpFindData"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextFile_Card(int lFindHandle, ref NET_DVR_FINDDATA_CARD lpFindData);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="dwFileType"></param>
+        /// <param name="lpStartTime"></param>
+        /// <param name="lpStopTime"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FindFile_Card(int lUserID, int lChannel, uint dwFileType, ref NET_DVR_TIME lpStartTime, ref NET_DVR_TIME lpStopTime);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="sLockFileName"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_LockFileByName(int lUserID, string sLockFileName);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="sUnlockFileName"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_UnlockFileByName(int lUserID, string sUnlockFileName);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="sPlayBackFileName"></param>
+        /// <param name="hWnd"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_PlayBackByName(int lUserID, string sPlayBackFileName, IntPtr hWnd);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="lpStartTime"></param>
+        /// <param name="lpStopTime"></param>
+        /// <param name="hWnd"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_PlayBackByTime(int lUserID, int lChannel, ref NET_DVR_TIME lpStartTime, ref NET_DVR_TIME lpStopTime, System.IntPtr hWnd);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="pVodPara"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_PlayBackByTime_V40(int lUserID, ref NET_DVR_VOD_PARA pVodPara);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lPlayHandle"></param>
+        /// <param name="dwControlCode"></param>
+        /// <param name="dwInValue"></param>
+        /// <param name="LPOutValue"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PlayBackControl(int lPlayHandle, uint dwControlCode, uint dwInValue, ref uint LPOutValue);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lPlayHandle"></param>
+        /// <param name="dwControlCode"></param>
+        /// <param name="lpInBuffer"></param>
+        /// <param name="dwInValue"></param>
+        /// <param name="lpOutBuffer"></param>
+        /// <param name="LPOutValue"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PlayBackControl_V40(int lPlayHandle, uint dwControlCode, IntPtr lpInBuffer, uint dwInValue, IntPtr lpOutBuffer, ref uint LPOutValue);
         /// <summary>
@@ -16890,7 +17655,13 @@ namespace CHCNetSDK
         /// <param name="dwBufSize"></param>
         /// <param name="dwUser"></param>
         public delegate void PLAYDATACALLBACK(int lPlayHandle, uint dwDataType, IntPtr pBuffer, uint dwBufSize, uint dwUser);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lPlayHandle"></param>
+        /// <param name="fPlayDataCallBack"></param>
+        /// <param name="dwUser"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_SetPlayDataCallBack(int lPlayHandle, PLAYDATACALLBACK fPlayDataCallBack, uint dwUser);
 
@@ -17228,14 +17999,22 @@ namespace CHCNetSDK
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_GetScaleCFG_V30(int lUserID, ref NET_DVR_SCALECFG pScalecfg);
 
-        //2006-08-28 ATM机端口设置
+        /// <summary>
+        /// 2006-08-28 ATM机端口设置
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="wATMPort"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_SetATMPortCFG(int lUserID, ushort wATMPort);
 
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_GetATMPortCFG(int lUserID, ref ushort LPOutATMPort);
 
-        //2006-11-10 支持显卡辅助输出
+        /// <summary>
+        /// 2006-11-10 支持显卡辅助输出
+        /// </summary>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_InitDDrawDevice();
 
@@ -17254,7 +18033,13 @@ namespace CHCNetSDK
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZSelZoomIn_EX(int lUserID, int lChannel, ref NET_DVR_POINT_FRAME pStruPointFrame);
 
-        //解码设备DS-6001D/DS-6001F
+        /// <summary>
+        /// 解码设备DS-6001D/DS-6001F
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="lpDecoderinfo"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_StartDecode(int lUserID, int lChannel, ref NET_DVR_DECODERINFO lpDecoderinfo);
 
@@ -17264,7 +18049,13 @@ namespace CHCNetSDK
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDecoderState(int lUserID, int lChannel, ref NET_DVR_DECODERSTATE lpDecoderState);
 
-        //2005-08-01
+        /// <summary>
+        /// 2005-08-01
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="lpDecoderinfo"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_SetDecInfo(int lUserID, int lChannel, ref NET_DVR_DECCFG lpDecoderinfo);
 
@@ -17383,9 +18174,14 @@ namespace CHCNetSDK
 
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_UploadLogo(int lUserID, uint dwDispChanNum, ref NET_DVR_DISP_LOGOCFG lpDispLogoCfg, System.IntPtr sLogoBuffer);
-
-        public const int NET_DVR_SHOWLOGO = 1;/*显示LOGO*/
-        public const int NET_DVR_HIDELOGO = 2;/*隐藏LOGO*/
+        /// <summary>
+        /// 显示LOGO
+        /// </summary>
+        public const int NET_DVR_SHOWLOGO = 1;
+        /// <summary>
+        /// 隐藏LOGO
+        /// </summary>
+        public const int NET_DVR_HIDELOGO = 2;
 
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_LogoSwitch(int lUserID, uint dwDecChan, uint dwLogoSwitch);
@@ -17393,14 +18189,25 @@ namespace CHCNetSDK
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetDeviceStatus(int lUserID, ref NET_DVR_DECODER_WORK_STATUS lpDecoderCfg);
 
-        /*显示通道命令码定义*/
-        //上海世博 定制
+        /**/
+        /// <summary>
+        /// 上海世博 定制 显示通道命令码定义
+        /// </summary> 
+        /// <param name="lRealHandle"></param>
+        /// <param name="fDrawFun"></param>
+        /// <param name="dwUser"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_RigisterPlayBackDrawFun(int lRealHandle, DRAWFUN fDrawFun, uint dwUser);
 
-
-        public const int DISP_CMD_ENLARGE_WINDOW = 1;   /*显示通道放大某个窗口*/
-        public const int DISP_CMD_RENEW_WINDOW = 2; /*显示通道窗口还原*/
+        /// <summary>
+        /// 显示通道放大某个窗口
+        /// </summary>
+        public const int DISP_CMD_ENLARGE_WINDOW = 1;
+        /// <summary>
+        /// 显示通道窗口还原
+        /// </summary>
+        public const int DISP_CMD_RENEW_WINDOW = 2;
 
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixDiaplayControl(int lUserID, uint dwDispChanNum, uint dwDispChanCmd, uint dwCmdParam);
@@ -17409,23 +18216,49 @@ namespace CHCNetSDK
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_RefreshPlay(int lPlayHandle);
 
-        //恢复默认值
+        /// <summary>
+        /// 恢复默认值
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_RestoreConfig(int lUserID);
 
-        //保存参数
+        /// <summary>
+        /// 保存参数
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_SaveConfig(int lUserID);
 
-        //重启
+        /// <summary>
+        /// 重启
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_RebootDVR(int lUserID);
 
-        //关闭DVR
+        /// <summary>
+        /// 关闭DVR
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_ShutDownDVR(int lUserID);
 
-        //参数配置 begin
+        #region 参数配置
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="dwCommand"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="lpOutBuffer"></param>
+        /// <param name="dwOutBufferSize"></param>
+        /// <param name="lpBytesReturned"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDVRConfig(int lUserID, uint dwCommand, int lChannel, IntPtr lpOutBuffer, uint dwOutBufferSize, ref uint lpBytesReturned);
 
@@ -17535,44 +18368,65 @@ namespace CHCNetSDK
 
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_DecodeG711Frame(uint iType, ref byte pInBuffer, ref byte pOutBuffer);
+        #endregion
 
-        //2009-7-22 end  
-
-        //邮件服务测试 9000_1.1
+        /// <summary>
+        /// 邮件服务测试 9000_1.1
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_EmailTest(int lUserID);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lpSearchEventParam"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FindFileByEvent(int lUserID, ref NET_DVR_SEARCH_EVENT_PARAM lpSearchEventParam);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lSearchHandle"></param>
+        /// <param name="lpSearchEventRet"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextEvent(int lSearchHandle, ref NET_DVR_SEARCH_EVENT_RET lpSearchEventRet);
 
-        /*********************************************************
-        Function:	NET_DVR_Login_V30
-        Desc:		
-        Input:	sDVRIP [in] 设备IP地址 
-                wServerPort [in] 设备端口号 
-                sUserName [in] 登录的用户名 
-                sPassword [in] 用户密码 
-        Output:	lpDeviceInfo [out] 设备信息 
-        Return:	-1表示失败，其他值表示返回的用户ID值
-        **********************************************************/
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sDVRIP">设备IP地址</param>
+        /// <param name="wDVRPort">设备端口号</param>
+        /// <param name="sUserName">登录的用户名</param>
+        /// <param name="sPassword">用户密码</param>
+        /// <param name="lpDeviceInfo">设备信息</param>
+        /// <returns>-1表示失败，其他值表示返回的用户ID值</returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern Int32 NET_DVR_Login_V30(string sDVRIP, Int32 wDVRPort, string sUserName, string sPassword, ref NET_DVR_DEVICEINFO_V30 lpDeviceInfo);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pLoginInfo"></param>
+        /// <param name="lpDeviceInfo"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern int NET_DVR_Login_V40(ref NET_DVR_USER_LOGIN_INFO pLoginInfo, ref NET_DVR_DEVICEINFO_V40 lpDeviceInfo);
-        /*********************************************************
-        Function:	NET_DVR_Logout_V30
-        Desc:		用户注册设备。
-        Input:	lUserID [in] 用户ID号
-        Output:	
-        Return:	TRUE表示成功，FALSE表示失败
-        **********************************************************/
+
+        /// <summary>
+        /// 用户注册设备。
+        /// </summary>
+        /// <param name="lUserID">用户ID号</param>
+        /// <returns>TRUE表示成功，FALSE表示失败</returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_Logout_V30(Int32 lUserID);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="iLogHandle"></param>
+        /// <param name="lpLogData"></param>
+        /// <returns></returns>
         [DllImportAttribute(@"HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextLog_MATRIX(int iLogHandle, ref NET_DVR_LOG_MATRIX lpLogData);
 
@@ -17594,7 +18448,13 @@ namespace CHCNetSDK
 
         [DllImportAttribute(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_SetSTDConfig(int iUserID, uint dwCommand, ref NET_DVR_STD_CONFIG lpConfigParam);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dwType"></param>
+        /// <param name="lpBuffer"></param>
+        /// <param name="dwBufLen"></param>
+        /// <param name="pUserData"></param>
         public delegate void RemoteConfigCallback(uint dwType, IntPtr lpBuffer, uint dwBufLen, IntPtr pUserData);
 
         [DllImportAttribute(@"HCNetSDK.dll")]
@@ -17606,20 +18466,37 @@ namespace CHCNetSDK
         [DllImportAttribute(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_StopRemoteConfig(int lHandle);
 
-        /*********************************************************
-        Function:	NET_DVR_GetDeviceAbility
-        Desc:		
-        Input:	
-        Output:	
-        Return:	TRUE表示成功，FALSE表示失败。
-        **********************************************************/
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="dwAbilityType"></param>
+        /// <param name="pInBuf"></param>
+        /// <param name="dwInLength"></param>
+        /// <param name="pOutBuf"></param>
+        /// <param name="dwOutLength"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDeviceAbility(int lUserID, uint dwAbilityType, IntPtr pInBuf, uint dwInLength, IntPtr pOutBuf, uint dwOutLength);
 
-        //设置/获取参数关键字
+        /// <summary>
+        /// 设置参数关键字
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="dwParameterKey"></param>
+        /// <param name="nValue"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_SetBehaviorParamKey(int lUserID, int lChannel, uint dwParameterKey, int nValue);
-
+        /// <summary>
+        /// 获取参数关键字
+        /// </summary>
+        /// <param name="lUserID"></param>
+        /// <param name="lChannel"></param>
+        /// <param name="dwParameterKey"></param>
+        /// <param name="pValue"></param>
+        /// <returns></returns>
         [DllImport(@"HCNetSDK.dll")]
         public static extern bool NET_DVR_GetBehaviorParamKey(int lUserID, int lChannel, uint dwParameterKey, ref int pValue);
 
@@ -17649,17 +18526,36 @@ namespace CHCNetSDK
         #endregion
 
         #region 消息事件
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hWnd"></param>
+        /// <param name="Msg"></param>
+        /// <param name="wParam"></param>
+        /// <param name="lParam"></param>
+        /// <returns></returns>
         [DllImport("User32.dll", EntryPoint = "PostMessage")]
         public static extern int PostMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         #endregion
 
 
-        //识别场景
+        /// <summary>
+        /// 识别场景
+        /// </summary>
         public enum VCA_RECOGNIZE_SCENE
         {
-            VCA_LOW_SPEED_SCENE = 0,//低速通过场景（收费站、小区门口、停车场）
-            VCA_HIGH_SPEED_SCENE = 1,//高速通过场景（卡口、高速公路、移动稽查)
-            VCA_MOBILE_CAMERA_SCENE = 2,//移动摄像机应用） 
+            /// <summary>
+            /// 低速通过场景（收费站、小区门口、停车场）
+            /// </summary>
+            VCA_LOW_SPEED_SCENE = 0,
+            /// <summary>
+            /// 高速通过场景（卡口、高速公路、移动稽查)
+            /// </summary>
+            VCA_HIGH_SPEED_SCENE = 1,
+            /// <summary>
+            /// 移动摄像机应用
+            /// </summary>
+            VCA_MOBILE_CAMERA_SCENE = 2, 
         }
 
         //识别结果标志
@@ -17673,7 +18569,9 @@ namespace CHCNetSDK
         }
 
 
-        //视频识别触发类型
+        /// <summary>
+        /// 视频识别触发类型
+        /// </summary>
         public enum VCA_TRIGGER_TYPE
         {
             INTER_TRIGGER = 0,// 模块内部触发识别
@@ -17701,7 +18599,9 @@ namespace CHCNetSDK
         识别有影响，如果设置过大，那么如果场景中出现小车牌就会漏识别；如果场景中车牌宽度普遍较大，可以把该参数设置稍大，便于减少对虚假车牌的处理。在标清情况下建议设置为80， 在高清情况下建议设置为120
         wTriggerDuration － 外部触发信号持续帧数量，其含义是从触发信号开始识别的帧数量。该值在低速场景建议设置为50～100；高速场景建议设置为15～25；移动识别时如果也有外部触发，设置为15～25；具体可以根据现场情况进行配置
         */
-        //车牌识别参数子结构
+        /// <summary>
+        /// 车牌识别参数子结构
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_PLATEINFO
         {
@@ -18040,15 +18940,25 @@ namespace CHCNetSDK
             public bool bUseIPServer;                                       //  [in]是否使用IPServer 
             [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 128)]
             public string SerialNumber;                                     //  [in]设备的序列号
-
+            /// <summary>
+            /// 
+            /// </summary>
             public VodStreamFrameData streamFrameData;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct CONNPARAM
         {
+            /// <summary>
+            /// 
+            /// </summary>
             public uint uiUser;
+            /// <summary>
+            /// 
+            /// </summary>
             public ErrorCallback errorCB;
         }
 
@@ -18089,10 +18999,19 @@ namespace CHCNetSDK
         /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODServerDisconnect(IntPtr hSession);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pSearchParam"></param>
+        /// <param name="pSecList"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODStreamSearch(IntPtr pSearchParam, ref IntPtr pSecList);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pSecList"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODDeleteSectionList(IntPtr pSecList);
 
@@ -18104,7 +19023,11 @@ namespace CHCNetSDK
         /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODOpenStream(IntPtr pOpenParam, ref IntPtr phStream);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hStream"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODCloseStream(IntPtr hStream);
 
@@ -18116,7 +19039,11 @@ namespace CHCNetSDK
         /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODOpenDownloadStream(ref VODOPENPARAM struVodParam, ref IntPtr phStream);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hStream"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODCloseDownloadStream(IntPtr hStream);
 
@@ -18127,8 +19054,19 @@ namespace CHCNetSDK
         /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODStartStreamData(IntPtr phStream);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hStream"></param>
+        /// <param name="bPause"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODPauseStreamData(IntPtr hStream, bool bPause);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hStream"></param>
+        /// <returns></returns>
         [DllImport("PdCssVodClient.dll")]
         public static extern bool VODStopStreamData(IntPtr hStream);
 
@@ -18181,25 +19119,51 @@ namespace CHCNetSDK
             /// 11: private frame only for PS
             /// </summary>
             public int nPacketType;
-            //      [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPStr)]
+            ///<summary>
+            ///</summary>
+            // [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPStr)]  
             public IntPtr pPacketBuffer;
+            /// <summary>
+            /// 
+            /// </summary>
             public uint dwPacketSize;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nYear;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nMonth;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nDay;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nHour;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nMinute;
+            /// <summary>
+            /// 
+            /// </summary>
             public int nSecond;
+            /// <summary>
+            /// 
+            /// </summary>
             public uint dwTimeStamp;
         }
 
-        /******************************************************************************
-        * function：get a empty port number
-        * parameters：
-        * return： 0 - 499 : empty port number
-        *          -1      : server is full  			
-        * comment：
-        ******************************************************************************/
+        /// <summary>
+        /// get a empty port number
+        /// </summary>
+        /// <returns>
+        /// 0 - 499 : empty port number
+        /// -1      : server is full 
+        /// </returns>
         [DllImport("AnalyzeData.dll")]
         public static extern int AnalyzeDataGetSafeHandle();
 
@@ -18212,54 +19176,53 @@ namespace CHCNetSDK
         [DllImport("AnalyzeData.dll")]
         public static extern bool AnalyzeDataOpenStreamEx(int iHandle, byte[] pFileHead);
 
-
-        /******************************************************************************
-        * function：close analyzing
-        * parameters：lHandle - working port number
-        * return：
-        * comment：
-        ******************************************************************************/
+        /// <summary>
+        /// close analyzing
+        /// </summary>
+        /// <param name="iHandle"> working port number</param>
+        /// <returns></returns>
         [DllImport("AnalyzeData.dll")]
         public static extern bool AnalyzeDataClose(int iHandle);
 
-
-        /******************************************************************************
-        * function：input stream data
-        * parameters：lHandle		- working port number
-        *			  pBuffer		- data pointer
-        *			  dwBuffersize	- data size
-        * return：TRUE or FALSE
-        * comment：
-        ******************************************************************************/
+        /// <summary>
+        /// input stream data
+        /// </summary>
+        /// <param name="iHandle">working port number</param>
+        /// <param name="pBuffer">data pointer</param>
+        /// <param name="uiSize">data size</param>
+        /// <returns></returns>
         [DllImport("AnalyzeData.dll")]
         public static extern bool AnalyzeDataInputData(int iHandle, IntPtr pBuffer, uint uiSize); //byte []
 
-
-        /******************************************************************************
-        * function：get analyzed packet
-        * parameters：lHandle		- working port number
-        *			  pPacketInfo	- returned structure
-        * return：-1 : error
-        *          0 : succeed
-        *		   1 : failed
-        *		   2 : file end (only in file mode)				
-        * comment：
-        ******************************************************************************/
+        /// <summary>
+        /// get analyzed packet
+        /// </summary>
+        /// <param name="iHandle">working port number</param>
+        /// <param name="pPacketInfo">returned structure 要把pPacketInfo转换成PACKET_INFO结构</param>
+        /// <returns>
+        ///-1 : error
+        /// 0 : succeed
+        /// 1 : failed
+        /// 2 : file end (only in file mode)
+        ///</returns>
         [DllImport("AnalyzeData.dll")]
-        public static extern int AnalyzeDataGetPacket(int iHandle, ref PACKET_INFO pPacketInfo);  //要把pPacketInfo转换成PACKET_INFO结构
+        public static extern int AnalyzeDataGetPacket(int iHandle, ref PACKET_INFO pPacketInfo);  //
 
-        /******************************************************************************
-        * function：get remain data from input buffer
-        * parameters：lHandle		- working port number
-        *			  pBuf	        - pointer to the mem which stored remain data
-        *             dwSize        - size of remain data  
-        * return： TRUE or FALSE				
-        * comment：
-        ******************************************************************************/
+        /// <summary>
+        /// get remain data from input buffer
+        /// </summary>
+        /// <param name="iHandle">working port number</param>
+        /// <param name="pBuffer">pointer to the mem which stored remain data</param>
+        /// <param name="uiSize">size of remain data  </param>
+        /// <returns></returns>
         [DllImport("AnalyzeData.dll")]
         public static extern bool AnalyzeDataGetTail(int iHandle, ref IntPtr pBuffer, ref uint uiSize);
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="iHandle"></param>
+        /// <returns></returns>
         [DllImport("AnalyzeData.dll")]
         public static extern uint AnalyzeDataGetLastError(int iHandle);
 
@@ -18284,72 +19247,160 @@ namespace CHCNetSDK
         /// </summary>
         public const int DATASTREAM_NORMALFRAME = 3;
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MESSAGEVALUE_DISKFULL = 0x01;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MESSAGEVALUE_SWITCHDISK = 0x02;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MESSAGEVALUE_CREATEFILE = 0x03;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MESSAGEVALUE_DELETEFILE = 0x04;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MESSAGEVALUE_SWITCHFILE = 0x05;
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct STOREINFO
         {
+            /// <summary>
+            /// 
+            /// </summary>
             public int iMaxChannels;
+            /// <summary>
+            /// 
+            /// </summary>
             public int iDiskGroup;
+            /// <summary>
+            /// 
+            /// </summary>
             public int iStreamType;
+            /// <summary>
+            /// 
+            /// </summary>
             public bool bAnalyze;
+            /// <summary>
+            /// 
+            /// </summary>
             public bool bCycWrite;
+            /// <summary>
+            /// 
+            /// </summary>
             public uint uiFileSize;
-
+            /// <summary>
+            /// 
+            /// </summary>
             public CALLBACKFUN_MESSAGE funCallback;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct CREATEFILE_INFO
         {
+            /// <summary>
+            /// 
+            /// </summary>
             public int iHandle;
-
+            /// <summary>
+            /// 
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 128)]
             public string strCameraid;
-
+            /// <summary>
+            /// 
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 128)]
             public string strFileName;
-
+            /// <summary>
+            /// 
+            /// </summary>
             public BLOCKTIME tFileCreateTime;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct CLOSEFILE_INFO
         {
+            /// <summary>
+            /// 
+            /// </summary>
             public int iHandle;
-
+            /// <summary>
+            /// 
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 128)]
             public string strCameraid;
-
+            /// <summary>
+            /// 
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 128)]
             public string strFileName;
-
+            /// <summary>
+            /// 
+            /// </summary>
             public BLOCKTIME tFileSwitchTime;
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="iMessageType"></param>
+        /// <param name="pBuf"></param>
+        /// <param name="iBufLen"></param>
+        /// <returns></returns>
         public delegate int CALLBACKFUN_MESSAGE(int iMessageType, System.IntPtr pBuf, int iBufLen);
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="struStoreInfo"></param>
+        /// <returns></returns>
         [DllImport("RecordDLL.dll")]
         public static extern int Initialize(STOREINFO struStoreInfo);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [DllImport("RecordDLL.dll")]
         public static extern int Release();
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strCameraid"></param>
+        /// <param name="pHead"></param>
+        /// <param name="dwHeadLength"></param>
+        /// <returns></returns>
         [DllImport("RecordDLL.dll")]
         public static extern int OpenChannelRecord(string strCameraid, IntPtr pHead, uint dwHeadLength);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="iRecordHandle"></param>
+        /// <returns></returns>
         [DllImport("RecordDLL.dll")]
         public static extern bool CloseChannelRecord(int iRecordHandle);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="iHandle"></param>
+        /// <param name="iDataType"></param>
+        /// <param name="pBuf"></param>
+        /// <param name="uiSize"></param>
+        /// <returns></returns>
         [DllImport("RecordDLL.dll")]
         public static extern int GetData(int iHandle, int iDataType, IntPtr pBuf, uint uiSize);
 

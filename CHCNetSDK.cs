@@ -632,27 +632,69 @@ namespace CHCNetSDK
         /// 认证ID最大长度
         /// </summary>
         public const int MAX_AUTHENTICATEID_LEN = 64;
-        public const int MAX_AUTHENTICATEPASSWD_LEN = 32; //认证密码最大长度
-        public const int MAX_SERVERNAME_LEN = 64; //最大服务器用户名 
-        public const int MAX_COMPRESSIONID_LEN = 64; //编码ID的最大长度
-        public const int MAX_SIPSERVER_ADDRESS_LEN = 128; //SIP服务器地址支持域名和IP地址
-                                                          //压线报警
-        public const int MAX_PlATE_NO_LEN = 32;   //车牌号码最大长度 2013-09-27
-        public const int UPNP_PORT_NUM = 12;      //upnp端口映射端口数目
+        /// <summary>
+        /// 认证密码最大长度
+        /// </summary>
+        public const int MAX_AUTHENTICATEPASSWD_LEN = 32;
+        /// <summary>
+        /// 最大服务器用户名
+        /// </summary>
+        public const int MAX_SERVERNAME_LEN = 64;
+        /// <summary>
+        /// 编码ID的最大长度
+        /// </summary>
+        public const int MAX_COMPRESSIONID_LEN = 64;
+        /// <summary>
+        /// SIP服务器地址支持域名和IP地址
+        /// </summary>
+        public const int MAX_SIPSERVER_ADDRESS_LEN = 128;
 
+        //压线报警
+        /// <summary>
+        /// 车牌号码最大长度 2013-09-27
+        /// </summary>
+        public const int MAX_PlATE_NO_LEN = 32;
+        /// <summary>
+        /// upnp端口映射端口数目
+        /// </summary>
+        public const int UPNP_PORT_NUM = 12;
 
-        public const int MAX_LOCAL_ADDR_LEN = 96;       //SOCKS最大本地网段个数
-        public const int MAX_COUNTRY_NAME_LEN = 4;      //国家简写名称长度
-
-        public const int THERMOMETRY_ALARMRULE_NUM = 40; //热成像报警规则数
-
-        public const int ACS_CARD_NO_LEN = 32; //门禁卡号长度    
-        public const int MAX_ID_NUM_LEN = 32;  //最大身份证号长度
-        public const int MAX_ID_NAME_LEN = 128;   //最大姓名长度
-        public const int MAX_ID_ADDR_LEN = 280;   //最大住址长度
-        public const int MAX_ID_ISSUING_AUTHORITY_LEN = 128; //最大签发机关长度
-
-        public const int MAX_CARD_RIGHT_PLAN_NUM = 4;   //卡权限最大计划个数
+        /// <summary>
+        /// SOCKS最大本地网段个数
+        /// </summary>
+        public const int MAX_LOCAL_ADDR_LEN = 96;
+        /// <summary>
+        /// 国家简写名称长度
+        /// </summary>
+        public const int MAX_COUNTRY_NAME_LEN = 4;
+        /// <summary>
+        /// 热成像报警规则数
+        /// </summary>
+        public const int THERMOMETRY_ALARMRULE_NUM = 40;
+        /// <summary>
+        /// 门禁卡号长度
+        /// </summary>
+        public const int ACS_CARD_NO_LEN = 32;
+        /// <summary>
+        /// 最大身份证号长度
+        /// </summary>
+        public const int MAX_ID_NUM_LEN = 32;
+        /// <summary>
+        /// 最大姓名长度
+        /// </summary>
+        public const int MAX_ID_NAME_LEN = 128;
+        /// <summary>
+        /// 最大住址长度
+        /// </summary>
+        public const int MAX_ID_ADDR_LEN = 280;
+        /// <summary>
+        /// 最大签发机关长度
+        /// </summary>
+        public const int MAX_ID_ISSUING_AUTHORITY_LEN = 128;
+        /// <summary>
+        /// 卡权限最大计划个数
+        /// </summary>
+        public const int MAX_CARD_RIGHT_PLAN_NUM = 4;
         public const int MAX_GROUP_NUM_128 = 128; //最大群组数
         public const int MAX_CARD_READER_NUM = 64;  //最大读卡器数
         public const int MAX_SNEAK_PATH_NODE = 8;   //最大后续读卡器数

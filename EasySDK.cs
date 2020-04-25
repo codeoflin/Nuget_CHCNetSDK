@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.IO.MemoryMappedFiles;
 using System.IO;
 using System.Threading;
+using Lin.LogHelper;
 
 namespace CHCNetSDK
 {
@@ -61,7 +62,7 @@ namespace CHCNetSDK
 
         private void LogForError(string str)
         {
-
+            str.LogForError();
         }
 
         /// <summary>

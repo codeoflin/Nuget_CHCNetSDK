@@ -27,5 +27,8 @@
     <Content Include="$(ProjectDir)runtimes\win-x86\*" Pack="true" PackagePath="\runtimes\win-x86\native" />
     <Content Include="$(ProjectDir)runtimes\win-x64\*" Pack="true" PackagePath="\runtimes\win-x64\native" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Lin.Loghelper" Version="0.0.1" />
+  </ItemGroup>
 
 </Project>

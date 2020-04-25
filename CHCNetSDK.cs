@@ -2934,18 +2934,40 @@ namespace CHCNetSDK
             public byte[] byRelAlarmOut;//报警触发的输出通道,报警触发的输出,为1表示触发该输出
         }
 
-        //DVR设备参数
+        /// <summary>
+        /// DVR设备参数
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_DEVICECFG
         {
+            /// <summary>
+            /// 
+            /// </summary>
             public uint dwSize;
+            /// <summary>
+            /// DVR名称
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sDVRName;//DVR名称
-            public uint dwDVRID;//DVR ID,用于遥控器 //V1.4(0-99), V1.5(0-255)
-            public uint dwRecycleRecord;//是否循环录像,0:不是; 1:是
-                                        //以下不可更改
+            public byte[] sDVRName;
+            /// <summary>
+            /// DVR ID,用于遥控器 //V1.4(0-99), V1.5(0-255)
+            /// </summary>
+            public uint dwDVRID;
+            /// <summary>
+            /// 是否循环录像,0:不是; 1:是
+            /// </summary>
+            public uint dwRecycleRecord;
+
+            //以下不可更改
+
+            /// <summary>
+            /// 序列号
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = SERIALNO_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sSerialNumber;//序列号
+            public byte[] sSerialNumber;
+            /// <summary>
+            /// 
+            /// </summary>
             public uint dwSoftwareVersion;//软件版本号,高16位是主版本,低16位是次版本
             public uint dwSoftwareBuildDate;//软件生成日期,0xYYYYMMDD
             public uint dwDSPSoftwareVersion;//DSP软件版本,高16位是主版本,低16位是次版本

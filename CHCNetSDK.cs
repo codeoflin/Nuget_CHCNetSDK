@@ -1690,19 +1690,54 @@ namespace CHCNetSDK
         /// 获取用户参数(SDK_V15扩展命令)
         /// </summary>
         public const int NET_DVR_GET_USERCFG_EX = 202;
-        public const int NET_DVR_SET_USERCFG_EX = 203;//设置用户参数(SDK_V15扩展命令)
-        public const int NET_DVR_GET_COMPRESSCFG_EX = 204;//获取压缩参数(SDK_V15扩展命令2006-05-15)
-        public const int NET_DVR_SET_COMPRESSCFG_EX = 205;//设置压缩参数(SDK_V15扩展命令2006-05-15)
+        /// <summary>
+        /// 设置用户参数(SDK_V15扩展命令)
+        /// </summary>
+        public const int NET_DVR_SET_USERCFG_EX = 203;
+        /// <summary>
+        /// 获取压缩参数(SDK_V15扩展命令2006-05-15)
 
-        public const int NET_DVR_GET_NETAPPCFG = 222;//获取网络应用参数 NTP/DDNS/EMAIL
-        public const int NET_DVR_SET_NETAPPCFG = 223;//设置网络应用参数 NTP/DDNS/EMAIL
-        public const int NET_DVR_GET_NTPCFG = 224;//获取网络应用参数 NTP
-        public const int NET_DVR_SET_NTPCFG = 225;//设置网络应用参数 NTP
-        public const int NET_DVR_GET_DDNSCFG = 226;//获取网络应用参数 DDNS
-        public const int NET_DVR_SET_DDNSCFG = 227;//设置网络应用参数 DDNS
-                                                   //对应NET_DVR_EMAILPARA
-        public const int NET_DVR_GET_EMAILCFG = 228;//获取网络应用参数 EMAIL
-        public const int NET_DVR_SET_EMAILCFG = 229;//设置网络应用参数 EMAIL
+        /// </summary>
+        public const int NET_DVR_GET_COMPRESSCFG_EX = 204;
+        /// <summary>
+        /// 设置压缩参数(SDK_V15扩展命令2006-05-15)
+        /// </summary>
+        public const int NET_DVR_SET_COMPRESSCFG_EX = 205;
+        /// <summary>
+        /// 获取网络应用参数 NTP/DDNS/EMAIL
+        /// </summary>
+        public const int NET_DVR_GET_NETAPPCFG = 222;
+        /// <summary>
+        /// 设置网络应用参数 NTP/DDNS/EMAIL
+        /// </summary>
+        public const int NET_DVR_SET_NETAPPCFG = 223;
+        /// <summary>
+        /// 获取网络应用参数 NTP
+        /// </summary>
+        public const int NET_DVR_GET_NTPCFG = 224;
+        /// <summary>
+        /// 设置网络应用参数 NTP
+        /// </summary>
+        public const int NET_DVR_SET_NTPCFG = 225;
+        /// <summary>
+        /// 获取网络应用参数 DDNS
+        /// </summary>
+        public const int NET_DVR_GET_DDNSCFG = 226;
+        /// <summary>
+        /// 设置网络应用参数 DDNS
+        /// </summary>
+        public const int NET_DVR_SET_DDNSCFG = 227;
+
+        //对应NET_DVR_EMAILPARA
+        /// <summary>
+        /// 获取网络应用参数 EMAIL
+
+        /// </summary>
+        public const int NET_DVR_GET_EMAILCFG = 228;
+        /// <summary>
+        /// 设置网络应用参数 EMAIL
+        /// </summary>
+         public const int NET_DVR_SET_EMAILCFG = 229;
 
         public const int NET_DVR_GET_NFSCFG = 230;/* NFS disk config */
         public const int NET_DVR_SET_NFSCFG = 231;/* NFS disk config */
@@ -1732,26 +1767,74 @@ namespace CHCNetSDK
 
         /***************************智能服务器 begin *****************************/
         //智能设备类型
-        public const int DS6001_HF_B = 60;//行为分析：DS6001-HF/B
-        public const int DS6001_HF_P = 61;//车牌识别：DS6001-HF/P
-        public const int DS6002_HF_B = 62;//双机跟踪：DS6002-HF/B
-        public const int DS6101_HF_B = 63;//行为分析：DS6101-HF/B
-        public const int IDS52XX = 64;//智能分析仪IVMS
-        public const int DS9000_IVS = 65;//9000系列智能DVR
-        public const int DS8004_AHL_A = 66;//智能ATM, DS8004AHL-S/A
-        public const int DS6101_HF_P = 67;//车牌识别：DS6101-HF/P
+        /// <summary>
+        /// 行为分析：DS6001-HF/B
+        /// </summary>
+        public const int DS6001_HF_B = 60;
+        /// <summary>
+        /// 车牌识别：DS6001-HF/P
+        /// </summary>
+        public const int DS6001_HF_P = 61;
+        /// <summary>
+        /// 双机跟踪：DS6002-HF/B
+        /// </summary>
+        public const int DS6002_HF_B = 62;
+        /// <summary>
+        /// 行为分析：DS6101-HF/B
+        /// </summary>
+        public const int DS6101_HF_B = 63;
+        /// <summary>
+        /// 智能分析仪IVMS
+        /// </summary>
+        public const int IDS52XX = 64;
+        /// <summary>
+        /// 9000系列智能DVR
+        /// </summary>
+        public const int DS9000_IVS = 65;
+        /// <summary>
+        /// 智能ATM, DS8004AHL-S/A
+        /// </summary>
+        public const int DS8004_AHL_A = 66;
+        /// <summary>
+        /// 车牌识别：DS6101-HF/P
+        /// </summary>
+        public const int DS6101_HF_P = 67;
 
         //能力获取命令
-        public const int VCA_DEV_ABILITY = 256;//设备智能分析的总能力
-        public const int VCA_CHAN_ABILITY = 272;//行为分析能力
-        public const int MATRIXDECODER_ABILITY = 512;//多路解码器显示、解码能力
-                                                     //获取/设置大接口参数配置命令
-                                                     //车牌识别（NET_VCA_PLATE_CFG）
-        public const int NET_DVR_SET_PLATECFG = 150;//设置车牌识别参数
-        public const int NET_DVR_GET_PLATECFG = 151;//获取车牌识别参数
+        /// <summary>
+        /// 设备智能分析的总能力
+        /// </summary>
+        public const int VCA_DEV_ABILITY = 256;
+        /// <summary>
+        /// 行为分析能力
+        /// </summary>
+        public const int VCA_CHAN_ABILITY = 272;
+        /// <summary>
+        /// 多路解码器显示、解码能力
+        /// </summary>
+        public const int MATRIXDECODER_ABILITY = 512;
+
+        //获取/设置大接口参数配置命令
+
+        //车牌识别（NET_VCA_PLATE_CFG）
+        /// <summary>
+        /// 设置车牌识别参数
+        /// </summary>
+        public const int NET_DVR_SET_PLATECFG = 150;
+        /// <summary>
+        /// 获取车牌识别参数
+        /// </summary>
+        public const int NET_DVR_GET_PLATECFG = 151;
+
                                                     //行为对应（NET_VCA_RULECFG）
-        public const int NET_DVR_SET_RULECFG = 152;//设置行为分析规则
-        public const int NET_DVR_GET_RULECFG = 153;//获取行为分析规则
+                                    /// <summary>
+                                    /// 设置行为分析规则
+                                    /// </summary>
+        public const int NET_DVR_SET_RULECFG = 152;
+        /// <summary>
+        /// 获取行为分析规则
+        /// </summary>
+        public const int NET_DVR_GET_RULECFG = 153;
 
         //双摄像机标定参数（NET_DVR_LF_CFG）
         /// <summary>
@@ -2015,75 +2098,183 @@ namespace CHCNetSDK
         public const int NET_DVR_SET_NET_DISKCFG = 1039;
 
         //压缩参数 (NET_DVR_COMPRESSIONCFG_V30结构)
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_GET_COMPRESSCFG_V30 = 1040;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_SET_COMPRESSCFG_V30 = 1041;
 
         //获取485解码器参数 (NET_DVR_DECODERCFG_V30结构)
-        public const int NET_DVR_GET_DECODERCFG_V30 = 1042;//获取解码器参数
-        public const int NET_DVR_SET_DECODERCFG_V30 = 1043;//设置解码器参数
+        /// <summary>
+        /// 获取解码器参数
+        /// </summary>
+        public const int NET_DVR_GET_DECODERCFG_V30 = 1042;
+        /// <summary>
+        /// 设置解码器参数
+        /// </summary>
+        public const int NET_DVR_SET_DECODERCFG_V30 = 1043;
 
         //获取预览参数 (NET_DVR_PREVIEWCFG_V30结构)
-        public const int NET_DVR_GET_PREVIEWCFG_V30 = 1044;//获取预览参数
-        public const int NET_DVR_SET_PREVIEWCFG_V30 = 1045;//设置预览参数
+        /// <summary>
+        /// 获取预览参数
+        /// </summary>
+        public const int NET_DVR_GET_PREVIEWCFG_V30 = 1044;
+        /// <summary>
+        /// 设置预览参数
+        /// </summary>
+        public const int NET_DVR_SET_PREVIEWCFG_V30 = 1045;
 
         //辅助预览参数 (NET_DVR_PREVIEWCFG_AUX_V30结构)
-        public const int NET_DVR_GET_PREVIEWCFG_AUX_V30 = 1046;//获取辅助预览参数
-        public const int NET_DVR_SET_PREVIEWCFG_AUX_V30 = 1047;//设置辅助预览参数
+        /// <summary>
+        /// 获取辅助预览参数
+        /// </summary>
+        public const int NET_DVR_GET_PREVIEWCFG_AUX_V30 = 1046;
+        /// <summary>
+        /// 设置辅助预览参数
+        /// </summary>
+        public const int NET_DVR_SET_PREVIEWCFG_AUX_V30 = 1047;
 
         //IP接入配置参数 （NET_DVR_IPPARACFG结构）
-        public const int NET_DVR_GET_IPPARACFG = 1048; //获取IP接入配置信息 
-        public const int NET_DVR_SET_IPPARACFG = 1049;//设置IP接入配置信息
+        /// <summary>
+        /// 获取IP接入配置信息
+        /// </summary>
+        public const int NET_DVR_GET_IPPARACFG = 1048;
+        /// <summary>
+        /// 设置IP接入配置信息
+        /// </summary>
+        public const int NET_DVR_SET_IPPARACFG = 1049;
 
         //IP接入配置参数 （NET_DVR_IPPARACFG_V40结构）
-        public const int NET_DVR_GET_IPPARACFG_V40 = 1062; //获取IP接入配置信息 
-        public const int NET_DVR_SET_IPPARACFG_V40 = 1063;//设置IP接入配置信息
+        /// <summary>
+        /// 获取IP接入配置信息
+        /// </summary>
+        public const int NET_DVR_GET_IPPARACFG_V40 = 1062; 
+        /// <summary>
+        /// 设置IP接入配置信息
+        /// </summary>
+        public const int NET_DVR_SET_IPPARACFG_V40 = 1063;
 
         //IP报警输入接入配置参数 （NET_DVR_IPALARMINCFG结构）
-        public const int NET_DVR_GET_IPALARMINCFG = 1050; //获取IP报警输入接入配置信息 
-        public const int NET_DVR_SET_IPALARMINCFG = 1051; //设置IP报警输入接入配置信息
+        /// <summary>
+        /// 获取IP报警输入接入配置信息
+        /// </summary>
+        public const int NET_DVR_GET_IPALARMINCFG = 1050;
+        /// <summary>
+        /// 设置IP报警输入接入配置信息
+        /// </summary>
+        public const int NET_DVR_SET_IPALARMINCFG = 1051;
 
         //IP报警输出接入配置参数 （NET_DVR_IPALARMOUTCFG结构）
-        public const int NET_DVR_GET_IPALARMOUTCFG = 1052;//获取IP报警输出接入配置信息 
-        public const int NET_DVR_SET_IPALARMOUTCFG = 1053;//设置IP报警输出接入配置信息
+        /// <summary>
+        /// 获取IP报警输出接入配置信息
+        /// </summary>
+        public const int NET_DVR_GET_IPALARMOUTCFG = 1052;
+        /// <summary>
+        /// 设置IP报警输出接入配置信息
+        /// </summary>
+                public const int NET_DVR_SET_IPALARMOUTCFG = 1053;
 
         //硬盘管理的参数获取 (NET_DVR_HDCFG结构)
-        public const int NET_DVR_GET_HDCFG = 1054;//获取硬盘管理配置参数
-        public const int NET_DVR_SET_HDCFG = 1055;//设置硬盘管理配置参数
+        /// <summary>
+        /// 获取硬盘管理配置参数
+        /// </summary>
+        public const int NET_DVR_GET_HDCFG = 1054;
+        /// <summary>
+        /// 设置硬盘管理配置参数
+        /// </summary>
+        public const int NET_DVR_SET_HDCFG = 1055;
+
 
         //盘组管理的参数获取 (NET_DVR_HDGROUP_CFG结构)
-        public const int NET_DVR_GET_HDGROUP_CFG = 1056;//获取盘组管理配置参数
-        public const int NET_DVR_SET_HDGROUP_CFG = 1057;//设置盘组管理配置参数
+        /// <summary>
+        /// 获取盘组管理配置参数
+        /// </summary>
+        public const int NET_DVR_GET_HDGROUP_CFG = 1056;
+        /// <summary>
+        /// 设置盘组管理配置参数
+        /// </summary>
+        public const int NET_DVR_SET_HDGROUP_CFG = 1057;
 
         //设备编码类型配置(NET_DVR_COMPRESSION_AUDIO结构)
-        public const int NET_DVR_GET_COMPRESSCFG_AUD = 1058;//获取设备语音对讲编码参数
-        public const int NET_DVR_SET_COMPRESSCFG_AUD = 1059;//设置设备语音对讲编码参数
+/// <summary>
+/// 获取设备语音对讲编码参数
+/// </summary>
+        public const int NET_DVR_GET_COMPRESSCFG_AUD = 1058;
+        /// <summary>
+        /// 设置设备语音对讲编码参数
+        /// </summary>
+        public const int NET_DVR_SET_COMPRESSCFG_AUD = 1059;
 
         //IP接入配置参数 （NET_DVR_IPPARACFG_V31结构）
-        public const int NET_DVR_GET_IPPARACFG_V31 = 1060;//获取IP接入配置信息 
-        public const int NET_DVR_SET_IPPARACFG_V31 = 1061; //设置IP接入配置信息
+        /// <summary>
+        /// 获取IP接入配置信息
+        /// </summary>
+        public const int NET_DVR_GET_IPPARACFG_V31 = 1060;
+        /// <summary>
+        /// 设置IP接入配置信息
+        /// </summary>
+        public const int NET_DVR_SET_IPPARACFG_V31 = 1061;
 
         //设备参数配置 （NET_DVR_DEVICECFG_V40结构）
-        public const int NET_DVR_GET_DEVICECFG_V40 = 1100;//获取设备参数
-        public const int NET_DVR_SET_DEVICECFG_V40 = 1101;//设置设备参数
+        /// <summary>
+        /// 获取设备参数
+        /// </summary>
+        public const int NET_DVR_GET_DEVICECFG_V40 = 1100;
+        /// <summary>
+        /// 设置设备参数
+        /// </summary>
+        public const int NET_DVR_SET_DEVICECFG_V40 = 1101;
 
         //多网卡配置(NET_DVR_NETCFG_MULTI结构)
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_GET_NETCFG_MULTI = 1161;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_SET_NETCFG_MULTI = 1162;
 
         //BONDING网卡(NET_DVR_NETWORK_BONDING结构)
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_GET_NETWORK_BONDING = 1254;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int NET_DVR_SET_NETWORK_BONDING = 1255;
 
         //NAT映射配置参数 （NET_DVR_NAT_CFG结构）
-        public const int NET_DVR_GET_NAT_CFG = 6111;    //获取NAT映射参数
-        public const int NET_DVR_SET_NAT_CFG = 6112;    //设置NAT映射参数  
+        /// <summary>
+        /// 获取NAT映射参数
+        /// </summary>
+        public const int NET_DVR_GET_NAT_CFG = 6111;
+        /// <summary>
+        /// 设置NAT映射参数
+        /// </summary>
+        public const int NET_DVR_SET_NAT_CFG = 6112;  
 
-        //预置点名称获取与设置
+        //
+        /// <summary>
+        /// 预置点名称获取
+        /// </summary>
         public const int NET_DVR_GET_PRESET_NAME = 3383;
+        /// <summary>
+        /// 预置点名称设置
+        /// </summary>
         public const int NET_DVR_SET_PRESET_NAME = 3382;
-
-        public const int NET_VCA_GET_RULECFG_V41 = 5011; //获取行为分析参数
-        public const int NET_VCA_SET_RULECFG_V41 = 5012; //设置行为分析参数
+        /// <summary>
+        /// 获取行为分析参数
+        /// </summary>
+        public const int NET_VCA_GET_RULECFG_V41 = 5011;
+        /// <summary>
+        /// 设置行为分析参数
+        /// </summary>
+        public const int NET_VCA_SET_RULECFG_V41 = 5012;
 
         public const int NET_DVR_GET_TRAVERSE_PLANE_DETECTION = 3360; //获取越界侦测配置
         public const int NET_DVR_SET_TRAVERSE_PLANE_DETECTION = 3361; //设置越界侦测配置
@@ -2613,26 +2804,64 @@ namespace CHCNetSDK
         }
 
         /*设备报警和异常处理方式*/
-        public const int NOACTION = 0x0;/*无响应*/
-        public const int WARNONMONITOR = 0x1;/*监视器上警告*/
-        public const int WARNONAUDIOOUT = 0x2;/*声音警告*/
-        public const int UPTOCENTER = 0x4;/*上传中心*/
-        public const int TRIGGERALARMOUT = 0x8;/*触发报警输出*/
-        public const int TRIGGERCATPIC = 0x10;/*触发抓图并上传E-mail*/
-        public const int SEND_PIC_FTP = 0x200;  /*抓图并上传ftp*/
-
+        /// <summary>
+        /// 无响应
+        /// </summary>
+        public const int NOACTION = 0x0;
+        /// <summary>
+        /// 监视器上警告
+        /// </summary>
+                public const int WARNONMONITOR = 0x1;
+                /// <summary>
+                /// 声音警告
+                /// </summary>
+        public const int WARNONAUDIOOUT = 0x2;
+        /// <summary>
+        /// 上传中心
+        /// </summary>
+        public const int UPTOCENTER = 0x4;
+        /// <summary>
+        /// 触发报警输出
+        /// </summary>
+        public const int TRIGGERALARMOUT = 0x8;
+        /// <summary>
+        /// 触发抓图并上传E-mail
+        /// </summary>
+        public const int TRIGGERCATPIC = 0x10;
+        /// <summary>
+        /// 抓图并上传ftp
+        /// </summary>
+        public const int SEND_PIC_FTP = 0x200;
+        /// <summary>
+        /// 
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_STRUCTHEAD
         {
-            public ushort wLength;  //结构长度
-            public byte byVersion;  /*高低4位分别代表高低版本，后续根据版本和长度进行扩展，不同的版本的长度进行限制*/
+            /// <summary>
+            /// 结构长度
+            /// </summary>
+            public ushort wLength;
+            /// <summary>
+            /// 高低4位分别代表高低版本，后续根据版本和长度进行扩展，不同的版本的长度进行限制
+            /// </summary>
+            public byte byVersion;
+            /// <summary>
+            /// 
+            /// </summary>
             public byte byRes;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_HANDLEEXCEPTION_V41
         {
-            public uint dwHandleType;/*处理方式,处理方式的"或"结果*/
+            /// <summary>
+            /// 处理方式,处理方式的"或"结果
+            /// </summary>
+            public uint dwHandleType;
             /*0x00: 无响应*/
             /*0x01: 监视器上警告*/
             /*0x02: 声音警告*/
@@ -2670,7 +2899,9 @@ namespace CHCNetSDK
             public byte[] byRes;           //保留
         }
 
-        //报警和异常处理结构(子结构)(多处使用)(9000扩展)
+        /// <summary>
+        /// 报警和异常处理结构(子结构)(多处使用)(9000扩展)
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_HANDLEEXCEPTION_V30
         {
@@ -16246,7 +16477,9 @@ namespace CHCNetSDK
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 256, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_DIAGNOSIS_UPLOAD
         {
@@ -16272,8 +16505,14 @@ namespace CHCNetSDK
             public byte byMonoResult;         //黑白图像检测结果，0-未检测，1-正常，2-异常
             public byte byShakeResult;        //视频抖动检测结果，0-未检测，1-正常，2-异常
             [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 256)]
-            public string sSNapShotURL; ///<图片URL地址
-            public byte byFlashResult;        //视频剧变检测结果，0-未检测，1-正常，2-异常
+            /// <summary>
+            /// 图片URL地址
+            /// </summary>
+            public string sSNapShotURL;
+            /// <summary>
+            /// 视频剧变检测结果，0-未检测，1-正常，2-异常
+            /// </summary>
+            public byte byFlashResult;
             public byte byCoverResult;        //视频遮挡检测结果，0-未检测，1-正常，2-异常
             public byte bySceneResult;        //场景变更检测结果，0-未检测，1-正常，2-异常
             public byte byDarkResult;         //图像过暗检测结果，0-未检测，1-正常，2-异常
@@ -16586,18 +16825,30 @@ namespace CHCNetSDK
             public byte[] byRes2;
             public uint dwLockID;  //锁ID
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_LOCK_CODE_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] byLockCode;    //锁代码
+            /// <summary>
+            /// 锁代码
+            /// </summary>
+            public byte[] byLockCode;
+            /// <summary>
+            /// 房间代码
+            /// 按位表示，0-无权限，1-有权限
+            /// 第0位表示：弱电报警
+            /// 第1位表示：开门提示音
+            /// 第2位表示：限制客卡
+            /// 第3位表示：通道
+            /// 第4位表示：反锁开门
+            /// 第5位表示：巡更功能
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DOOR_CODE_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRoomCode;  //房间代码
-                                       //按位表示，0-无权限，1-有权限
-                                       //第0位表示：弱电报警
-                                       //第1位表示：开门提示音
-                                       //第2位表示：限制客卡
-                                       //第3位表示：通道
-                                       //第4位表示：反锁开门
-                                       //第5位表示：巡更功能
-            public uint dwCardRight;      //卡权限
-            public uint dwPlanTemplate;   //计划模板(每天)各时间段是否启用，按位表示，0--不启用，1-启用
+            public byte[] byRoomCode;
+            /// <summary>
+            /// 卡权限
+            /// </summary>
+            public uint dwCardRight;
+            /// <summary>
+            /// 计划模板(每天)各时间段是否启用，按位表示，0--不启用，1-启用
+            /// </summary>
+                        public uint dwPlanTemplate;
             public uint dwCardUserId;    //持卡人ID
             public byte byCardModelType;  //0-空，1- MIFARE S50，2- MIFARE S70，3- FM1208 CPU卡，4- FM1216 CPU卡，5-国密CPU卡，6-身份证，7- NFC
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 51, ArraySubType = UnmanagedType.I1)]

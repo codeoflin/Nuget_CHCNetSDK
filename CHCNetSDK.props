@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<NativeDlls>$(MSBuildThisFileDirectory)..\</NativeDlls>
 	</PropertyGroup>
-	<ItemGroup>
+	<ItemGroup Condition="!$(TargetFramework.Contains('netstandard')) And !$(TargetFramework.Contains('netcoreapp'))">
 		<Content Include="$(NativeDlls)\runtimes\win-x64\native\AnalyzeData.dll">
 			<Link>runtimes\win-x64\native\AnalyzeData.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

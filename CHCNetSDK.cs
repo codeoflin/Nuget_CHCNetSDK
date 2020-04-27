@@ -1040,45 +1040,162 @@ namespace CHCNetSDK
         public const int NET_DVR_SETSOCKET_ERROR = 45;//设置SOCKET出错
         public const int NET_DVR_MAX_NUM = 46;//个数达到最大
         public const int NET_DVR_USERNOTEXIST = 47;//用户不存在
-        public const int NET_DVR_WRITEFLASHERROR = 48;//写FLASH出错
-        public const int NET_DVR_UPGRADEFAIL = 49;//DVR升级失败
-        public const int NET_DVR_CARDHAVEINIT = 50;//解码卡已经初始化过
-        public const int NET_DVR_PLAYERFAILED = 51;//调用播放库中某个函数失败
-        public const int NET_DVR_MAX_USERNUM = 52;//设备端用户数达到最大
-        public const int NET_DVR_GETLOCALIPANDMACFAIL = 53;//获得客户端的IP地址或物理地址失败
-        public const int NET_DVR_NOENCODEING = 54;//该通道没有编码
-        public const int NET_DVR_IPMISMATCH = 55;//IP地址不匹配
-        public const int NET_DVR_MACMISMATCH = 56;//MAC地址不匹配
-        public const int NET_DVR_UPGRADELANGMISMATCH = 57;//升级文件语言不匹配
-        public const int NET_DVR_MAX_PLAYERPORT = 58;//播放器路数达到最大
-        public const int NET_DVR_NOSPACEBACKUP = 59;//备份设备中没有足够空间进行备份
-        public const int NET_DVR_NODEVICEBACKUP = 60;//没有找到指定的备份设备
-        public const int NET_DVR_PICTURE_BITS_ERROR = 61;//图像素位数不符，限24色
-        public const int NET_DVR_PICTURE_DIMENSION_ERROR = 62;//图片高*宽超限， 限128*256
-        public const int NET_DVR_PICTURE_SIZ_ERROR = 63;//图片大小超限，限100K
-        public const int NET_DVR_LOADPLAYERSDKFAILED = 64;//载入当前目录下Player Sdk出错
-        public const int NET_DVR_LOADPLAYERSDKPROC_ERROR = 65;//找不到Player Sdk中某个函数入口
-        public const int NET_DVR_LOADDSSDKFAILED = 66;//载入当前目录下DSsdk出错
-        public const int NET_DVR_LOADDSSDKPROC_ERROR = 67;//找不到DsSdk中某个函数入口
-        public const int NET_DVR_DSSDK_ERROR = 68;//调用硬解码库DsSdk中某个函数失败
-        public const int NET_DVR_VOICEMONOPOLIZE = 69;//声卡被独占
-        public const int NET_DVR_JOINMULTICASTFAILED = 70;//加入多播组失败
-        public const int NET_DVR_CREATEDIR_ERROR = 71;//建立日志文件目录失败
-        public const int NET_DVR_BINDSOCKET_ERROR = 72;//绑定套接字失败
-        public const int NET_DVR_SOCKETCLOSE_ERROR = 73;//socket连接中断，此错误通常是由于连接中断或目的地不可达
-        public const int NET_DVR_USERID_ISUSING = 74;//注销时用户ID正在进行某操作
-        public const int NET_DVR_SOCKETLISTEN_ERROR = 75;//监听失败
-        public const int NET_DVR_PROGRAM_EXCEPTION = 76;//程序异常
-        public const int NET_DVR_WRITEFILE_FAILED = 77;//写文件失败
-        public const int NET_DVR_FORMAT_READONLY = 78;//禁止格式化只读硬盘
-        public const int NET_DVR_WITHSAMEUSERNAME = 79;//用户配置结构中存在相同的用户名
-        public const int NET_DVR_DEVICETYPE_ERROR = 80;//导入参数时设备型号不匹配
-        public const int NET_DVR_LANGUAGE_ERROR = 81;//导入参数时语言不匹配
-        public const int NET_DVR_PARAVERSION_ERROR = 82;//导入参数时软件版本不匹配
-        public const int NET_DVR_IPCHAN_NOTALIVE = 83; //预览时外接IP通道不在线
-        public const int NET_DVR_RTSP_SDK_ERROR = 84;//加载高清IPC通讯库StreamTransClient.dll失败
-        public const int NET_DVR_CONVERT_SDK_ERROR = 85;//加载转码库失败
-        public const int NET_DVR_IPC_COUNT_OVERFLOW = 86;//超出最大的ip接入通道数
+        /// <summary>
+        /// 写FLASH出错
+        /// </summary>
+        public const int NET_DVR_WRITEFLASHERROR = 48;
+        /// <summary>
+        /// DVR升级失败
+        /// </summary>
+        public const int NET_DVR_UPGRADEFAIL = 49;
+        /// <summary>
+        /// 解码卡已经初始化过
+        /// </summary>
+        public const int NET_DVR_CARDHAVEINIT = 50;
+        /// <summary>
+        /// 调用播放库中某个函数失败
+        /// </summary>
+        public const int NET_DVR_PLAYERFAILED = 51;
+        /// <summary>
+        /// 设备端用户数达到最大
+        /// </summary>
+        public const int NET_DVR_MAX_USERNUM = 52;
+        /// <summary>
+        /// 获得客户端的IP地址或物理地址失败
+        /// </summary>
+        public const int NET_DVR_GETLOCALIPANDMACFAIL = 53;
+        /// <summary>
+        /// 该通道没有编码
+        /// </summary>
+        public const int NET_DVR_NOENCODEING = 54;
+        /// <summary>
+        /// IP地址不匹配
+        /// </summary>
+        public const int NET_DVR_IPMISMATCH = 55;
+        /// <summary>
+        /// MAC地址不匹配
+        /// </summary>
+        public const int NET_DVR_MACMISMATCH = 56;
+        /// <summary>
+        /// 升级文件语言不匹配
+        /// </summary>
+        public const int NET_DVR_UPGRADELANGMISMATCH = 57;
+        /// <summary>
+        /// 播放器路数达到最大
+        /// </summary>
+        public const int NET_DVR_MAX_PLAYERPORT = 58;
+        /// <summary>
+        /// 备份设备中没有足够空间进行备份
+        /// </summary>
+        public const int NET_DVR_NOSPACEBACKUP = 59;
+        /// <summary>
+        /// 没有找到指定的备份设备
+        /// </summary>
+        public const int NET_DVR_NODEVICEBACKUP = 60;
+        /// <summary>
+        /// 图像素位数不符，限24色
+        /// </summary>
+        public const int NET_DVR_PICTURE_BITS_ERROR = 61;
+        /// <summary>
+        /// 图片高*宽超限， 限128*256
+        /// </summary>
+        public const int NET_DVR_PICTURE_DIMENSION_ERROR = 62;
+        /// <summary>
+        /// 图片大小超限，限100K
+        /// </summary>
+        public const int NET_DVR_PICTURE_SIZ_ERROR = 63;
+        /// <summary>
+        /// 载入当前目录下Player Sdk出错
+        /// </summary>
+        public const int NET_DVR_LOADPLAYERSDKFAILED = 64;
+        /// <summary>
+        /// 找不到Player Sdk中某个函数入口
+        /// </summary>
+        public const int NET_DVR_LOADPLAYERSDKPROC_ERROR = 65;
+        /// <summary>
+        /// 载入当前目录下DSsdk出错
+        /// </summary>
+        public const int NET_DVR_LOADDSSDKFAILED = 66;
+        /// <summary>
+        /// 找不到DsSdk中某个函数入口
+        /// </summary>
+        public const int NET_DVR_LOADDSSDKPROC_ERROR = 67;
+        /// <summary>
+        /// 调用硬解码库DsSdk中某个函数失败
+        /// </summary>
+        public const int NET_DVR_DSSDK_ERROR = 68;
+        /// <summary>
+        /// 声卡被独占
+        /// </summary>
+        public const int NET_DVR_VOICEMONOPOLIZE = 69;
+        /// <summary>
+        /// 加入多播组失败
+        /// </summary>
+        public const int NET_DVR_JOINMULTICASTFAILED = 70;
+        /// <summary>
+        /// 建立日志文件目录失败
+        /// </summary>
+        public const int NET_DVR_CREATEDIR_ERROR = 71;
+        /// <summary>
+        /// 绑定套接字失败
+        /// </summary>
+        public const int NET_DVR_BINDSOCKET_ERROR = 72;
+        /// <summary>
+        /// socket连接中断，此错误通常是由于连接中断或目的地不可达
+        /// </summary>
+        public const int NET_DVR_SOCKETCLOSE_ERROR = 73;
+        /// <summary>
+        /// 注销时用户ID正在进行某操作
+        /// </summary>
+        public const int NET_DVR_USERID_ISUSING = 74;
+        /// <summary>
+        /// 监听失败
+        /// </summary>
+        public const int NET_DVR_SOCKETLISTEN_ERROR = 75;
+        /// <summary>
+        /// 程序异常
+        /// </summary>
+        public const int NET_DVR_PROGRAM_EXCEPTION = 76;
+        /// <summary>
+        /// 写文件失败
+        /// </summary>
+        public const int NET_DVR_WRITEFILE_FAILED = 77;
+        /// <summary>
+        /// 禁止格式化只读硬盘
+        /// </summary>
+        public const int NET_DVR_FORMAT_READONLY = 78;
+        /// <summary>
+        /// 用户配置结构中存在相同的用户名
+        /// </summary>
+        public const int NET_DVR_WITHSAMEUSERNAME = 79;
+        /// <summary>
+        /// 导入参数时设备型号不匹配
+        /// </summary>
+        public const int NET_DVR_DEVICETYPE_ERROR = 80;
+        /// <summary>
+        /// 导入参数时语言不匹配
+        /// </summary>
+        public const int NET_DVR_LANGUAGE_ERROR = 81;
+        /// <summary>
+        /// 导入参数时软件版本不匹配
+        /// </summary>
+        public const int NET_DVR_PARAVERSION_ERROR = 82;
+        /// <summary>
+        /// 预览时外接IP通道不在线
+        /// </summary>
+        public const int NET_DVR_IPCHAN_NOTALIVE = 83;
+        /// <summary>
+        /// 加载高清IPC通讯库StreamTransClient.dll失败
+        /// </summary>
+        public const int NET_DVR_RTSP_SDK_ERROR = 84;
+        /// <summary>
+        /// 加载转码库失败
+        /// </summary>
+        public const int NET_DVR_CONVERT_SDK_ERROR = 85;
+        /// <summary>
+        /// 超出最大的ip接入通道数
+        /// </summary>
+        public const int NET_DVR_IPC_COUNT_OVERFLOW = 86;
 
         /// <summary>
         /// no error
@@ -2798,9 +2915,18 @@ namespace CHCNetSDK
             /// 开始时间
             /// </summary>
             public byte byStartHour;
-            public byte byStartMin;//开始时间
-            public byte byStopHour;//结束时间
-            public byte byStopMin;//结束时间
+            /// <summary>
+            /// 开始时间
+            /// </summary>
+            public byte byStartMin;
+            /// <summary>
+            /// 结束时间
+            /// </summary>
+            public byte byStopHour;
+            /// <summary>
+            /// 结束时间
+            /// </summary>
+            public byte byStopMin;
         }
 
         /*设备报警和异常处理方式*/
@@ -2860,37 +2986,49 @@ namespace CHCNetSDK
         {
             /// <summary>
             /// 处理方式,处理方式的"或"结果
+            /// 0x00: 无响应
+            /// 0x01: 监视器上警告
+            /// 0x02: 声音警告
+            /// 0x04: 上传中心
+            /// 0x08: 触发报警输出
+            /// 0x10: Jpeg抓图并上传EMail
+            /// 0x20: 无线声光报警器联动
+            /// 0x40: 联动电子地图(目前只有PCNVR支持)
+            /// 0x200: 抓图并上传FTP
             /// </summary>
             public uint dwHandleType;
-            /*0x00: 无响应*/
-            /*0x01: 监视器上警告*/
-            /*0x02: 声音警告*/
-            /*0x04: 上传中心*/
-            /*0x08: 触发报警输出*/
-            /*0x10: 触发JPRG抓图并上传Email*/
-            /*0x20: 无线声光报警器联动*/
-            /*0x40: 联动电子地图(目前只有PCNVR支持)*/
-            /*0x200: 抓图并上传FTP*/
-            public uint dwMaxRelAlarmOutChanNum; //触发的报警输出通道数（只读）最大支持数
+            /// <summary>
+            /// 触发的报警输出通道数（只读）最大支持数
+            /// </summary>
+            public uint dwMaxRelAlarmOutChanNum;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ALARMOUT_V40, ArraySubType = UnmanagedType.U4)]
-            public uint[] dwRelAlarmOut; //触发报警通道      
+            /// <summary>
+            /// 触发报警通道
+            /// </summary>
+            public uint[] dwRelAlarmOut;
+            /// <summary>
+            /// 保留
+            /// </summary>  
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;           //保留
+            public byte[] byRes;
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_HANDLEEXCEPTION_V40
         {
-            public uint dwHandleType;/*处理方式,处理方式的"或"结果*/
-            /*0x00: 无响应*/
-            /*0x01: 监视器上警告*/
-            /*0x02: 声音警告*/
-            /*0x04: 上传中心*/
-            /*0x08: 触发报警输出*/
-            /*0x10: 触发JPRG抓图并上传Email*/
-            /*0x20: 无线声光报警器联动*/
-            /*0x40: 联动电子地图(目前只有PCNVR支持)*/
-            /*0x200: 抓图并上传FTP*/
+                        /// <summary>
+            /// 处理方式,处理方式的"或"结果
+            /// 0x00: 无响应
+            /// 0x01: 监视器上警告
+            /// 0x02: 声音警告
+            /// 0x04: 上传中心
+            /// 0x08: 触发报警输出
+            /// 0x10: Jpeg抓图并上传EMail
+            /// 0x20: 无线声光报警器联动
+            /// 0x40: 联动电子地图(目前只有PCNVR支持)
+            /// 0x200: 抓图并上传FTP
+            /// </summary>
+            public uint dwHandleType;
             public uint dwMaxRelAlarmOutChanNum; //触发的报警输出通道数（只读）最大支持数
             public uint dwRelAlarmOutChanNum; //触发的报警输出通道数 实际支持数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V30, ArraySubType = UnmanagedType.U4)]
@@ -2905,33 +3043,47 @@ namespace CHCNetSDK
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_HANDLEEXCEPTION_V30
         {
-            public uint dwHandleType;/*处理方式,处理方式的"或"结果*/
-            /*0x00: 无响应*/
-            /*0x01: 监视器上警告*/
-            /*0x02: 声音警告*/
-            /*0x04: 上传中心*/
-            /*0x08: 触发报警输出*/
-            /*0x10: 触发JPRG抓图并上传Email*/
-            /*0x20: 无线声光报警器联动*/
-            /*0x40: 联动电子地图(目前只有PCNVR支持)*/
-            /*0x200: 抓图并上传FTP*/
+            /// <summary>
+            /// 处理方式,处理方式的"或"结果
+            /// 0x00: 无响应
+            /// 0x01: 监视器上警告
+            /// 0x02: 声音警告
+            /// 0x04: 上传中心
+            /// 0x08: 触发报警输出
+            /// 0x10: Jpeg抓图并上传EMail
+            /// 0x20: 无线声光报警器联动
+            /// 0x40: 联动电子地图(目前只有PCNVR支持)
+            /// 0x200: 抓图并上传FTP
+            /// </summary>
+            public uint dwHandleType;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ALARMOUT_V30, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRelAlarmOut;//报警触发的输出通道,报警触发的输出,为1表示触发该输出
+            /// <summary>
+            /// 报警触发的输出通道,报警触发的输出,为1表示触发该输出
+            /// </summary>
+            public byte[] byRelAlarmOut;
         }
 
-        //报警和异常处理结构(子结构)(多处使用)
+        /// <summary>
+        /// 报警和异常处理结构(子结构)(多处使用)
+        /// </summary>
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_HANDLEEXCEPTION
         {
-            public uint dwHandleType;/*处理方式,处理方式的"或"结果*/
-            /*0x00: 无响应*/
-            /*0x01: 监视器上警告*/
-            /*0x02: 声音警告*/
-            /*0x04: 上传中心*/
-            /*0x08: 触发报警输出*/
-            /*0x10: Jpeg抓图并上传EMail*/
+            /// <summary>
+            /// 处理方式,处理方式的"或"结果
+            /// 0x00: 无响应
+            /// 0x01: 监视器上警告
+            /// 0x02: 声音警告
+            /// 0x04: 上传中心
+            /// 0x08: 触发报警输出
+            /// 0x10: Jpeg抓图并上传EMail
+            /// </summary>
+            public uint dwHandleType;
+            /// <summary>
+            /// 报警触发的输出通道,报警触发的输出,为1表示触发该输出
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ALARMOUT, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRelAlarmOut;//报警触发的输出通道,报警触发的输出,为1表示触发该输出
+            public byte[] byRelAlarmOut;//
         }
 
         /// <summary>
@@ -2966,12 +3118,21 @@ namespace CHCNetSDK
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = SERIALNO_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] sSerialNumber;
             /// <summary>
-            /// 
+            /// 软件版本号,高16位是主版本,低16位是次版本
             /// </summary>
-            public uint dwSoftwareVersion;//软件版本号,高16位是主版本,低16位是次版本
-            public uint dwSoftwareBuildDate;//软件生成日期,0xYYYYMMDD
-            public uint dwDSPSoftwareVersion;//DSP软件版本,高16位是主版本,低16位是次版本
-            public uint dwDSPSoftwareBuildDate;// DSP软件生成日期,0xYYYYMMDD
+            public uint dwSoftwareVersion;
+            /// <summary>
+            /// 软件生成日期,0xYYYYMMDD
+            /// </summary>
+            public uint dwSoftwareBuildDate;
+            /// <summary>
+            /// DSP软件版本,高16位是主版本,低16位是次版本
+            /// </summary>
+            public uint dwDSPSoftwareVersion;
+            /// <summary>
+            /// DSP软件生成日期,0xYYYYMMDD
+            /// </summary>
+            public uint dwDSPSoftwareBuildDate;
             public uint dwPanelVersion;// 前面板版本,高16位是主版本,低16位是次版本
             public uint dwHardwareVersion;// 硬件版本,高16位是主版本,低16位是次版本
             public byte byAlarmInPortNum;//DVR报警输入个数

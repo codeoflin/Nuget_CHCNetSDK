@@ -1038,8 +1038,14 @@ namespace CHCNetSDK
         public const int NET_DVR_NOENOUGH_BUF = 43;//缓冲区太小
         public const int NET_DVR_CREATESOCKET_ERROR = 44;//创建SOCKET出错
         public const int NET_DVR_SETSOCKET_ERROR = 45;//设置SOCKET出错
-        public const int NET_DVR_MAX_NUM = 46;//个数达到最大
-        public const int NET_DVR_USERNOTEXIST = 47;//用户不存在
+        /// <summary>
+        /// 个数达到最大
+        /// </summary>
+        public const int NET_DVR_MAX_NUM = 46;
+        /// <summary>
+        /// 用户不存在
+        /// </summary>
+        public const int NET_DVR_USERNOTEXIST = 47;
         /// <summary>
         /// 写FLASH出错
         /// </summary>

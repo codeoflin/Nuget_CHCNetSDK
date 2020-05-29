@@ -25,8 +25,17 @@ namespace CHCNetSDK
 		public static void SDKInit()
 		{
 			//File.WriteAllText(@"E:\2.TXT",$"123");
-			var basepath = $"{ Path.GetDirectoryName(typeof(CHCNet).Assembly.Location)}/runtimes/win-{(Environment.Is64BitProcess ? "x64" : "x86")}/native/";//获取应用程序所在目录（绝对，不受工作目录影响，建议采用此方法获取路径）
+			var runpath=Path.GetDirectoryName(typeof(CHCNet).Assembly.Location);
+			var basepath = $"{ runpath }/runtimes/win-{(Environment.Is64BitProcess ? "x64" : "x86")}/native/";//获取应用程序所在目录（绝对，不受工作目录影响，建议采用此方法获取路径）
 			if (!Directory.Exists(basepath)) basepath = Path.GetDirectoryName(typeof(CHCNet).Assembly.Location);
+			if(File.Exists($"{basepath}/hlog.dll"))
+			{
+				try
+				{
+					File.Copy($"{basepath}/hlog.dll",$"{runpath}/hlog.dll");
+				}catch
+				{}
+			}
 			//File.WriteAllText("E://1.TXT",$"{basepath}/HCCore.dll");
 			//为了实现x64和x86共兼容,此处必须手动加载dll
 			LoadLibraryA($"{basepath}/AnalyzeData.dll");
@@ -43,7 +52,7 @@ namespace CHCNetSDK
 			LoadLibraryA($"{basepath}/HCPlayBack.dll");
 			LoadLibraryA($"{basepath}/HCPreview.dll");
 			LoadLibraryA($"{basepath}/HCVoiceTalk.dll");
-			LoadLibraryA($"{basepath}/hlog.dll");
+			LoadLibraryA($"{runpath}/hlog.dll");
 			LoadLibraryA($"{basepath}/hpr.dll");
 			LoadLibraryA($"{basepath}/HXVA.dll");
 			LoadLibraryA($"{basepath}/libeay32.dll");

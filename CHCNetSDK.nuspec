@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>CHCNetSDK</id>
-    <version>2.2.19</version>
+    <version>2.2.21</version>
     <title>CHCNetSDK</title>
     <authors>Lin</authors>
     <owners>Lin</owners>
@@ -38,8 +38,8 @@
   
     <file src="CHCNetSDK.props" target="\build\CHCNetSDK.props" />
     <file src="bin\Release\**\*" target="\lib" />
-    <file src="runtimes\win-x86\*" target="\runtimes\win-x86\native" />
-    <file src="runtimes\win-x64\*" target="\runtimes\win-x64\native" />
+    <file src="runtimes\win-x86\native\*" target="\runtimes\win-x86\native" />
+    <file src="runtimes\win-x64\native\*" target="\runtimes\win-x64\native" />
   </files>
 
 </package>

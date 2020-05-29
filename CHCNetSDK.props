@@ -1,265 +1,265 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
-		<NativeDlls>$(MSBuildThisFileDirectory)..\</NativeDlls>
+		<CHCNetSDKNativeDlls>$(MSBuildThisFileDirectory)..\runtimes\</CHCNetSDKNativeDlls>
 	</PropertyGroup>
 	<ItemGroup Condition="!$(TargetFramework.Contains('netstandard')) And !$(TargetFramework.Contains('netcoreapp'))">
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\AnalyzeData.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\AnalyzeData.dll">
 			<Link>runtimes\win-x64\native\AnalyzeData.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\AnalyzeData.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\AnalyzeData.dll">
 			<Link>runtimes\win-x86\native\AnalyzeData.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\AudioIntercom.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\AudioIntercom.dll">
 			<Link>runtimes\win-x64\native\AudioIntercom.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\AudioIntercom.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\AudioIntercom.dll">
 			<Link>runtimes\win-x86\native\AudioIntercom.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\AudioRender.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\AudioRender.dll">
 			<Link>runtimes\win-x64\native\AudioRender.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\AudioRender.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\AudioRender.dll">
 			<Link>runtimes\win-x86\native\AudioRender.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\CHCTCPSender.exe">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\CHCTCPSender.exe">
 			<Link>runtimes\win-x64\native\CHCTCPSender.exe</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\CHCTCPSender.exe">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\CHCTCPSender.exe">
 			<Link>runtimes\win-x86\native\CHCTCPSender.exe</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\EagleEyeRender.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\EagleEyeRender.dll">
 			<Link>runtimes\win-x64\native\EagleEyeRender.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\EagleEyeRender.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\EagleEyeRender.dll">
 			<Link>runtimes\win-x86\native\EagleEyeRender.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\HCAlarm.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\HCAlarm.dll">
 			<Link>runtimes\win-x64\native\HCAlarm.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\HCAlarm.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\HCAlarm.dll">
 			<Link>runtimes\win-x86\native\HCAlarm.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\HCCore.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\HCCore.dll">
 			<Link>runtimes\win-x64\native\HCCore.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\HCCore.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\HCCore.dll">
 			<Link>runtimes\win-x86\native\HCCore.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\HCCoreDevCfg.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\HCCoreDevCfg.dll">
 			<Link>runtimes\win-x64\native\HCCoreDevCfg.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\HCCoreDevCfg.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\HCCoreDevCfg.dll">
 			<Link>runtimes\win-x86\native\HCCoreDevCfg.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\HCDisplay.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\HCDisplay.dll">
 			<Link>runtimes\win-x64\native\HCDisplay.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\HCDisplay.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\HCDisplay.dll">
 			<Link>runtimes\win-x86\native\HCDisplay.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\HCGeneralCfgMgr.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\HCGeneralCfgMgr.dll">
 			<Link>runtimes\win-x64\native\HCGeneralCfgMgr.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\HCGeneralCfgMgr.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\HCGeneralCfgMgr.dll">
 			<Link>runtimes\win-x86\native\HCGeneralCfgMgr.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\HCIndustry.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\HCIndustry.dll">
 			<Link>runtimes\win-x64\native\HCAlarm.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\HCIndustry.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\HCIndustry.dll">
 			<Link>runtimes\win-x86\native\HCIndustry.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\HCNetSDK.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\HCNetSDK.dll">
 			<Link>runtimes\win-x64\native\HCNetSDK.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\HCNetSDK.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\HCNetSDK.dll">
 			<Link>runtimes\win-x86\native\HCNetSDK.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\HCPlayBack.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\HCPlayBack.dll">
 			<Link>runtimes\win-x64\native\HCPlayBack.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\HCPlayBack.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\HCPlayBack.dll">
 			<Link>runtimes\win-x86\native\HCPlayBack.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\HCPreview.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\HCPreview.dll">
 			<Link>runtimes\win-x64\native\HCPreview.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\HCPreview.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\HCPreview.dll">
 			<Link>runtimes\win-x86\native\HCPreview.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\HCVoiceTalk.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\HCVoiceTalk.dll">
 			<Link>runtimes\win-x64\native\HCVoiceTalk.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\HCVoiceTalk.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\HCVoiceTalk.dll">
 			<Link>runtimes\win-x86\native\HCVoiceTalk.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\hlog.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\hlog.dll">
 			<Link>runtimes\win-x64\native\hlog.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\hlog.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\hlog.dll">
 			<Link>runtimes\win-x86\native\hlog.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\hpr.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\hpr.dll">
 			<Link>runtimes\win-x64\native\hpr.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\hpr.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\hpr.dll">
 			<Link>runtimes\win-x86\native\hpr.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\HXVA.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\HXVA.dll">
 			<Link>runtimes\win-x64\native\HXVA.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\HXVA.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\HXVA.dll">
 			<Link>runtimes\win-x86\native\HXVA.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\libeay32.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\libeay32.dll">
 			<Link>runtimes\win-x64\native\libeay32.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\libeay32.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\libeay32.dll">
 			<Link>runtimes\win-x86\native\libeay32.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\libiconv2.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\libiconv2.dll">
 			<Link>runtimes\win-x64\native\libiconv2.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\libiconv2.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\libiconv2.dll">
 			<Link>runtimes\win-x86\native\libiconv2.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\MP_Render.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\MP_Render.dll">
 			<Link>runtimes\win-x64\native\MP_Render.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\MP_Render.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\MP_Render.dll">
 			<Link>runtimes\win-x86\native\MP_Render.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\NPQos.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\NPQos.dll">
 			<Link>runtimes\win-x64\native\NPQos.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\NPQos.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\NPQos.dll">
 			<Link>runtimes\win-x86\native\NPQos.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\OpenAL32.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\OpenAL32.dll">
 			<Link>runtimes\win-x64\native\OpenAL32.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\OpenAL32.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\OpenAL32.dll">
 			<Link>runtimes\win-x86\native\OpenAL32.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\PlayCtrl.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\PlayCtrl.dll">
 			<Link>runtimes\win-x64\native\PlayCtrl.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\PlayCtrl.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\PlayCtrl.dll">
 			<Link>runtimes\win-x86\native\PlayCtrl.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\ssleay32.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\ssleay32.dll">
 			<Link>runtimes\win-x64\native\ssleay32.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\ssleay32.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\ssleay32.dll">
 			<Link>runtimes\win-x86\native\ssleay32.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\StreamTransClient.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\StreamTransClient.dll">
 			<Link>runtimes\win-x64\native\StreamTransClient.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\StreamTransClient.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\StreamTransClient.dll">
 			<Link>runtimes\win-x86\native\StreamTransClient.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\SuperRender.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\SuperRender.dll">
 			<Link>runtimes\win-x64\native\SuperRender.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\SuperRender.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\SuperRender.dll">
 			<Link>runtimes\win-x86\native\SuperRender.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\SystemTransform.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\SystemTransform.dll">
 			<Link>runtimes\win-x64\native\SystemTransform.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\SystemTransform.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\SystemTransform.dll">
 			<Link>runtimes\win-x86\native\SystemTransform.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		
-		<Content Include="$(NativeDlls)\runtimes\win-x64\native\YUVProcess.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x64\native\YUVProcess.dll">
 			<Link>runtimes\win-x64\native\YUVProcess.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\runtimes\win-x86\native\YUVProcess.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)win-x86\native\YUVProcess.dll">
 			<Link>runtimes\win-x86\native\YUVProcess.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
@@ -267,21 +267,21 @@
 	</ItemGroup>
 	
 	<!--ItemGroup Condition="!$(TargetFramework.Contains('netstandard')) And !$(TargetFramework.Contains('netcoreapp'))">
-		<Content Include="$(NativeDlls)\win-x86\native\OpenCvSharpExtern.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)\win-x86\native\OpenCvSharpExtern.dll">
 			<Link>dll\x86\OpenCvSharpExtern.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\win-x86\native\opencv_videoio_ffmpeg430.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)\win-x86\native\opencv_videoio_ffmpeg430.dll">
 			<Link>dll\x86\opencv_videoio_ffmpeg430.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
 	<ItemGroup Condition="!$(TargetFramework.Contains('netstandard')) And !$(TargetFramework.Contains('netcoreapp'))">
-		<Content Include="$(NativeDlls)\win-x64\native\OpenCvSharpExtern.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)\win-x64\native\OpenCvSharpExtern.dll">
 			<Link>dll\x64\OpenCvSharpExtern.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="$(NativeDlls)\win-x64\native\opencv_videoio_ffmpeg430_64.dll">
+		<Content Include="$(CHCNetSDKNativeDlls)\win-x64\native\opencv_videoio_ffmpeg430_64.dll">
 			<Link>dll\x64\opencv_videoio_ffmpeg430_64.dll</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>

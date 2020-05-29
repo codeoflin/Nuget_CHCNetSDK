@@ -29,7 +29,7 @@ namespace CHCNetSDK
 		static EasySDK()
 		{
 			if (!Directory.Exists(LibPath)) LibPath = BasePath;
-			CHCNetSDK.CHCNet.NET_DVR_Init();
+			CHCNetSDK.NET_DVR_Init();
 
 		}
 
@@ -129,8 +129,10 @@ var suffixName = suffix == "png"
 		/// <param name="port"></param>
 		/// <param name="username"></param>
 		/// <param name="password"></param>
-		public EasySDK(string ip, int port, string username, string password)
+		/// <param name="id">表示要打开的摄像头编号,以0为下标,-1:表示全部</param>
+		public EasySDK(string ip, int port, string username, string password, int id = -1)
 		{
+			$"id={id}".LogForDebug();
 			Ports.Clear();
 			CHCNet.NET_DVR_Init();
 			var deviceInfo = new CHCNet.NET_DVR_DEVICEINFO_V30();
@@ -155,9 +157,9 @@ var suffixName = suffix == "png"
 			}
 			m_struIpParaCfgV40 = (CHCNet.NET_DVR_IPPARACFG_V40)Marshal.PtrToStructure(ptrIpParaCfgV40, typeof(CHCNet.NET_DVR_IPPARACFG_V40));
 			Marshal.FreeHGlobal(ptrIpParaCfgV40);
-			//"获取IP资源配置信息成功!".LogForInfomation();
+			"获取IP资源配置信息成功!".LogForInfomation();
 
-			uint iDChanNum = (uint)deviceInfo.byIPChanNum + 256 * (uint)deviceInfo.byHighDChanNum;
+			uint iDChanNum = (uint)(deviceInfo.byIPChanNum + 256 * deviceInfo.byHighDChanNum);
 			if (iDChanNum > 64) iDChanNum = 64; //如果设备IP通道大于64路，按只取64
 
 			for (int i = 0; i < iDChanNum; i++)
@@ -174,21 +176,18 @@ var suffixName = suffix == "png"
 					case 0:
 						{
 							var info = (CHCNet.NET_DVR_IPCHANINFO)Marshal.PtrToStructure(databuff, typeof(CHCNet.NET_DVR_IPCHANINFO));
-							//videoport.DevID = info.byIPID + info.byIPIDHigh * 256 - iGroupNo * 64 - 1;
 							isenable = info.byEnable == 1;
 							break;
 						}
 					case 4:
 						{
 							var info = (CHCNet.NET_DVR_PU_STREAM_URL)Marshal.PtrToStructure(databuff, typeof(CHCNet.NET_DVR_PU_STREAM_URL));
-							//videoport.DevID = info.wIPID - iGroupNo * 64 - 1;
 							isenable = info.byEnable == 1;
 							break;
 						}
 					case 6:
 						{
 							var info = (CHCNet.NET_DVR_IPCHANINFO_V40)Marshal.PtrToStructure(databuff, typeof(CHCNet.NET_DVR_IPCHANINFO_V40));
-							//videoport.DevID = info.wIPID - iGroupNo * 64 - 1;
 							isenable = info.byEnable == 1;
 							break;
 						}
@@ -199,41 +198,49 @@ var suffixName = suffix == "png"
 				if (!isenable) continue;
 				Ports.Add(videoport);
 				var run = true;
-				var filename = $"HCNVR{(run ? "_" : "")}{(run ? Process.GetCurrentProcess().Id.ToString() : "")}_{Ports.Count}";
 				int portid = Ports.Count - 1;
+				var filename = $"HCNVR_{(run ? Process.GetCurrentProcess().Id.ToString() : "")}_{portid}";
+				$"portid={portid}".LogForDebug();
+				if (id >= 0) if (portid != id) continue;
 				Task.Factory.StartNew(() =>
 				{
 					//创建或者打开共享内存 32MB
 					var mmf = MemoryMappedFile.CreateNew(filename, 32 * 1024 * 1024, MemoryMappedFileAccess.ReadWrite);
-
 					//通过MemoryMappedFile的CreateViewAccssor方法获得共享内存的访问器
-					var viewAccessor = mmf.CreateViewAccessor(0, 32 * 1024 * 1024);
+					var viewaccessor = mmf.CreateViewAccessor(0, 32 * 1024 * 1024);
 					//循环写入，使在这个进程中可以向共享内存中写入不同的字符串值
-					viewAccessor.Write(0, 0);
-					viewAccessor.Write(1, 0);
+					viewaccessor.Write(0, 0);
+					viewaccessor.Write(1, 0);
 					videoport.Process = new Process();
 					videoport.Process.StartInfo = new ProcessStartInfo($"{LibPath}/CHCTCPSender.exe", $"{ip} {port.ToString()} {username} {password} {portid} {filename}") { CreateNoWindow = true, WindowStyle = ProcessWindowStyle.Hidden };
 
 					if (run) videoport.Process.Start();
 					while ((!run) || !videoport.Process.HasExited)
 					{
-						Thread.Sleep(10);
-						var index1 = viewAccessor.ReadByte(0);
-						var index2 = viewAccessor.ReadByte(1);
+						Thread.Sleep(50);
+						var index1 = viewaccessor.ReadByte(0);
+						var index2 = viewaccessor.ReadByte(1);
 						if (index1 == index2) continue;
-						var imglen = viewAccessor.ReadUInt32(2);
+						var imglen = viewaccessor.ReadUInt32(2);
 						if (imglen == 0) continue;
 						var buff = new byte[imglen];
-						viewAccessor.ReadArray<byte>(6, buff, 0, buff.Length);
-						viewAccessor.Write(0, index2);
+						viewaccessor.ReadArray<byte>(6, buff, 0, buff.Length);
+						viewaccessor.Write(0, index2);
 						lock (videoport) videoport.Frame = buff;
 					}
 					videoport.Process.Dispose();
-					viewAccessor.Dispose();
+					viewaccessor.Dispose();
 					mmf.Dispose();
 				});
 				//*/
 			}//EndFor
+
+			if (id >= 0 && Ports.Count > id)
+			{
+				var tmp = Ports[id];
+				Ports.Clear();
+				Ports.Add(tmp);
+			}
 			CHCNet.NET_DVR_Logout(uid);
 		}
 
@@ -276,6 +283,7 @@ var suffixName = suffix == "png"
 			{
 				var tmp = Image.FromStream(mem);
 				img = DeepCopyBitmap(tmp);
+				tmp.Dispose();
 			}
 			return img;
 		}
@@ -333,7 +341,7 @@ var suffixName = suffix == "png"
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine("Error : {0}", ex.Message);
+				Console.WriteLine($"Error : {ex.Message}");
 				return null;
 			}
 		}

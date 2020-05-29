@@ -1,6 +1,7 @@
 
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <!-- OutputType>WinExe</OutputType --><!-- 此选项打开调试模式 -->
     <TargetFrameworks>netstandard2.0;net40;net45;net451;net452;net46;net461;net462;net472;netcoreapp3.1;</TargetFrameworks>
     <IncludeBuildOutput>true</IncludeBuildOutput>
     <NuspecFile>CHCNetSDK.nuspec</NuspecFile>
@@ -9,8 +10,6 @@
     <IsPackable>true</IsPackable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
-
-
 <!-- Condition="$(ConfigurationName) == 'Debug'" AfterTargets="Build" -->
   <ItemGroup>
     <Content Include="$(ProjectDir)runtimes\win-x86\*" Pack="true" PackagePath="\runtimes\win-x86\native" />
@@ -28,7 +27,7 @@
     <Content Include="$(ProjectDir)runtimes\win-x64\*" Pack="true" PackagePath="\runtimes\win-x64\native" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Lin.Loghelper" Version="0.0.1" />
+    <PackageReference Include="Lin.Loghelper" Version="0.0.3" />
   </ItemGroup>
 
 </Project>
